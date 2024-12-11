@@ -4,11 +4,12 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
           <span class="govuk-caption-l">004335 - Multi academy trust</span>
           <h1 class="govuk-heading-l">Catering Services for a really long long name</h1>
+          {% include "./includes/key-procurement-info.html" %}
         </div>
         <div class="govuk-grid-column-one-quarter" style="text-align: right;">
           <div class="moj-button-menu" data-module="moj-button-menu" data-button-text="Actions" data-button-classes="govuk-button--secondary" data-align-menu="right">
@@ -31,71 +32,34 @@
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Procurement ID
-              </dt>
-              <dd class="govuk-summary-list__value">
-                004335
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Main contact
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Marissa Dale
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Organisation
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Bueller Trust
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Target end date
-              </dt>
-              <dd class="govuk-summary-list__value">
-                25 July 2026
-              </dd>
-            </div>
-          </dl>
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="#">
+                  Task list</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Case details</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Notes</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Contacts</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">History</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Attachments</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Files</a>
+              </li>
+            </ul>
+          </nav>
+          TASKLIST
         </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <nav class="moj-sub-navigation" aria-label="Sub navigation">
-          <ul class="moj-sub-navigation__list">
-            <li class="moj-sub-navigation__item">
-              <a class="moj-sub-navigation__link" aria-current="page" href="#">
-                Task list</a>
-            </li>
-            <li class="moj-sub-navigation__item">
-              <a class="moj-sub-navigation__link" href="#">Case details</a>
-            </li>
-            <li class="moj-sub-navigation__item">
-              <a class="moj-sub-navigation__link" href="#">Notes</a>
-            </li>
-            <li class="moj-sub-navigation__item">
-              <a class="moj-sub-navigation__link" href="#">Contacts</a>
-            </li>
-            <li class="moj-sub-navigation__item">
-              <a class="moj-sub-navigation__link" href="#">History</a>
-            </li>
-            <li class="moj-sub-navigation__item">
-              <a class="moj-sub-navigation__link" href="#">Attachments</a>
-            </li>
-            <li class="moj-sub-navigation__item">
-              <a class="moj-sub-navigation__link" href="#">Files</a>
-            </li>
-          </ul>
-        </nav>
-        TASKLIST
       </div>
     </div>
   </div>
