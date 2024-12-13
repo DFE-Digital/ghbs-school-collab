@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335 Catering
+                  services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Complete information
+                  gathering</a>
+              </li>
+            </ol>
+          </nav>
+          <span class="govuk-caption-l">004335 - Multi academy trust</span>
+          <h1 class="govuk-heading-l">Complete information gathering</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="other-tax-relief" method="post" novalidate>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="regionalDeliveryOfficerHandover" name="regionalDeliveryOfficerHandover" type="checkbox" value="doResearch">
+                    <label class="govuk-label govuk-checkboxes__label" for="regionalDeliveryOfficerHandover">
+                      Review information gathered during triage
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="regionalDeliveryOfficerHandover-3" name="regionalDeliveryOfficerHandover" type="checkbox" value="doHandover">
+                    <label class="govuk-label govuk-checkboxes__label" for="regionalDeliveryOfficerHandover-3">
+                      Send quality and scoring preferences document
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="regionalDeliveryOfficerHandover-2" name="regionalDeliveryOfficerHandover" type="checkbox" value="makeNotes">
+                    <label class="govuk-label govuk-checkboxes__label" for="regionalDeliveryOfficerHandover-2">
+                      Get more information or ask for changes</label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="regionalDeliveryOfficerHandover-4" name="regionalDeliveryOfficerHandover" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="regionalDeliveryOfficerHandover-4">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
