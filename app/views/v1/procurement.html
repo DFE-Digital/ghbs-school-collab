@@ -83,9 +83,13 @@
                 </a>
               </div>
               <div class="govuk-task-list__status" id="company-details-1-status">
-                <strong class="govuk-tag govuk-tag--blue">
-                  To do
-                </strong>
+                {% if (data['tagCompleteInformationGatheringStatus'] == "complete") %}
+                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                {% elseif (data['tagCompleteInformationGatheringStatus'] == "inProgress")%}
+                  <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--blue">To do</strong>
+                {% endif %}
               </div>
             </li>
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
