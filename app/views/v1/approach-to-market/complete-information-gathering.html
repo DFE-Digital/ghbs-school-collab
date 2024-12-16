@@ -31,9 +31,11 @@
           <form action="complete-information-gathering" method="post" novalidate>
             <h2 class="govuk-heading-m"  >Review information gathered</h2>
             <div for="file-upload-1" class="govuk-hint">
-              <p class="govuk-body">Check the information gathering documents to
-                ensure that you have enough information to start the procurement
-                and that quality and scoring criteria have been agreed.</p>
+              <p class="govuk-body">Check the information gathered to
+                ensure that you have enough information to start the procurement.
+                Use the requirements document to gather information that may be
+                missing, you may also want to share the quality and scoring
+                criteria document now.</p>
               <p class="govuk-body">Replace old versions of documents with new
                 ones when they are received.</p>
             </div>
@@ -43,22 +45,22 @@
                 {% if (data['pageAction'] == 'uploadInformationGathering') %}
                   <li><a class="govuk-link" href="#">Information gathering v2.docx</a>
                     | <a class="govuk-link" href="#">delete <span class="govuk-visually-hidden">
-                      information gathering v3.docx</span></a></li>
-                  <li><a class="govuk-link" href="#">Scoring Criteria v2.docx</a> |
-                    <a class="govuk-link" href="#">delete <span class="govuk-visually-hidden">
-                      Scoring criteria v2.docx</span></a></li>
+                      information gathering.docx</span></a></li>
+                  <li><a class="govuk-link" href="#">Requirements v3.xlsx</a>
+                    | <a class="govuk-link" href="#">delete <span class="govuk-visually-hidden">
+                      information gathering v3.xlsx</span></a></li>
                 {% else %}
-                  {% if (data['informationGatheringV2Deleted'] != 'true') %}
-                    <li><a class="govuk-link" href="#">Information gathering v2.docx</a>
-                      | <a class="govuk-link" href="complete-information-gathering?informationGatheringV2Deleted=true">delete <span class="govuk-visually-hidden">
-                        information gathering v2.docx</span></a></li>
+                  {% if (data['informationGatheringDeleted'] != 'true') %}
+                    <li><a class="govuk-link" href="#">Information gathering.docx</a>
+                      | <a class="govuk-link" href="complete-information-gathering?informationGatheringDeleted=true">delete <span class="govuk-visually-hidden">
+                        information gathering.docx</span></a></li>
                   {% endif %}
-                  {% if (data['scoringCriteriaDeleted'] != 'true') %}
-                    <li><a class="govuk-link" href="#">Scoring Criteria.docx</a> |
-                      <a class="govuk-link" href="complete-information-gathering?scoringCriteriaDeleted=true">delete <span class="govuk-visually-hidden">
-                      information gathering v2.docx</span></a></li>
+                  {% if (data['requirementsDeleted'] != 'true') %}
+                    <li><a class="govuk-link" href="#">Requirements v2.xlsx</a> |
+                      <a class="govuk-link" href="complete-information-gathering?requirementsDeleted=true">delete <span class="govuk-visually-hidden">
+                      Requirements v2.xlsx</span></a></li>
                   {% endif %}
-                  {% if (data['scoringCriteriaDeleted'] == 'true' and data['informationGatheringV2Deleted'] == 'true') %}
+                  {% if (data['requirementsDeleted'] == 'true' and data['informationGatheringDeleted'] == 'true') %}
                       No documents uploaded
                   {% endif %}
                 {% endif %}
@@ -79,14 +81,27 @@
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagCompleteInformationGathering-3" name="tagCompleteInformationGathering" type="checkbox" value="Send and review quality and scoring preferences document" {{ checked("tagCompleteInformationGathering", "Send and review quality and scoring preferences document") }}>
+                    <input class="govuk-checkboxes__input" id="tagCompleteInformationGathering-3" name="tagCompleteInformationGathering" type="checkbox" value="Share requirements document with school" {{ checked("tagCompleteInformationGathering", "Share requirements document with school") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagCompleteInformationGathering-3">
-                      Send and review quality and scoring preferences document
+                      Share requirements document with school
+                    </label>
+                    <div class="govuk-checkboxes__guidance">
+                      <div for="tagCompleteInformationGathering-3" class="govuk-hint">
+                        Upload the relevant requirement documents to share with
+                        the school. Several versions may be worked on before you
+                        chose to approve it.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagCompleteInformationGathering-4" name="tagCompleteInformationGathering" type="checkbox" value="Approve requirements document" {{ checked("tagCompleteInformationGathering", "Approve requirements document") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCompleteInformationGathering-4">
+                      Approve requirements document
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item" style="display: none;">
-                    <input class="govuk-checkboxes__input" id="tagCompleteInformationGathering-4" name="tagCompleteInformationGathering" type="checkbox" value="empty" checked="empty">
-                    <label class="govuk-label govuk-checkboxes__label" for="tagCompleteInformationGathering-4">
+                    <input class="govuk-checkboxes__input" id="tagCompleteInformationGathering-0" name="tagCompleteInformationGathering" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCompleteInformationGathering-0">
                       empty
                     </label>
                   </div>

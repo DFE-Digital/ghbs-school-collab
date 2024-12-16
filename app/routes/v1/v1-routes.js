@@ -3,6 +3,7 @@ module.exports = function (router) {
   var version = "v1";
 
   router.get('/' + version + '/approach-to-market/complete-information-gathering', function (req, res) {
+    req.session.data.pageAction = ''
     res.render(version + '/approach-to-market/complete-information-gathering', {})
   })
 
@@ -11,7 +12,8 @@ module.exports = function (router) {
     const pageAction = req.session.data['pageAction']
 
     if (tagCompleteInformationGathering.includes('Review information gathered during triage') &
-      tagCompleteInformationGathering.includes('Send and review quality and scoring preferences document') &
+      tagCompleteInformationGathering.includes('Share requirements document with school') &
+      tagCompleteInformationGathering.includes('Approve requirements document') &
       tagCompleteInformationGathering.includes('empty')){
       req.session.data.tagCompleteInformationGatheringStatus = 'complete'
     }else if (tagCompleteInformationGathering == ('empty')){
