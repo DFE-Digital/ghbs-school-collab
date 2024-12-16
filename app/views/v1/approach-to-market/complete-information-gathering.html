@@ -28,36 +28,68 @@
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form action="other-tax-relief" method="post" novalidate>
+          <form action="complete-information-gathering" method="post" novalidate>
+            <h2 class="govuk-heading-m"  >Review information gathered</h2>
+            <div for="file-upload-1" class="govuk-hint">
+              <p class="govuk-body">Check the information gathering documents to
+                ensure that you have enough information to start the procurement
+                and that quality and scoring criteria have been agreed.</p>
+              <p class="govuk-body">Replace old versions of documents with new
+                ones when they are received.</p>
+            </div>
+            <div class="govuk-form-group">
+              <h3 class="govuk-heading-s">Uploaded documents</h3>
+              <ul class="govuk-list">
+                {% if (data['informationGatheringV2Deleted'] != 'true') %}
+                  <li><a class="govuk-link" href="#">Information gathering v2.docx</a>
+                    | <a class="govuk-link" href="complete-information-gathering?informationGatheringV2Deleted=true">delete <span class="govuk-visually-hidden">
+                      information gathering v2.docx</span></a></li>
+                {% endif %}
+                {% if (data['scoringCriteriaDeleted'] != 'true') %}
+                  <li><a class="govuk-link" href="#">Scoring Criteria</a> |
+                    <a class="govuk-link" href="complete-information-gathering?scoringCriteriaDeleted=true">delete <span class="govuk-visually-hidden">
+                    information gathering v2.docx</span></a></li>
+                {% endif %}
+                {% if (data['scoringCriteriaDeleted'] == 'true' and data['informationGatheringV2Deleted'] == 'true') %}
+                    No documents uploaded
+                {% endif %}
+              </ul>
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label>
+              <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+            </div>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="regionalDeliveryOfficerHandover" name="regionalDeliveryOfficerHandover" type="checkbox" value="doResearch">
-                    <label class="govuk-label govuk-checkboxes__label" for="regionalDeliveryOfficerHandover">
+                    <input class="govuk-checkboxes__input" id="tagCompleteInformationGathering" name="tagCompleteInformationGathering" type="checkbox" value="Review information gathered during triage" {{ checked("tagCompleteInformationGathering", "Review information gathered during triage") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCompleteInformationGathering">
                       Review information gathered during triage
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="regionalDeliveryOfficerHandover-2" name="regionalDeliveryOfficerHandover" type="checkbox" value="makeNotes">
-                    <label class="govuk-label govuk-checkboxes__label" for="regionalDeliveryOfficerHandover-2">
-                      Send document asking for additional questions and
-                      clarification</label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="regionalDeliveryOfficerHandover-3" name="regionalDeliveryOfficerHandover" type="checkbox" value="doHandover">
-                    <label class="govuk-label govuk-checkboxes__label" for="regionalDeliveryOfficerHandover-3">
-                      Send quality and scoring preferences document
+                    <input class="govuk-checkboxes__input" id="tagCompleteInformationGathering-3" name="tagCompleteInformationGathering" type="checkbox" value="Send and review quality and scoring preferences document" {{ checked("tagCompleteInformationGathering", "Send and review quality and scoring preferences document") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCompleteInformationGathering-3">
+                      Send and review quality and scoring preferences document
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item" style="display: none;">
-                    <input class="govuk-checkboxes__input" id="regionalDeliveryOfficerHandover-4" name="regionalDeliveryOfficerHandover" type="checkbox" value="empty" checked="empty">
-                    <label class="govuk-label govuk-checkboxes__label" for="regionalDeliveryOfficerHandover-4">
+                    <input class="govuk-checkboxes__input" id="tagCompleteInformationGathering-4" name="tagCompleteInformationGathering" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCompleteInformationGathering-4">
                       empty
                     </label>
                   </div>
                 </div>
               </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+              <a class="govuk-link" href="../procurement">Cancel</a>
             </div>
           </form>
         </div>

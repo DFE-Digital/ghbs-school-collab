@@ -8,6 +8,7 @@
 @import 'node_modules/dfe-frontend/packages/dfefrontend';
 @import 'components/moj-button-menu';
 @import 'components/govuk-checkboxes-list';
+@import 'components/govuk-hint';
 
 .govuk-width-container, .dfe-width-container, .dfe-header__container, .dfe-header__navigation{
   max-width: 1200px !important;
