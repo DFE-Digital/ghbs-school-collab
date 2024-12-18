@@ -44,10 +44,24 @@
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="routeToMarket-2" name="routeToMarket" type="radio" value="DfE approved deal or framework" {{ checked("routeToMarket", "DfE approved deal or framework") }}>
+                    <input class="govuk-radios__input" id="routeToMarket-2" name="routeToMarket" type="radio" data-aria-controls="frameworkName" value="DfE approved deal or framework" {{ checked("routeToMarket", "DfE approved deal or framework") }}>
                     <label class="govuk-label govuk-radios__label" for="routeToMarket-2">
                       DfE approved deal or framework
                     </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="frameworkName">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="framework-name">
+                        Name of framework
+                      </label>
+                      <input class="govuk-input" id="framework-name" name="framework-name" type="text" spellcheck="false">
+                    </div>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="eportal-reference">
+                        E-portal reference
+                      </label>
+                      <input class="govuk-input" id="eportal-reference" name="eportal-reference" type="text" spellcheck="false">
+                    </div>
                   </div>
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="routeToMarket-3" name="routeToMarket" type="radio" value="Direct award" {{ checked("routeToMarket", "Direct award") }}>
@@ -98,14 +112,20 @@
               <fieldset class="govuk-fieldset">
                 <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagCompleteInformationGathering" name="tagCompleteInformationGathering" type="checkbox" value="Review information gathered during triage" {{ checked("tagCompleteInformationGathering", "Review information gathered during triage") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="tagCompleteInformationGathering">
+                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket" name="tagRecordRouteToMarket" type="checkbox" value="Review information gathered during triage" {{ checked("tagRecordRouteToMarket", "Review information gathered during triage") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket">
+                      Discuss and agree route to market
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket" name="tagRecordRouteToMarket" type="checkbox" value="Review information gathered during triage" {{ checked("tagRecordRouteToMarket", "Review information gathered during triage") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket">
                       Recorded route to market
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item" style="display: none;">
-                    <input class="govuk-checkboxes__input" id="tagCompleteInformationGathering-0" name="tagCompleteInformationGathering" type="checkbox" value="empty" checked="empty">
-                    <label class="govuk-label govuk-checkboxes__label" for="tagCompleteInformationGathering-0">
+                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket-0" name="tagRecordRouteToMarket" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket-0">
                       empty
                     </label>
                   </div>
