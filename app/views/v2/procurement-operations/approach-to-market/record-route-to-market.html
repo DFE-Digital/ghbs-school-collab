@@ -44,23 +44,23 @@
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="routeToMarket-2" name="routeToMarket" type="radio" data-aria-controls="frameworkName" value="DfE approved deal or framework" {{ checked("routeToMarket", "DfE approved deal or framework") }}>
+                    <input class="govuk-radios__input" id="routeToMarket-2" name="routeToMarket" type="radio" data-aria-controls="frameworkNameHolder" value="DfE approved deal or framework" {{ checked("routeToMarket", "DfE approved deal or framework") }}>
                     <label class="govuk-label govuk-radios__label" for="routeToMarket-2">
                       DfE approved deal or framework
                     </label>
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="frameworkName">
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="frameworkNameHolder">
                     <div class="govuk-form-group">
-                      <label class="govuk-label" for="framework-name">
+                      <label class="govuk-label" for="frameworkName">
                         Name of framework
                       </label>
-                      <input class="govuk-input" id="framework-name" name="framework-name" type="text" spellcheck="false">
+                      <input class="govuk-input" id="frameworkName" name="frameworkName" type="text" spellcheck="false" value="{{data['frameworkName']}}">
                     </div>
                     <div class="govuk-form-group">
-                      <label class="govuk-label" for="eportal-reference">
+                      <label class="govuk-label" for="ePortalReference">
                         E-portal reference
                       </label>
-                      <input class="govuk-input" id="eportal-reference" name="eportal-reference" type="text" spellcheck="false">
+                      <input class="govuk-input" id="ePortalReference" name="ePortalReference" type="text" spellcheck="false" value="{{data['ePortalReference']}}">
                     </div>
                   </div>
                   <div class="govuk-radios__item">
