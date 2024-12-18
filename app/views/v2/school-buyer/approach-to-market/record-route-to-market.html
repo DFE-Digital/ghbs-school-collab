@@ -32,11 +32,11 @@
             <div class="govuk-form-group">
               <h2 class="govuk-heading-m">Route to market</h2>
               <p class="govuk-body">{{data['routeToMarket'] | default('Pending decision')}}</p>
-              {% if (data['has-loan'] == 'Yes')   %}
-              <h3 class="govuk-heading-s">Name of framework</h3>
-              <p class="govuk-body">{{data['framework-name'] | default('Pending decision')}}</p>
-              <h3 class="govuk-heading-s">E-portal reference</h3>
-              <p class="govuk-body">{{data['eportal-reference'] | default('Pending decision')}}</p>
+              {% if (data['routeToMarket'] == 'DfE approved deal or framework') %}
+                <h3 class="govuk-heading-s">Name of framework</h3>
+                <p class="govuk-body">{{data['frameworkName'] | default('Pending decision')}}</p>
+                <h3 class="govuk-heading-s">E-portal reference</h3>
+                <p class="govuk-body">{{data['ePortalReference'] | default('Pending decision')}}</p>
               {% endif %}
             </div>
             <div class="govuk-form-group">

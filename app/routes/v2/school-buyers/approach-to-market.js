@@ -17,4 +17,14 @@ module.exports = function (router) {
     }
   })
 
+  router.get('/' + version + '/school-buyer/approach-to-market/record-route-to-market', function (req, res) {
+    req.session.data.pageAction = ''
+    res.render(version + '/school-buyer/approach-to-market/record-route-to-market', {})
+  })
+
+  router.post('/' + version + '/school-buyer/approach-to-market/record-route-to-market', function (req, res) {
+
+    res.redirect('/' + version + '/school-buyer/procurement')
+  })
+
 }
