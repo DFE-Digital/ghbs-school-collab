@@ -28,7 +28,7 @@
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form action="complete-information-gathering" method="post" novalidate>
+          <form action="record-route-to-market" method="post" novalidate>
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -44,23 +44,23 @@
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="routeToMarket-2" name="routeToMarket" type="radio" data-aria-controls="frameworkName" value="DfE approved deal or framework" {{ checked("routeToMarket", "DfE approved deal or framework") }}>
+                    <input class="govuk-radios__input" id="routeToMarket-2" name="routeToMarket" type="radio" data-aria-controls="frameworkNameHolder" value="DfE approved deal or framework" {{ checked("routeToMarket", "DfE approved deal or framework") }}>
                     <label class="govuk-label govuk-radios__label" for="routeToMarket-2">
                       DfE approved deal or framework
                     </label>
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="frameworkName">
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="frameworkNameHolder">
                     <div class="govuk-form-group">
-                      <label class="govuk-label" for="framework-name">
+                      <label class="govuk-label" for="frameworkName">
                         Name of framework
                       </label>
-                      <input class="govuk-input" id="framework-name" name="framework-name" type="text" spellcheck="false">
+                      <input class="govuk-input" id="frameworkName" name="frameworkName" type="text" spellcheck="false" value="{{data['frameworkName']}}">
                     </div>
                     <div class="govuk-form-group">
-                      <label class="govuk-label" for="eportal-reference">
+                      <label class="govuk-label" for="ePortalReference">
                         E-portal reference
                       </label>
-                      <input class="govuk-input" id="eportal-reference" name="eportal-reference" type="text" spellcheck="false">
+                      <input class="govuk-input" id="ePortalReference" name="ePortalReference" type="text" spellcheck="false" value="{{data['ePortalReference']}}">
                     </div>
                   </div>
                   <div class="govuk-radios__item">
@@ -112,15 +112,15 @@
               <fieldset class="govuk-fieldset">
                 <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket" name="tagRecordRouteToMarket" type="checkbox" value="Review information gathered during triage" {{ checked("tagRecordRouteToMarket", "Review information gathered during triage") }}>
+                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket" name="tagRecordRouteToMarket" type="checkbox" value="Discuss and agree route to market" {{ checked("tagRecordRouteToMarket", "Discuss and agree route to market") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket">
                       Discuss and agree route to market
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket" name="tagRecordRouteToMarket" type="checkbox" value="Review information gathered during triage" {{ checked("tagRecordRouteToMarket", "Review information gathered during triage") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket">
-                      Recorded route to market
+                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket-2" name="tagRecordRouteToMarket" type="checkbox" value="Record route to market" {{ checked("tagRecordRouteToMarket", "Record route to market") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket-2">
+                      Record route to market
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item" style="display: none;">

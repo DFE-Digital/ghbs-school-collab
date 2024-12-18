@@ -29,4 +29,25 @@ module.exports = function (router) {
     }
   })
 
+  router.get('/' + version + '/procurement-operations/approach-to-market/record-route-to-market', function (req, res) {
+    req.session.data.pageAction = ''
+    res.render(version + '/procurement-operations/approach-to-market/record-route-to-market', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/approach-to-market/record-route-to-market', function (req, res) {
+    const tagRecordRouteToMarket = req.session.data['tagRecordRouteToMarket']
+
+    if (tagRecordRouteToMarket.includes('Discuss and agree route to market') &
+    tagRecordRouteToMarket.includes('Record route to market') &
+    tagRecordRouteToMarket.includes('empty')){
+      req.session.data.tagRecordRouteToMarketStatus = 'complete'
+    }else if (tagRecordRouteToMarket == ('empty')){
+      req.session.data.tagRecordRouteToMarketStatus = 'toDo'
+    }else {
+      req.session.data.tagRecordRouteToMarketStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/procurement')
+  })
+
 }
