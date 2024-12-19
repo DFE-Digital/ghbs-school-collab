@@ -9,6 +9,6 @@ module.exports = function (router) {
   router.post('/' + version + '/common/upload-document', function (req, res) {
     const userType = req.session.data['userType']
 
-    res.redirect('/' + version + '/' + userType + '/procurement')
+    res.redirect('/' + version + '/' + userType + '/approach-to-market/complete-information-gathering')
   })
 }
