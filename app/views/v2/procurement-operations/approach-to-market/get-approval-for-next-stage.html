@@ -49,9 +49,15 @@
               </fieldset>
             </div>
             <div class="govuk-button-group">
-              <button type="submit" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
-                Continue
-              </button>
+              {% if (data['tagCompleteInformationGatheringStatus'] == "complete" and data['tagRecordRouteToMarketStatus'] == "complete") %}
+                <button type="submit" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
+                  Continue
+                </button>
+              {% else %}
+                <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
+                  Continue
+                </button>
+              {% endif %}
               <a class="govuk-link" href="../procurement">Cancel</a>
             </div>
           </form>
