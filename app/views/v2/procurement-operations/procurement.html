@@ -179,6 +179,34 @@
                 {% endif %}
               </div>
             </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                {% if (data['routeToMarket'] == "Bespoke procurement") %}
+                  <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+                    Bespoke procurement task
+                  </a>
+                {% elseif (data['routeToMarket'] == "DfE approved deal or framework") %}
+                  <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+                    DfE approved deal or framework task
+                  </a>
+                {% elseif (data['routeToMarket'] == "Direct award") %}
+                  <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+                    Direct award task
+                  </a>
+                {% else %}
+                  <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+                    #TODO THING THAT CHANGES DEPENDING ON ROUTE TO MARKET
+                  </a>
+                {% endif %}
+              </div>
+              <div class="govuk-task-list__status" id="company-details-4-status">
+                {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+                  <strong class="govuk-tag govuk-tag--blue">To do</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+                {% endif %}
+              </div>
+            </li>
           </ul>
         </div>
       </div>
