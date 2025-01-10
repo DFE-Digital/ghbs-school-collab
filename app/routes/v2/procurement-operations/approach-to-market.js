@@ -49,6 +49,22 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
+  router.get('/' + version + '/procurement-operations/approach-to-market/check-cost-threshold', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/check-cost-threshold', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/approach-to-market/check-cost-threshold', function (req, res) {
+    const tagCheckCostThreshold = req.session.data['costThresholdStatus']
+
+    if (tagCheckCostThreshold){
+      req.session.data.tagCheckCostThresholdStatus = 'complete'
+    }else{
+      req.session.data.tagCheckCostThresholdStatus = 'toDo'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/procurement')
+  })
+
   router.get('/' + version + '/procurement-operations/approach-to-market/get-approval-for-next-stage', function (req, res) {
     res.render(version + '/procurement-operations/approach-to-market/get-approval-for-next-stage', {})
   })

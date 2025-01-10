@@ -15,3 +15,4 @@ require('./routes/v1/common/upload-document.js')(router);
 require('./routes/v2/procurement-operations/approach-to-market.js')(router);
 require('./routes/v2/school-buyers/approach-to-market.js')(router);
 require('./routes/v2/common/upload-document.js')(router);
+require('./routes/v2/common/procurement.js')(router);
