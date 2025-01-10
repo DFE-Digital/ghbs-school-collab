@@ -49,12 +49,12 @@
               </fieldset>
             </div>
             <div class="govuk-button-group">
-              {% if (data['tagCompleteInformationGatheringStatus'] == "complete" and data['tagRecordRouteToMarketStatus'] == "complete") %}
-                <button type="submit" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
+              {% if (data['stage1ApprovalBlocked'] == "true") %}
+                <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
                   Continue
                 </button>
               {% else %}
-                <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
+                <button type="submit" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
                   Continue
                 </button>
               {% endif %}
