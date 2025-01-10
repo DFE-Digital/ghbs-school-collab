@@ -106,14 +106,48 @@
               </div>
               <div class="govuk-task-list__status">
                 {% if (data['tagRecordRouteToMarketStatus'] == "complete") %}
-                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                <strong class="govuk-tag govuk-tag--green">Complete</strong>
                 {% elseif (data['tagRecordRouteToMarketStatus'] == "inProgress")%}
+                <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+                {% else %}
+                <strong class="govuk-tag govuk-tag--blue">To do</strong>
+                {% endif %}
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="approach-to-market/check-cost-threshold" aria-describedby="company-details-1-status">
+                  Check cost threshold
+                </a>
+              </div>
+              <div class="govuk-task-list__status">
+                {% if (data['tagCheckCostThresholdStatus'] == "complete") %}
+                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                {% elseif (data['tagCheckCostThresholdStatus'] == "inProgress")%}
                   <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
                 {% else %}
                   <strong class="govuk-tag govuk-tag--blue">To do</strong>
                 {% endif %}
               </div>
             </li>
+            {% if (data['routeToMarket'] == "Non-DfE approved deal or framework") %}
+              <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="approach-to-market/get-CAB-approval-for-Non-DfE-deal-or-framework" aria-describedby="company-details-2-status">
+                    Get CAB approval for Non-DfE deal or framework
+                  </a>
+                </div>
+                <div class="govuk-task-list__status">
+                  {% if (data['tagRecordRouteToMarketStatus'] == "complete") %}
+                    <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                  {% elseif (data['tagRecordRouteToMarketStatus'] == "inProgress")%}
+                    <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+                  {% else %}
+                    <strong class="govuk-tag govuk-tag--blue">To do</strong>
+                  {% endif %}
+                </div>
+              </li>
+            {% endif %}
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
                 <a class="govuk-link govuk-task-list__link" href="approach-to-market/get-approval-for-next-stage" aria-describedby="company-details-4-status">
@@ -121,7 +155,9 @@
                 </a>
               </div>
               <div class="govuk-task-list__status" id="company-details-4-status">
-                {% if (data['tagCompleteInformationGatheringStatus'] == "complete" and data['tagRecordRouteToMarketStatus'] == "complete") %}
+                {% if (data['stage1ApprovalBlocked'] == "true") %}
+                  <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+                {% else %}
                   {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
                     <strong class="govuk-tag govuk-tag--green">Complete</strong>
                   {% elseif (data['tagGetApprovalForStage2Status'] == "inProgress")%}
@@ -129,8 +165,6 @@
                   {% else %}
                     <strong class="govuk-tag govuk-tag--blue">To do</strong>
                   {% endif %}
-                {% else %}
-                  <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
                 {% endif %}
               </div>
             </li>
