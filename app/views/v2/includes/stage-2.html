@@ -1,0 +1,89 @@
+<h3 class="govuk-heading-m">2. Prepare and go to market</h3>
+<ul class="govuk-task-list">
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-1-status">
+        Prepare documents
+      </a>
+    </div>
+    <div class="govuk-task-list__status">
+      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+        <strong class="govuk-tag govuk-tag--blue">To do</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+      {% endif %}
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-2-status">
+        Approve documents
+      </a>
+    </div>
+    <div class="govuk-task-list__status">
+      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+        <strong class="govuk-tag govuk-tag--blue">To do</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+      {% endif %}
+    </div>
+  </li>
+  {% if (data['costThresholdStatus'] == "This procurement is above the relevant threshold") %}
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+          Get Manager approval to go to market
+        </a>
+      </div>
+      <div class="govuk-task-list__status" id="company-details-4-status">
+        {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+          <strong class="govuk-tag govuk-tag--blue">To do</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+        {% endif %}
+      </div>
+    </li>
+  {% endif %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+        Go to market
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-4-status">
+      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+        <strong class="govuk-tag govuk-tag--blue">To do</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+      {% endif %}
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      {% if (data['routeToMarket'] == "Bespoke procurement") %}
+        <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+          Bespoke procurement task
+        </a>
+      {% elseif (data['routeToMarket'] == "DfE approved deal or framework") %}
+        <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+          DfE approved deal or framework task
+        </a>
+      {% elseif (data['routeToMarket'] == "Non-DfE approved deal or framework") %}
+        <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+          Non-DfE approved deal or framework task
+        </a>
+      {% else %}
+        <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+          #TODO THING THAT CHANGES DEPENDING ON ROUTE TO MARKET
+        </a>
+      {% endif %}
+    </div>
+    <div class="govuk-task-list__status" id="company-details-4-status">
+      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+        <strong class="govuk-tag govuk-tag--blue">To do</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+      {% endif %}
+    </div>
+  </li>
+</ul>
