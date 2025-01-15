@@ -1,0 +1,143 @@
+{% extends "layouts/school-buyer.html" %}
+
+{% set pageName="Catering services 004335" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">004335 Catering
+                  services</a>
+              </li>
+            </ol>
+          </nav>
+          <span class="govuk-caption-l">004335 - Multi academy trust</span>
+          <h1 class="govuk-heading-l">Catering Services</h1>
+          {% include "../includes/key-procurement-info.html" %}
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l">Procurement task list</h2>
+          {% include "../includes/stage-1.html" %}
+          {% include "../includes/stage-2.html" %}
+          <!-- <h3 class="govuk-heading-m">1. Approach to market</h3>
+          <ul class="govuk-task-list">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="approach-to-market/complete-information-gathering" aria-describedby="company-details-1-status">
+                  Complete information gathering
+                </a>
+              </div>
+              <div class="govuk-task-list__status">
+                {% if (data['tagCompleteInformationGatheringStatus'] == "complete") %}
+                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                {% elseif (data['tagCompleteInformationGatheringStatus'] == "inProgress")%}
+                  <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--blue">To do</strong>
+                {% endif %}
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="approach-to-market/record-route-to-market" aria-describedby="company-details-1-status">
+                  Record route to market
+                </a>
+              </div>
+              <div class="govuk-task-list__status">
+                {% if (data['tagRecordRouteToMarketStatus'] == "complete") %}
+                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                {% elseif (data['tagRecordRouteToMarketStatus'] == "inProgress")%}
+                  <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--blue">To do</strong>
+                {% endif %}
+              </div>
+            </li>
+          </ul>
+          <h3 class="govuk-heading-m">2. Prepare and go to market</h3>
+          <ul class="govuk-task-list">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-1-status">
+                  Prepare documents
+                </a>
+              </div>
+              <div class="govuk-task-list__status">
+                {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+                  <strong class="govuk-tag govuk-tag--blue">To do</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+                {% endif %}
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-2-status">
+                  Approve documents
+                </a>
+              </div>
+              <div class="govuk-task-list__status">
+                {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+                  <strong class="govuk-tag govuk-tag--blue">To do</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+                {% endif %}
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+                  Go to market
+                </a>
+              </div>
+              <div class="govuk-task-list__status" id="company-details-4-status">
+                {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+                  <strong class="govuk-tag govuk-tag--blue">To do</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+                {% endif %}
+              </div>
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                {% if (data['routeToMarket'] == "Bespoke procurement") %}
+                  <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+                    Bespoke procurement task
+                  </a>
+                {% elseif (data['routeToMarket'] == "DfE approved deal or framework") %}
+                  <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+                    DfE approved deal or framework task
+                  </a>
+                {% elseif (data['routeToMarket'] == "Non-DfE approved deal or framework") %}
+                  <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+                    Non-DfE approved deal or framework
+                  </a>
+                {% else %}
+                  <a class="govuk-link govuk-task-list__link" href="#TODO" aria-describedby="company-details-4-status">
+                    #TODO THING THAT CHANGES DEPENDING ON ROUTE TO MARKET
+                  </a>
+                {% endif %}
+              </div>
+              <div class="govuk-task-list__status" id="company-details-4-status">
+                {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+                  <strong class="govuk-tag govuk-tag--blue">To do</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+                {% endif %}
+              </div>
+            </li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
