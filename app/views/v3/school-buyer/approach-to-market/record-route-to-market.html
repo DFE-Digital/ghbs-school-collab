@@ -1,0 +1,57 @@
+{% extends "layouts/school-buyer.html" %}
+
+{% set pageName="Record route to market" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335 Catering
+                  services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Complete information
+                  gathering</a>
+              </li>
+            </ol>
+          </nav>
+          <span class="govuk-caption-l">004335 - Multi academy trust</span>
+          <h1 class="govuk-heading-l">Record route to market and rationale</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="record-route-to-market" method="post" novalidate>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Route to market</h2>
+              <p class="govuk-body">{{data['routeToMarket'] | default('Pending decision')}}</p>
+              {% if (data['routeToMarket'] == 'DfE approved deal or framework') %}
+                <h3 class="govuk-heading-s">Name of framework</h3>
+                <p class="govuk-body">{{data['frameworkName'] | default('Pending decision')}}</p>
+                <h3 class="govuk-heading-s">E-portal reference</h3>
+                <p class="govuk-body">{{data['ePortalReference'] | default('Pending decision')}}</p>
+              {% endif %}
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Reason for route to market</h2>
+              <p class="govuk-body">{{data['reasonForRouteToMarket'] | default('Pending decision')}}</p>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+              <a class="govuk-link" href="../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
