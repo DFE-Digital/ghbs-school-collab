@@ -28,6 +28,31 @@ module.exports = function (router) {
     }
   })
 
+  router.get('/' + version + '/procurement-operations/approach-to-market/invite-the-school-lead', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/invite-the-school-lead', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/approach-to-market/invite-the-school-lead', function (req, res) {
+    const tagInviteTheSchoolLead = req.session.data['tagInviteTheSchoolLead']
+    const pageAction = req.session.data['pageAction']
+
+    if (tagInviteTheSchoolLead.includes('Add school leads') &
+      tagInviteTheSchoolLead.includes('Send invites') &
+      tagInviteTheSchoolLead.includes('empty')){
+      req.session.data.tagInviteTheSchoolLeadStatus = 'complete'
+    }else if (tagInviteTheSchoolLead == ('empty')){
+      req.session.data.tagInviteTheSchoolLeadStatus = 'toDo'
+    }else {
+      req.session.data.tagInviteTheSchoolLeadStatus = 'inProgress'
+    }
+
+    if (pageAction == 'addUser'){
+      res.redirect('/' + version + '/common/add-user')
+    } else {
+      res.redirect('/' + version + '/procurement-operations/procurement')
+    }
+  })
+
   router.get('/' + version + '/procurement-operations/approach-to-market/record-route-to-market', function (req, res) {
     req.session.data.pageAction = ''
     res.render(version + '/procurement-operations/approach-to-market/record-route-to-market', {})
