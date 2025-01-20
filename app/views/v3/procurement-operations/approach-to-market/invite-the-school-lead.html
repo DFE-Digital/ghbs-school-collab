@@ -50,6 +50,8 @@
                     <td class="govuk-table__cell">Emmie Duke</td>
                     <td class="govuk-table__cell">Emmie.Duke@school.com</td>
                     <td class="govuk-table__cell">
+
+                      {{ "" | todayGovuk }} TODAYS DATE <br>
                       {% if (data['sbp1Emailed'] != 'true') %}
                         not emailed
                       {% else %}
