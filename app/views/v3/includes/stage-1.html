@@ -16,22 +16,24 @@
       {% endif %}
     </div>
   </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/invite-the-school-lead" aria-describedby="company-details-1-status">
-        Invite the school lead
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagInviteTheSchoolLeadStatus'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagInviteTheSchoolLeadStatus'] == "inProgress")%}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--blue">To do</strong>
-      {% endif %}
-    </div>
-  </li>
+  {% if (data['userType'] == 'procurement-operations') %}
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="approach-to-market/invite-the-school-lead" aria-describedby="company-details-1-status">
+          Invite the school lead
+        </a>
+      </div>
+      <div class="govuk-task-list__status">
+        {% if (data['tagInviteTheSchoolLeadStatus'] == "complete") %}
+          <strong class="govuk-tag govuk-tag--green">Complete</strong>
+        {% elseif (data['tagInviteTheSchoolLeadStatus'] == "inProgress")%}
+          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--blue">To do</strong>
+        {% endif %}
+      </div>
+    </li>
+  {% endif %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
       <a class="govuk-link govuk-task-list__link" href="approach-to-market/record-route-to-market" aria-describedby="company-details-2-status">
