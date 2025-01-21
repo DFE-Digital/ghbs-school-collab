@@ -53,7 +53,7 @@
                       {% if (data['sbp1Emailed'] != 'true') %}
                         not emailed
                       {% else %}
-                        12/01/2025
+                        {{ "now" | govukTime }}
                       {% endif %}
                     </td>
                     <td class="govuk-table__cell">
