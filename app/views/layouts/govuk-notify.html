@@ -1,0 +1,44 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+  #}
+
+  {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+  {% block stylesheets %}
+    {{ super() }}
+    <link href="/public/sass/notify-branding.css" rel="stylesheet" type="text/css" />
+  {% endblock %}
+
+  {% block header %}
+    {% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
+    <header class="dfe-header" role="banner">
+      <div class="govuk-width-container dfe-header__container">
+          <div class="dfe-header__logo">
+            <a class="dfe-header__link" href="/" aria-label="DfE homepage">
+            <img src="/public/images/dfe-logo.png" class="dfe-logo" alt="Department for Education">
+            <img src="/public/images/dfe-logo-alt.png" class="dfe-logo-hover" alt="Department for Education">
+            </a>
+          </div>
+      </div>
+      <div class="govuk-width-container dfe-header__service-name">
+          <a href="/" class="dfe-header__link--service">Get help buying for schools</a>
+      </div>
+    </header>
+    <div class="govuk-phase-banner govuk-width-container">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">Beta</strong>
+        <span class="govuk-phase-banner__text">This is a new service. Help us
+          improve it and <a class="govuk-link" href="https://staging.get-help-buying-for-schools.service.gov.uk/customer_satisfaction_surveys/new?service=supported_journey&source=banner_link">
+          give your feedback by email</a>.</span>
+      </p>
+    </div>
+  {% endblock %}
+  {% block scripts %}
+    {{ super() }}
+    <script src="/public/javascripts/dfefrontend.js"></script>
+  {% endblock %}
+
+  {% block footer %}
+
+  {% endblock %}
