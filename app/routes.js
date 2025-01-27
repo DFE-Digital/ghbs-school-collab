@@ -9,6 +9,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 require('./routes/v3/procurement-operations/approach-to-market.js')(router);
+require('./routes/v3/school-buyers/sign-in.js')(router);
 require('./routes/v3/school-buyers/approach-to-market.js')(router);
 require('./routes/v3/common/upload-document.js')(router);
 require('./routes/v3/common/procurement.js')(router);
