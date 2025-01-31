@@ -7,13 +7,7 @@
         Advertise tender</a>
     </div>
     <div class="govuk-task-list__status">
-      {% if (data['tagCompleteInformationGatheringStatus'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagCompleteInformationGatheringStatus'] == "inProgress")%}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--blue">To do</strong>
-      {% endif %}
+      <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
     </div>
   </li>
   {% if (data['userType'] == 'procurement-operations') %}
@@ -23,13 +17,7 @@
           Check compliance</a>
       </div>
       <div class="govuk-task-list__status">
-        {% if (data['tagInviteTheSchoolLeadStatus'] == "complete") %}
-          <strong class="govuk-tag govuk-tag--green">Complete</strong>
-        {% elseif (data['tagInviteTheSchoolLeadStatus'] == "inProgress")%}
-          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">To do</strong>
-        {% endif %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
       </div>
     </li>
   {% endif %}
@@ -40,13 +28,7 @@
       </a>
     </div>
     <div class="govuk-task-list__status">
-      {% if (data['tagRecordRouteToMarketStatus'] == "complete") %}
-      <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagRecordRouteToMarketStatus'] == "inProgress")%}
-      <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-      <strong class="govuk-tag govuk-tag--blue">To do</strong>
-      {% endif %}
+      <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
     </div>
   </li>
   {% if (data['userType'] == 'procurement-operations') %}
@@ -57,13 +39,7 @@
         </a>
       </div>
       <div class="govuk-task-list__status">
-        {% if (data['tagCheckCostThresholdStatus'] == "complete") %}
-          <strong class="govuk-tag govuk-tag--green">Complete</strong>
-        {% elseif (data['tagCheckCostThresholdStatus'] == "inProgress")%}
-          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">To do</strong>
-        {% endif %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
       </div>
     </li>
   {% endif %}
@@ -74,13 +50,7 @@
           CAB approval</a>
       </div>
       <div class="govuk-task-list__status">
-        {% if (data['tagCabApprovalNonDfeDealFrameworkStatus'] == "complete") %}
-          <strong class="govuk-tag govuk-tag--green">Complete</strong>
-        {% elseif (data['tagCabApprovalNonDfeDealFrameworkStatus'] == "inProgress")%}
-          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">To do</strong>
-        {% endif %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
       </div>
     </li>
   {% endif %}
@@ -92,17 +62,7 @@
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-4-status">
-        {% if (data['stage1ApprovalBlocked'] == "true") %}
-          <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
-        {% else %}
-          {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
-            <strong class="govuk-tag govuk-tag--green">Complete</strong>
-          {% elseif (data['tagGetApprovalForStage2Status'] == "inProgress")%}
-            <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-          {% else %}
-            <strong class="govuk-tag govuk-tag--blue">To do</strong>
-          {% endif %}
-        {% endif %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
       </div>
     </li>
   {% endif %}
