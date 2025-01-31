@@ -1,3 +1,4 @@
+<span class="govuk-caption-m">Due {{ "today" | duration(3, "weeks") | govukDate }}</span>
 <h3 class="govuk-heading-m">1. Approach to market</h3>
 <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -12,7 +13,7 @@
       {% elseif (data['tagCompleteInformationGatheringStatus'] == "inProgress")%}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--blue">To do</strong>
+        <strong class="govuk-tag govuk-tag--blue">To do {{ "today" | duration(7) | govukDate }}  </strong>
       {% endif %}
     </div>
   </li>
