@@ -115,16 +115,16 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/procurement-operations/approach-to-market/get-approval-for-next-stage', function (req, res) {
-    // const tagGetApprovalForStage2 = req.session.data['tagGetApprovalForStage2']
+    const tagGetApprovalForStage2 = req.session.data['tagGetApprovalForStage2']
 
-    // if (tagGetApprovalForStage2.includes('Granted approval to proceed') &
-    //   tagGetApprovalForStage2.includes('empty')){
-    //   req.session.data.tagGetApprovalForStage2Status = 'complete'
-    // }else if (tagGetApprovalForStage2 == ('empty')){
-    //   req.session.data.tagGetApprovalForStage2Status = 'toDo'
-    // }else {
-    //   req.session.data.tagGetApprovalForStage2Status = 'inProgress'
-    // }
+    if (tagGetApprovalForStage2.includes('Granted approval to proceed') &
+      tagGetApprovalForStage2.includes('empty')){
+      req.session.data.tagGetApprovalForStage2Status = 'complete'
+    }else if (tagGetApprovalForStage2 == ('empty')){
+      req.session.data.tagGetApprovalForStage2Status = 'toDo'
+    }else {
+      req.session.data.tagGetApprovalForStage2Status = 'inProgress'
+    }
 
     res.redirect('/' + version + '/procurement-operations/procurement')
   })

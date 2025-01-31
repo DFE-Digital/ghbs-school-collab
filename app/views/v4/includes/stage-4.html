@@ -1,68 +1,33 @@
+<span class="govuk-caption-m">Due {{ "today" | duration(7, "months") | govukDate }}</span>
 <h3 class="govuk-heading-m">4. Award contract</h3>
 <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#">
-        10 day standstill</a>
-    </div>
+    <div class="govuk-task-list__name-and-hint">10 day standstill</div>
     <div class="govuk-task-list__status">
-      {% if (data['tagCompleteInformationGatheringStatus'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagCompleteInformationGatheringStatus'] == "inProgress")%}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--blue">To do</strong>
-      {% endif %}
+      <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
     </div>
   </li>
   {% if (data['userType'] == 'procurement-operations') %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="#">
-          Create contracts</a>
-      </div>
+      <div class="govuk-task-list__name-and-hint">Create contracts</div>
       <div class="govuk-task-list__status">
-        {% if (data['tagInviteTheSchoolLeadStatus'] == "complete") %}
-          <strong class="govuk-tag govuk-tag--green">Complete</strong>
-        {% elseif (data['tagInviteTheSchoolLeadStatus'] == "inProgress")%}
-          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">To do</strong>
-        {% endif %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
       </div>
     </li>
   {% endif %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#">
-        Complete handover documentation
-      </a>
+    <div class="govuk-task-list__name-and-hint">Complete handover documentation
     </div>
     <div class="govuk-task-list__status">
-      {% if (data['tagRecordRouteToMarketStatus'] == "complete") %}
-      <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagRecordRouteToMarketStatus'] == "inProgress")%}
-      <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-      <strong class="govuk-tag govuk-tag--blue">To do</strong>
-      {% endif %}
+      <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
     </div>
   </li>
   {% if (data['userType'] == 'procurement-operations') %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="#">
-          Regulation 84, Framework provider notice and CMS savings
-        </a>
-      </div>
+      <div class="govuk-task-list__name-and-hint">Regulation 84, Framework
+        provider notice and CMS savings</div>
       <div class="govuk-task-list__status">
-        {% if (data['tagCheckCostThresholdStatus'] == "complete") %}
-          <strong class="govuk-tag govuk-tag--green">Complete</strong>
-        {% elseif (data['tagCheckCostThresholdStatus'] == "inProgress")%}
-          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">To do</strong>
-        {% endif %}
+        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
       </div>
     </li>
   {% endif %}
