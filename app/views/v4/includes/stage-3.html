@@ -2,48 +2,57 @@
 <h3 class="govuk-heading-m">3. Decide</h3>
 <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">Advertise tender</div>
+    <div class="govuk-task-list__name-and-hint">Call off deadline</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(38) | govukDate }} - {{ "today" | duration(59) | govukDate }}</strong>
     </div>
   </li>
-  {% if (data['userType'] == 'procurement-operations') %}
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">Check compliance</div>
-      <div class="govuk-task-list__status">
-        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
-      </div>
-    </li>
-  {% endif %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">Evaluate tenders</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(59) | govukDate }} - {{ "today" | duration(71) | govukDate }}</strong>
     </div>
   </li>
-  {% if (data['userType'] == 'procurement-operations') %}
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">Moderation meeting</div>
-      <div class="govuk-task-list__status">
-        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
-      </div>
-    </li>
-  {% endif %}
-  {% if (data['userType'] == 'procurement-operations') %}
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">CAB approval</div>
-      <div class="govuk-task-list__status">
-        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
-      </div>
-    </li>
-  {% endif %}
-  {% if (data['userType'] == 'procurement-operations') %}
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">Send award letters</a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-4-status">
-        <strong class="govuk-tag govuk-tag--grey">Cannot start</strong>
-      </div>
-    </li>
-  {% endif %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">Moderation meeting</div>
+    <div class="govuk-task-list__status">
+      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(71) | govukDate }} - {{ "today" | duration(72) | govukDate }}</strong>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">Finalise model and comments</div>
+    <div class="govuk-task-list__status">
+      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(72) | govukDate }} - {{ "today" | duration(75) | govukDate }}</strong>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">School sign off moderation and award decision</div>
+    <div class="govuk-task-list__status">
+      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(75) | govukDate }} - {{ "today" | duration(80) | govukDate }}</strong>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">Create stage 3 report</div>
+    <div class="govuk-task-list__status">
+      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(80) | govukDate }} - {{ "today" | duration(85) | govukDate }}</strong>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">Approval of stage 3 report by CAB or G7</div>
+    <div class="govuk-task-list__status">
+      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(85) | govukDate }} - {{ "today" | duration(86) | govukDate }}</strong>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">Complete bidder notification letters</div>
+    <div class="govuk-task-list__status">
+      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(86) | govukDate }} - {{ "today" | duration(87) | govukDate }}</strong>
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">Send bidder notification letters</div>
+    <div class="govuk-task-list__status">
+      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(87) | govukDate }} - {{ "today" | duration(88) | govukDate }}</strong>
+    </div>
+  </li>
 </ul>
