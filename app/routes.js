@@ -11,6 +11,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 require('./routes/v4/procurement-operations/approach-to-market.js')(router);
 require('./routes/v4/school-buyers/sign-in.js')(router);
 require('./routes/v4/school-buyers/approach-to-market.js')(router);
+require('./routes/v4/common/change-due-date.js')(router);
 require('./routes/v4/common/upload-document.js')(router);
 require('./routes/v4/common/procurement.js')(router);
 

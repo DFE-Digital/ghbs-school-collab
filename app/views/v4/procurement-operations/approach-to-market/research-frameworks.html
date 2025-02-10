@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Record route to market" %}
+{% set pageName="Research frameworks" %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -23,22 +23,22 @@
             </ol>
           </nav>
           {% include "../../includes/case-identifiers.html" %}
-          <h1 class="govuk-heading-l">Record route to market</h1>
+          <h1 class="govuk-heading-l">Research frameworks</h1>
         </div>
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <form action="record-route-to-market" method="post" novalidate>
             <div class="govuk-form-group">
-              {% if (data['recordRouteToMarketError'] == "true") %}
+              {% if (data['researchFrameworksError'] == "true") %}
                 <p class="govuk-body">
                   <strong class="govuk-tag govuk-tag--red govuk-!-margin-right-5">Overdue</strong>
-                  <a href="../../common/change-due-date?dueDateTask=Record%20route%20to%20market" class="govuk-link">Change due date</a>
+                  <a href="../../common/change-due-date?dueDateTask=Research%20frameworks" class="govuk-link">Change due date</a>
                 </p>
               {% else %}
               <p class="govuk-body">
-                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-right-5">Due: {{ (recordRouteToMarketDate) | govukDate("truncate") }} </strong>
-                <a href="../../common/change-due-date?dueDateTask=dueDateTask=Record%20route%20to%20market" class="govuk-link">Change due date</a>
+                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-right-5">Due: {{ ( data['due-date-year'] + '-' + data['due-date-month'] + '-' + data['due-date-day'] ) | govukDate("truncate") }} </strong>
+                <a href="../../common/change-due-date?dueDateTask=Research%20frameworks" class="govuk-link">Change due date</a>
               </p>
               {% endif %}
             </div>
