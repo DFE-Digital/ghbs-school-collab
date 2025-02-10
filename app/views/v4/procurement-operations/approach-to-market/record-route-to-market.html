@@ -37,7 +37,7 @@
                 </p>
               {% else %}
               <p class="govuk-body">
-                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-right-5">Due: {{ (recordRouteToMarketDate) | govukDate }} </strong>
+                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-right-5">Due: {{ (recordRouteToMarketDate) | govukDate("truncate") }} </strong>
                 <a href="../../common/change-due-date?dueDateTask=dueDateTask=Record%20route%20to%20market" class="govuk-link">Change due date</a>
               </p>
               {% endif %}

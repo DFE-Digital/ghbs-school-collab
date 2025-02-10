@@ -1,4 +1,4 @@
-<span class="govuk-caption-m">Completion on {{ "today" | duration(38) | govukDate }}</span>
+<span class="govuk-caption-m">Completion on {{ "today" | duration(38) | govukDate("truncate") }}</span>
 <h3 class="govuk-heading-m">2. Prepare and go to market</h3>
 <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -11,7 +11,7 @@
       {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(22) | govukDate }} - {{ "today" | duration(26) | govukDate }}  </strong>
+        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -25,7 +25,7 @@
       {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(26) | govukDate }} - {{ "today" | duration(27) | govukDate }}  </strong>
+        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(26) | govukDate("truncate") }} - {{ "today" | duration(27) | govukDate("truncate") }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -39,7 +39,7 @@
       {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(27) | govukDate }} - {{ "today" | duration(28) | govukDate }}  </strong>
+        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(27) | govukDate("truncate") }} - {{ "today" | duration(28) | govukDate("truncate") }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -53,7 +53,7 @@
       {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(28) | govukDate }} - {{ "today" | duration(29) | govukDate }}  </strong>
+        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(28) | govukDate("truncate") }} - {{ "today" | duration(29) | govukDate("truncate") }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -67,7 +67,7 @@
       {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(29) | govukDate }} - {{ "today" | duration(30) | govukDate }}  </strong>
+        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(29) | govukDate("truncate") }} - {{ "today" | duration(30) | govukDate("truncate") }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -81,7 +81,7 @@
       {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(30) | govukDate }} - {{ "today" | duration(31) | govukDate }}  </strong>
+        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(30) | govukDate("truncate") }} - {{ "today" | duration(31) | govukDate("truncate") }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -95,7 +95,7 @@
       {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(31) | govukDate }} - {{ "today" | duration(38) | govukDate }}  </strong>
+        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(31) | govukDate("truncate") }} - {{ "today" | duration(38) | govukDate("truncate") }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -109,7 +109,7 @@
       {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(38) | govukDate }} - {{ "today" | duration(38) | govukDate }}  </strong>
+        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(38) | govukDate("truncate") }} - {{ "today" | duration(38) | govukDate("truncate") }}  </strong>
       {% endif %}
     </div>
   </li>
