@@ -37,7 +37,7 @@
                 </p>
               {% else %}
               <p class="govuk-body">
-                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-right-5">Due: {{ ( data['due-date-year'] + '-' + data['due-date-month'] + '-' + data['due-date-day'] ) | govukDate("truncate") }} </strong>
+                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-right-5">Due: {{ (data['researchFrameworksDate']) | govukDate("truncate") }} </strong>
                 <a href="../../common/change-due-date?dueDateTask=Research%20frameworks" class="govuk-link">Change due date</a>
               </p>
               {% endif %}

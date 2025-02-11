@@ -40,11 +40,11 @@
         </a>
       </div>
       <div class="govuk-task-list__status">
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ ( data['due-date-year'] + '-' + data['due-date-month'] + '-' + data['due-date-day'] ) | govukDate("truncate") }} </strong>
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ (data['researchFrameworksDate']) | govukDate("truncate") }} </strong>
       </div>
     </li>
   {% endif %}
-  {% if (data['recordRouteToMarketError'] == "true") %}
+  {% if (data['recordRouteToMarketError'] == "true" and (data['tagRecordRouteToMarketStatus'] != "complete")) %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link govuk-form-group--error" id="record-route-to-market">
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="approach-to-market/record-route-to-market" aria-describedby="company-details-2-status">
@@ -55,15 +55,27 @@
         <strong class="govuk-tag govuk-tag--red">Overdue</strong>
       </div>
     </li>
+  {% elseif (data['tagRecordRouteToMarketStatus'] == "complete") %}
+    <li class="govuk-task-list__item govuk-task-list__item--with-link" id="record-route-to-market">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="approach-to-market/record-route-to-market" aria-describedby="company-details-2-status">
+          Record route to market
+        </a>
+      </div>
+      <div class="govuk-task-list__status">
+        <strong class="govuk-tag govuk-tag--green">Complete</strong>
+      </div>
+    </li>
   {% else %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link" id="record-route-to-market">
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="approach-to-market/record-route-to-market" aria-describedby="company-details-2-status">
-          Record route to market {{data['recordRouteToMarketDate']}}
+          Record route to market
         </a>
       </div>
       <div class="govuk-task-list__status">
-        <strong class="govuk-tag govuk-tag--blue">Due: 11 February 2025 </strong>
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ (data['recordRouteToMarketDate']) | govukDate("truncate") }} </strong>
+        </strong>
       </div>
     </li>
   {% endif %}
