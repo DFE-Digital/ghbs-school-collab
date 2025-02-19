@@ -2,6 +2,29 @@ module.exports = function (router) {
 
   var version = "v5";
 
+  router.get('/' + version + '/procurement-operations/approach-to-market/handover-from-triage', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/handover-from-triage', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/approach-to-market/handover-from-triage', function (req, res) {
+    const tagHandoverFromTriage = req.session.data['tagHandoverFromTriage']
+
+    if (tagHandoverFromTriage.includes('Participation agreement sent') &
+      tagHandoverFromTriage.includes('Participation agreement signed') &
+      tagHandoverFromTriage.includes('Resource board allocation') &
+      tagHandoverFromTriage.includes('Case assigned to procurement operations lead') &
+      tagHandoverFromTriage.includes('empty')){
+      req.session.data.tagHandoverFromTriageStatus = 'complete'
+    }else if (tagHandoverFromTriage == ('empty')){
+      req.session.data.tagHandoverFromTriageStatus = 'toDo'
+    }else {
+      req.session.data.tagHandoverFromTriageStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/procurement')
+  })
+
+
   router.get('/' + version + '/procurement-operations/approach-to-market/complete-information-gathering', function (req, res) {
     res.render(version + '/procurement-operations/approach-to-market/complete-information-gathering', {})
   })

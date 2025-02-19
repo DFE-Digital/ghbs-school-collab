@@ -5,6 +5,7 @@ module.exports = {
   'stage1ApprovalBlocked': 'true',
 
   // Task date offsets
+  'handoverFromTriageDuration' : '1',
   'createProcurementTimeline' : '2',
   'inviteTheSchoolLead' : '6',
 
