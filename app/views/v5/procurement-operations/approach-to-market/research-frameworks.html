@@ -28,7 +28,7 @@
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form action="record-route-to-market" method="post" novalidate>
+          <form action="research-frameworks" method="post" novalidate>
             <div class="govuk-form-group">
               {% if (data['researchFrameworksError'] == "true") %}
                 <p class="govuk-body">
@@ -43,102 +43,38 @@
               {% endif %}
             </div>
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                  <h2 class="govuk-fieldset__heading">
-                    Route to market
-                  </h2>
-                </legend>
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="routeToMarket" name="routeToMarket" type="radio" value="Bespoke procurement" {{ checked("routeToMarket", "Bespoke procurement") }}>
-                    <label class="govuk-label govuk-radios__label" for="routeToMarket">
-                      Bespoke procurement
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="routeToMarket-2" name="routeToMarket" type="radio" data-aria-controls="frameworkNameHolder" value="DfE approved deal or framework" {{ checked("routeToMarket", "DfE approved deal or framework") }}>
-                    <label class="govuk-label govuk-radios__label" for="routeToMarket-2">
-                      DfE approved deal or framework
-                    </label>
-                  </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="frameworkNameHolder">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="frameworkName">
-                        Name of framework
-                      </label>
-                      <input class="govuk-input" id="frameworkName" name="frameworkName" type="text" spellcheck="false" value="{{data['frameworkName']}}">
-                    </div>
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="ePortalReference">
-                        E-portal reference
-                      </label>
-                      <input class="govuk-input" id="ePortalReference" name="ePortalReference" type="text" spellcheck="false" value="{{data['ePortalReference']}}">
-                    </div>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="routeToMarket-3" name="routeToMarket" type="radio" value="Non-DfE approved deal or framework" {{ checked("routeToMarket", "Non-DfE approved deal or framework") }}>
-                    <label class="govuk-label govuk-radios__label" for="routeToMarket-3">
-                      Non-DfE approved deal or framework
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                  <h2 class="govuk-fieldset__heading">
-                    Reason for route to market
-                  </h2>
-                </legend>
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="reasonForRouteToMarket" name="reasonForRouteToMarket" type="radio" value="Better specification or terms than DfE deal" {{ checked("reasonForRouteToMarket", "Better specification or terms than DfE deal") }}>
-                    <label class="govuk-label govuk-radios__label" for="reasonForRouteToMarket">
-                      Better specification or terms than DfE deal
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="reasonForRouteToMarket-2" name="reasonForRouteToMarket" type="radio" value="DfE deal or framework selected" {{ checked("reasonForRouteToMarket", "DfE deal or framework selected") }}>
-                    <label class="govuk-label govuk-radios__label" for="reasonForRouteToMarket-2">
-                      DfE deal or framework selected
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="reasonForRouteToMarket-3" name="reasonForRouteToMarket" type="radio" value="No DfE deal or framework selected" {{ checked("reasonForRouteToMarket", "No DfE deal or framework selected") }}>
-                    <label class="govuk-label govuk-radios__label" for="reasonForRouteToMarket-3">
-                      No DfE deal or framework selected
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="reasonForRouteToMarket-4" name="reasonForRouteToMarket" type="radio" value="Bespoke procurement" {{ checked("reasonForRouteToMarket", "Bespoke procurement") }}>
-                    <label class="govuk-label govuk-radios__label" for="reasonForRouteToMarket-4">
-                      School preference
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
+              <p class="govuk-body">Identify existing frameworks that can be used.
+                Consider specific school needs such as including incumbent
+                suppliers as this may limit the frameworks available. You may
+                also consider expressions of interest.</p>
+              <p class="govuk-body">Only consider a bespoke framework if no
+                existing framework meets the school's needs.</p>
             </div>
             <div class="govuk-form-group">
               <h2 class="govuk-heading-m">Actions</h2>
               <fieldset class="govuk-fieldset">
                 <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket" name="tagRecordRouteToMarket" type="checkbox" value="Discuss and agree route to market" {{ checked("tagRecordRouteToMarket", "Discuss and agree route to market") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket">
-                      Discuss and agree route to market
+                    <input class="govuk-checkboxes__input" id="tagResearchFrameworks" name="tagResearchFrameworks" type="checkbox" value="Find suitable existing frameworks" {{ checked("tagResearchFrameworks", "Find suitable existing frameworks") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagResearchFrameworks">
+                      Find suitable existing frameworks
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket-2" name="tagRecordRouteToMarket" type="checkbox" value="Record route to market" {{ checked("tagRecordRouteToMarket", "Record route to market") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket-2">
-                      Record route to market
+                    <input class="govuk-checkboxes__input" id="tagResearchFrameworks-2" name="tagResearchFrameworks" type="checkbox" value="Discuss frameworks with the school" {{ checked("tagResearchFrameworks", "Discuss frameworks with the school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagResearchFrameworks-2">
+                      Discuss frameworks with the school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagResearchFrameworks-3" name="tagResearchFrameworks" type="checkbox" value="Agree framework for procurement" {{ checked("tagResearchFrameworks", "Agree framework for procurement") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagResearchFrameworks-3">
+                      Agree framework for procurement
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item" style="display: none;">
-                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket-0" name="tagRecordRouteToMarket" type="checkbox" value="empty" checked="empty">
-                    <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket-0">
+                    <input class="govuk-checkboxes__input" id="tagResearchFrameworks-0" name="tagResearchFrameworks" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagResearchFrameworks-0">
                       empty
                     </label>
                   </div>

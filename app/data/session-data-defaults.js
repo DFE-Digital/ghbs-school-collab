@@ -7,6 +7,7 @@ module.exports = {
   // Task date offsets
   'handoverFromTriageDuration' : '1',
   'discussSchoolRequirementsDuration' : '1',
+  'researchFrameworksDuration' : '5',
   'createProcurementTimeline' : '2',
   'inviteTheSchoolLead' : '6',
 

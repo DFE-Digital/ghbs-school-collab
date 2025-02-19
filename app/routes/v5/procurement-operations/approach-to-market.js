@@ -9,10 +9,10 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/handover-from-triage', function (req, res) {
     const tagHandoverFromTriage = req.session.data['tagHandoverFromTriage']
 
-    if (tagHandoverFromTriage.includes('Participation agreement sent') &
-      tagHandoverFromTriage.includes('Participation agreement signed') &
-      tagHandoverFromTriage.includes('Resource board allocation') &
-      tagHandoverFromTriage.includes('Case assigned to procurement operations lead') &
+    if (tagHandoverFromTriage.includes('Participation agreement sent') &&
+      tagHandoverFromTriage.includes('Participation agreement signed') &&
+      tagHandoverFromTriage.includes('Resource board allocation') &&
+      tagHandoverFromTriage.includes('Case assigned to procurement operations lead') &&
       tagHandoverFromTriage.includes('empty')){
       req.session.data.tagHandoverFromTriageStatus = 'complete'
     }else if (tagHandoverFromTriage == ('empty')){
@@ -31,15 +31,37 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/discuss-school-requirements', function (req, res) {
     const tagDiscussSchoolRequirements = req.session.data['tagDiscussSchoolRequirements']
 
-    if (tagDiscussSchoolRequirements.includes('Teams call to discuss the procurement') &
-      tagDiscussSchoolRequirements.includes('Record non-working days and completion date') &
-      tagDiscussSchoolRequirements.includes('Save completed information gathering document in SharePoint') &
+    if (tagDiscussSchoolRequirements.includes('Teams call to discuss the procurement') &&
+      tagDiscussSchoolRequirements.includes('Record non-working days and completion date') &&
+      tagDiscussSchoolRequirements.includes('Save completed information gathering document in SharePoint') &&
       tagDiscussSchoolRequirements.includes('empty')){
       req.session.data.tagDiscussSchoolRequirementsStatus = 'complete'
     }else if (tagDiscussSchoolRequirements == ('empty')){
       req.session.data.tagDiscussSchoolRequirementsStatus = 'toDo'
     }else {
       req.session.data.tagDiscussSchoolRequirementsStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/procurement')
+  })
+
+  router.get('/' + version + '/procurement-operations/approach-to-market/research-frameworks', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/research-frameworks', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/approach-to-market/research-frameworks', function (req, res) {
+    const tagResearchFrameworks = req.session.data['tagResearchFrameworks']
+
+    if (tagResearchFrameworks.includes('Find suitable existing frameworks') &&
+        tagResearchFrameworks.includes('Discuss frameworks with the school') &&
+        tagResearchFrameworks.includes('Agree framework for procurement') &&
+        tagResearchFrameworks.includes('empty')){
+      req.session.data.tagResearchFrameworksStatus = 'complete'
+      req.session.data.researchFrameworksError = 'false'
+    }else if (tagResearchFrameworks == ('empty')){
+      req.session.data.tagResearchFrameworksStatus = 'toDo'
+    }else {
+      req.session.data.tagResearchFrameworksStatus = 'inProgress'
     }
 
     res.redirect('/' + version + '/procurement-operations/procurement')
@@ -53,9 +75,9 @@ module.exports = function (router) {
     const tagCompleteInformationGathering = req.session.data['tagCompleteInformationGathering']
     const pageAction = req.session.data['pageAction']
 
-    if (tagCompleteInformationGathering.includes('Review information gathered during triage') &
-      tagCompleteInformationGathering.includes('Share requirements document with school') &
-      tagCompleteInformationGathering.includes('Approve requirements document') &
+    if (tagCompleteInformationGathering.includes('Review information gathered during triage') &&
+      tagCompleteInformationGathering.includes('Share requirements document with school') &&
+      tagCompleteInformationGathering.includes('Approve requirements document') &&
       tagCompleteInformationGathering.includes('empty')){
       req.session.data.tagCompleteInformationGatheringStatus = 'complete'
     }else if (tagCompleteInformationGathering == ('empty')){
@@ -79,8 +101,8 @@ module.exports = function (router) {
     const tagInviteTheSchoolLead = req.session.data['tagInviteTheSchoolLead']
     const pageAction = req.session.data['pageAction']
 
-    if (tagInviteTheSchoolLead.includes('Add school leads') &
-      tagInviteTheSchoolLead.includes('Send invites') &
+    if (tagInviteTheSchoolLead.includes('Add school leads') &&
+      tagInviteTheSchoolLead.includes('Send invites') &&
       tagInviteTheSchoolLead.includes('empty')){
       req.session.data.tagInviteTheSchoolLeadStatus = 'complete'
     }else if (tagInviteTheSchoolLead == ('empty')){
@@ -104,8 +126,8 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/record-route-to-market', function (req, res) {
     const tagRecordRouteToMarket = req.session.data['tagRecordRouteToMarket']
 
-    if (tagRecordRouteToMarket.includes('Discuss and agree route to market') &
-    tagRecordRouteToMarket.includes('Record route to market') &
+    if (tagRecordRouteToMarket.includes('Discuss and agree route to market') &&
+    tagRecordRouteToMarket.includes('Record route to market') &&
     tagRecordRouteToMarket.includes('empty')){
       req.session.data.tagRecordRouteToMarketStatus = 'complete'
     }else if (tagRecordRouteToMarket == ('empty')){
@@ -140,8 +162,8 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/get-CAB-approval-for-Non-DfE-deal-or-framework', function (req, res) {
     const tagCabApprovalNonDfeDealFramework = req.session.data['tagCabApprovalNonDfeDealFramework']
 
-    if (tagCabApprovalNonDfeDealFramework.includes('Submit to CAB for approval') &
-        tagCabApprovalNonDfeDealFramework.includes('Granted approval to proceed') &
+    if (tagCabApprovalNonDfeDealFramework.includes('Submit to CAB for approval') &&
+        tagCabApprovalNonDfeDealFramework.includes('Granted approval to proceed') &&
         tagCabApprovalNonDfeDealFramework.includes('empty')){
       req.session.data.tagCabApprovalNonDfeDealFrameworkStatus = 'complete'
     }else if (tagCabApprovalNonDfeDealFramework == ('empty')){
@@ -160,7 +182,7 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/get-approval-for-next-stage', function (req, res) {
     const tagGetApprovalForStage2 = req.session.data['tagGetApprovalForStage2']
 
-    if (tagGetApprovalForStage2.includes('Granted approval to proceed') &
+    if (tagGetApprovalForStage2.includes('Granted approval to proceed') &&
       tagGetApprovalForStage2.includes('empty')){
       req.session.data.tagGetApprovalForStage2Status = 'complete'
     }else if (tagGetApprovalForStage2 == ('empty')){
