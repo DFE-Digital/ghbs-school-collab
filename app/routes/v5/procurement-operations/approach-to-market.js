@@ -24,6 +24,26 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
+  router.get('/' + version + '/procurement-operations/approach-to-market/discuss-school-requirements', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/discuss-school-requirements', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/approach-to-market/discuss-school-requirements', function (req, res) {
+    const tagDiscussSchoolRequirements = req.session.data['tagDiscussSchoolRequirements']
+
+    if (tagDiscussSchoolRequirements.includes('Teams call to discuss the procurement') &
+      tagDiscussSchoolRequirements.includes('Record non-working days and completion date') &
+      tagDiscussSchoolRequirements.includes('Save completed information gathering document in SharePoint') &
+      tagDiscussSchoolRequirements.includes('empty')){
+      req.session.data.tagDiscussSchoolRequirementsStatus = 'complete'
+    }else if (tagDiscussSchoolRequirements == ('empty')){
+      req.session.data.tagDiscussSchoolRequirementsStatus = 'toDo'
+    }else {
+      req.session.data.tagDiscussSchoolRequirementsStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/procurement')
+  })
 
   router.get('/' + version + '/procurement-operations/approach-to-market/complete-information-gathering', function (req, res) {
     res.render(version + '/procurement-operations/approach-to-market/complete-information-gathering', {})
