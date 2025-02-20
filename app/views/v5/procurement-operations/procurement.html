@@ -3,7 +3,7 @@
 {% set pageName="Catering services Multi academy trust 004335" %}
 
 {% block content %}
-{% if (data['researchFrameworksError'] == 'true' or data['recordRouteToMarketError'] == 'true')%}
+{% if (data['tagResearchFrameworksStatus'] == 'overdue' or data['tagRecordRouteToMarketStatus'] == 'overdue')%}
   <div class="govuk-error-summary" data-module="govuk-error-summary">
     <div role="alert">
       <h2 class="govuk-error-summary__title">
@@ -13,12 +13,12 @@
         <p class="govuk-body">Complete the tasks now, or set the required due
           dates to a date in the future.</p>
         <ul class="govuk-list govuk-error-summary__list">
-          {% if (data['researchFrameworksError'] == 'true') %}
+          {% if (data['tagResearchFrameworksStatus'] == 'overdue') %}
             <li>
               <a href="#research-frameworks">Research frameworks</a>
             </li>
           {% endif %}
-          {% if (data['recordRouteToMarketError'] == 'true') %}
+          {% if (data['tagRecordRouteToMarketStatus'] == 'overdue') %}
             <li>
               <a href="#record-route-to-market">Record route to market</a>
             </li>

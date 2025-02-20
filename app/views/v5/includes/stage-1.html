@@ -33,7 +33,7 @@
       {% endif %}
     </div>
   </li>
-  {% if (data['researchFrameworksError'] == "true") %}
+  {% if (data['tagResearchFrameworksStatus'] == "overdue") %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link govuk-form-group--error" id="research-frameworks">
   {% else %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link" id="research-frameworks">
@@ -48,46 +48,35 @@
           <strong class="govuk-tag govuk-tag--green">Complete</strong>
         {% elseif (data['tagResearchFrameworksStatus'] == "inProgress")%}
           <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+        {% elseif (data['tagResearchFrameworksStatus'] == "overdue") %}
+          <strong class="govuk-tag govuk-tag--red">Overdue</strong>
         {% else %}
           <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['researchFrameworksDuration']) | govukDate("truncate") }}  </strong>
         {% endif %}
       </div>
     </li>
-  {% if (data['recordRouteToMarketError'] == "true" and (data['tagRecordRouteToMarketStatus'] != "complete")) %}
+  {% if (data['tagRecordRouteToMarketStatus'] == "overdue") %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link govuk-form-group--error" id="record-route-to-market">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/record-route-to-market" aria-describedby="company-details-2-status">
-          Record route to market
-        </a>
-      </div>
-      <div class="govuk-task-list__status">
-        <strong class="govuk-tag govuk-tag--red">Overdue</strong>
-      </div>
-    </li>
-  {% elseif (data['tagRecordRouteToMarketStatus'] == "complete") %}
-    <li class="govuk-task-list__item govuk-task-list__item--with-link" id="record-route-to-market">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/record-route-to-market" aria-describedby="company-details-2-status">
-          Record route to market
-        </a>
-      </div>
-      <div class="govuk-task-list__status">
-        <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      </div>
-    </li>
   {% else %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link" id="record-route-to-market">
+  {% endif %}
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="approach-to-market/record-route-to-market" aria-describedby="company-details-2-status">
           Record route to market
         </a>
       </div>
       <div class="govuk-task-list__status">
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ (data['recordRouteToMarketDate']) | govukDate("truncate") }} </strong>
-        </strong>
+        {% if (data['tagRecordRouteToMarketStatus'] == "complete") %}
+          <strong class="govuk-tag govuk-tag--green">Complete</strong>
+        {% elseif (data['tagRecordRouteToMarketStatus'] == "inProgress")%}
+          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+        {% elseif (data['tagRecordRouteToMarketStatus'] == "overdue") %}
+          <strong class="govuk-tag govuk-tag--red">Overdue</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['recordRouteToMarketDuration']) | govukDate("truncate") }}  </strong>
+        {% endif %}
       </div>
     </li>
-  {% endif %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
       <a class="govuk-link govuk-task-list__link" href="#">
