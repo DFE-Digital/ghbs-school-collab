@@ -107,6 +107,26 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
+  router.get('/' + version + '/procurement-operations/approach-to-market/create-procurement-risk-assessment', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/create-procurement-risk-assessment', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/approach-to-market/create-procurement-risk-assessment', function (req, res) {
+    const tagCreateRiskAssessment = req.session.data['tagCreateRiskAssessment']
+
+    if (tagCreateRiskAssessment.includes('Download template') &&
+      tagCreateRiskAssessment.includes('Save completed form in SharePoint') &&
+      tagCreateRiskAssessment.includes('empty')){
+      req.session.data.tagCreateRiskAssessmentStatus = 'complete'
+    }else if (tagCreateRiskAssessment == ('empty')){
+      req.session.data.tagCreateRiskAssessmentStatus = 'toDo'
+    }else {
+      req.session.data.tagCreateRiskAssessmentStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/procurement')
+  })
+
   router.get('/' + version + '/procurement-operations/approach-to-market/complete-information-gathering', function (req, res) {
     res.render(version + '/procurement-operations/approach-to-market/complete-information-gathering', {})
   })

@@ -12,7 +12,7 @@ module.exports = {
   'createProcurementTimeline' : '10',         // 8 + 2
   'inviteTheSchoolLead' : '16',              // 10 + 6
   'setProcurementTimelineDuration' : '17',    // 16 + 1
-
+  'createProcurementRiskAssessmentDuration' : '18', // 17 + 1
   // Tasks with errors
   'tagResearchFrameworksStatus': 'overdue',
   'tagRecordRouteToMarketStatus': 'overdue'

@@ -112,12 +112,18 @@
   {% endif %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#">
+      <a class="govuk-link govuk-task-list__link" href="approach-to-market/create-procurement-risk-assessment">
         Create Procurement Risk Assessment Tool (PRAT)
       </a>
     </div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(9) | govukDate("truncate") }}  </strong>
+      {% if (data['tagCreateRiskAssessmentStatus'] == "complete") %}
+        <strong class="govuk-tag govuk-tag--green">Complete</strong>
+      {% elseif (data['tagCreateRiskAssessmentStatus'] == "inProgress")%}
+        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['createProcurementRiskAssessmentDuration']) | govukDate("truncate") }}  </strong>
+      {% endif %}
     </div>
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
