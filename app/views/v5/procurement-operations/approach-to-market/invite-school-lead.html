@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Complete information gathering" %}
+{% set pageName="Invite school lead" %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -28,11 +28,9 @@
         <div class="govuk-grid-column-two-thirds">
           <form action="invite-the-school-lead" method="post" novalidate>
             {% include "../../includes/case-identifiers.html" %}
-            <h1 class="govuk-heading-l" id="task">Invite the school lead</h1>
-            <div for="task" class="govuk-hint">
-              <p class="govuk-body">The school lead will need to be invited to
-                the portal to complete the procurement.</p>
-            </div>
+            <h1 class="govuk-heading-l" id="task">Invite school lead</h1>
+            <p class="govuk-body">Add the school lead and any other contacts
+              that will need to view or work on the procurement.</p>
             <div class="govuk-form-group">
               <table class="govuk-table">
                 <caption class="govuk-table__caption govuk-table__caption--m">
@@ -62,7 +60,7 @@
                 </tbody>
               </table>
               <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="addUser">
-                Add
+                Add user
               </button>
             </div>
             <div class="govuk-form-group">
