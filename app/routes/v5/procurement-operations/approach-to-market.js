@@ -31,8 +31,8 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/discuss-school-requirements', function (req, res) {
     const tagDiscussSchoolRequirements = req.session.data['tagDiscussSchoolRequirements']
 
-    if (tagDiscussSchoolRequirements.includes('Teams call to discuss the procurement') &&
-      tagDiscussSchoolRequirements.includes('Record non-working days and completion date') &&
+    if (tagDiscussSchoolRequirements.includes('Host Teams call to discuss the procurement') &&
+      tagDiscussSchoolRequirements.includes('Record school holidays, non-working days and completion date') &&
       tagDiscussSchoolRequirements.includes('Save completed information gathering document in SharePoint') &&
       tagDiscussSchoolRequirements.includes('empty')){
       req.session.data.tagDiscussSchoolRequirementsStatus = 'complete'
