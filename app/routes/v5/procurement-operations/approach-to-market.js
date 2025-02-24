@@ -9,10 +9,10 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/handover-from-triage', function (req, res) {
     const tagHandoverFromTriage = req.session.data['tagHandoverFromTriage']
 
-    if (tagHandoverFromTriage.includes('Participation agreement sent') &&
+    if (tagHandoverFromTriage.includes('Send participation agreement') &&
       tagHandoverFromTriage.includes('Participation agreement signed') &&
       tagHandoverFromTriage.includes('Resource board allocation') &&
-      tagHandoverFromTriage.includes('Case assigned to procurement operations lead') &&
+      tagHandoverFromTriage.includes('Assigned to procurement operations lead') &&
       tagHandoverFromTriage.includes('empty')){
       req.session.data.tagHandoverFromTriageStatus = 'complete'
     }else if (tagHandoverFromTriage == ('empty')){
