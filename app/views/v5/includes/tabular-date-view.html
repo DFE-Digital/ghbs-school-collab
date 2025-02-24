@@ -1,0 +1,90 @@
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Project timeline</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Task</th>
+      <th scope="col" class="govuk-table__header">Start date</th>
+      <th scope="col" class="govuk-table__header">End date</th>
+      <th scope="col" class="govuk-table__header">Duration</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Call off document preparations</th>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-start-date" name="call-off-start-date" type="text" value="{{ 'today' | duration(22) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-end-date" name="call-off-end-date" type="text" value="{{ 'today' | duration(26) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">4 days</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Create specification</th>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-start-date" name="call-off-start-date" type="text" value="{{ 'today' | duration(26) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-end-date" name="call-off-end-date" type="text" value="{{ 'today' | duration(27) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">1 day</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Create pricing schedule</th>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-start-date" name="call-off-start-date" type="text" value="{{ 'today' | duration(27) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-end-date" name="call-off-end-date" type="text" value="{{ 'today' | duration(28) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">1 day</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Create quality questions</th>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-start-date" name="call-off-start-date" type="text" value="{{ 'today' | duration(28) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-end-date" name="call-off-end-date" type="text" value="{{ 'today' | duration(29) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">1 day</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Create evaluation methodology</th>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-start-date" name="call-off-start-date" type="text" value="{{ 'today' | duration(29) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-end-date" name="call-off-end-date" type="text" value="{{ 'today' | duration(30) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">1 day</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Sign off scoring and criteria</th>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-start-date" name="call-off-start-date" type="text" value="{{ 'today' | duration(30) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-end-date" name="call-off-end-date" type="text" value="{{ 'today' | duration(31) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">1 day</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Get approval for next stage</th>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-start-date" name="call-off-start-date" type="text" value="{{ 'today' | duration(31) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">
+          <input class="govuk-input govuk-input--width-10" id="call-off-end-date" name="call-off-end-date" type="text" value="{{ 'today' | duration(38) | govukDate('truncate') }}">
+      </td>
+      <td class="govuk-table__cell">7 days</td>
+    </tr>
+  </tbody>
+</table>
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Save dates
+  </button>
+  <a class="govuk-link" href="#">Cancel</a>
+</div>
+
