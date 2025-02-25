@@ -128,6 +128,22 @@
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="approach-to-market/check-cost-threshold">
+        Check cost threshold
+      </a>
+    </div>
+    <div class="govuk-task-list__status">
+      {% if (data['tagCheckCostThresholdStatus'] == "complete") %}
+        <strong class="govuk-tag govuk-tag--green">Complete</strong>
+      {% elseif (data['tagCheckCostThresholdStatus'] == "inProgress")%}
+        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+      {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['checkCostThresholdDuration']) | govukDate("truncate") }}  </strong>
+      {% endif %}
+    </div>
+  </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
       <a class="govuk-link govuk-task-list__link" href="#">
         Draft Stage 1 Authorisation Limits or CAB document
       </a>
