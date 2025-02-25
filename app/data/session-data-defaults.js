@@ -14,6 +14,7 @@ module.exports = {
   'setProcurementTimelineDuration' : '17',    // 16 + 1
   'createProcurementRiskAssessmentDuration' : '18', // 17 + 1
   'checkCostThresholdDuration' : '19', // 18 + 1
+  'getApprovalDuration' : '20', // 19 + 1
   // Tasks with errors
   'tagResearchFrameworksStatus': 'overdue',
   'tagRecordRouteToMarketStatus': 'overdue'

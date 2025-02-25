@@ -220,15 +220,33 @@ module.exports = function (router) {
 
   router.post('/' + version + '/procurement-operations/approach-to-market/get-approval-for-next-stage', function (req, res) {
     const tagGetApprovalForStage2 = req.session.data['tagGetApprovalForStage2']
+    const costThresholdStatus = req.session.data['costThresholdStatus']
 
-    if (tagGetApprovalForStage2.includes('Granted approval to proceed') &&
-      tagGetApprovalForStage2.includes('empty')){
-      req.session.data.tagGetApprovalForStage2Status = 'complete'
-    }else if (tagGetApprovalForStage2 == ('empty')){
-      req.session.data.tagGetApprovalForStage2Status = 'toDo'
-    }else {
-      req.session.data.tagGetApprovalForStage2Status = 'inProgress'
+    if (costThresholdStatus == 'This procurement is below the relevant threshold'){
+      if (tagGetApprovalForStage2.includes('Complete email template') &&
+        tagGetApprovalForStage2.includes('Get approval from G7') &&
+        tagGetApprovalForStage2.includes('empty')){
+        req.session.data.tagGetApprovalForStage2Status = 'complete'
+      }else if (tagGetApprovalForStage2 == ('empty')){
+        req.session.data.tagGetApprovalForStage2Status = 'toDo'
+      }else {
+        req.session.data.tagGetApprovalForStage2Status = 'inProgress'
+      }
+    } else {
+      if (tagGetApprovalForStage2.includes('Complete commercial assurance document') &&
+        tagGetApprovalForStage2.includes('Get approval from G7') &&
+        tagGetApprovalForStage2.includes('Add to secretariat agenda') &&
+        tagGetApprovalForStage2.includes('Receive email to confirm approval') &&
+        tagGetApprovalForStage2.includes('empty')){
+        req.session.data.tagGetApprovalForStage2Status = 'complete'
+      }else if (tagGetApprovalForStage2 == ('empty')){
+        req.session.data.tagGetApprovalForStage2Status = 'toDo'
+      }else {
+        req.session.data.tagGetApprovalForStage2Status = 'inProgress'
+      }
     }
+
+
 
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
