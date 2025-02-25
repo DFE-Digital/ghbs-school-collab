@@ -13,6 +13,11 @@ module.exports = {
   'inviteTheSchoolLead' : '16',              // 10 + 6
   'setProcurementTimelineDuration' : '17',    // 16 + 1
   'createProcurementRiskAssessmentDuration' : '18', // 17 + 1
+  'checkCostThresholdDuration' : '19', // 18 + 1
+  'getApprovalDuration' : '30', // 19 + 11
+  'approvalFromSchoolOnApproachDuration' : '45', // 30 + 15
+  'stage1Duration' : '45', // 45 + 0
+
   // Tasks with errors
   'tagResearchFrameworksStatus': 'overdue',
   'tagRecordRouteToMarketStatus': 'overdue'
