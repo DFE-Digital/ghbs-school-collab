@@ -246,9 +246,27 @@ module.exports = function (router) {
       }
     }
 
-
-
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
+
+  router.get('/' + version + '/procurement-operations/approach-to-market/get-approval-from-school-on-approach', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/get-approval-from-school-on-approach', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/approach-to-market/get-approval-from-school-on-approach', function (req, res) {
+    const tagSchoolApproval = req.session.data['tagSchoolApproval']
+
+    if (tagSchoolApproval.includes('Send email to school') &&
+      tagSchoolApproval.includes('Approval granted by school') &&
+      tagSchoolApproval.includes('empty')){
+      req.session.data.tagSchoolApprovalStatus = 'complete'
+    }else if (tagSchoolApproval == ('empty')){
+      req.session.data.tagSchoolApprovalStatus = 'toDo'
+    }else {
+      req.session.data.tagSchoolApprovalStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/procurement')
+  })
 }
