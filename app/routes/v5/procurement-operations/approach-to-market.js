@@ -9,10 +9,10 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/handover-from-triage', function (req, res) {
     const tagHandoverFromTriage = req.session.data['tagHandoverFromTriage']
 
-    if (tagHandoverFromTriage.includes('Participation agreement sent') &&
+    if (tagHandoverFromTriage.includes('Send participation agreement') &&
       tagHandoverFromTriage.includes('Participation agreement signed') &&
       tagHandoverFromTriage.includes('Resource board allocation') &&
-      tagHandoverFromTriage.includes('Case assigned to procurement operations lead') &&
+      tagHandoverFromTriage.includes('Assigned to procurement operations lead') &&
       tagHandoverFromTriage.includes('empty')){
       req.session.data.tagHandoverFromTriageStatus = 'complete'
     }else if (tagHandoverFromTriage == ('empty')){
@@ -31,8 +31,8 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/discuss-school-requirements', function (req, res) {
     const tagDiscussSchoolRequirements = req.session.data['tagDiscussSchoolRequirements']
 
-    if (tagDiscussSchoolRequirements.includes('Teams call to discuss the procurement') &&
-      tagDiscussSchoolRequirements.includes('Record non-working days and completion date') &&
+    if (tagDiscussSchoolRequirements.includes('Host Teams call to discuss the procurement') &&
+      tagDiscussSchoolRequirements.includes('Record school holidays, non-working days and completion date') &&
       tagDiscussSchoolRequirements.includes('Save completed information gathering document in SharePoint') &&
       tagDiscussSchoolRequirements.includes('empty')){
       req.session.data.tagDiscussSchoolRequirementsStatus = 'complete'

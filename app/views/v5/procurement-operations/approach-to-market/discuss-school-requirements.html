@@ -17,8 +17,8 @@
                   services</a>
               </li>
               <li class="govuk-breadcrumbs__list-item">
-                <a class="govuk-breadcrumbs__link" href="#">Complete information
-                  gathering</a>
+                <a class="govuk-breadcrumbs__link" href="#">Discuss school
+                  requirements</a>
               </li>
             </ol>
           </nav>
@@ -30,32 +30,40 @@
         <div class="govuk-grid-column-two-thirds">
           <form action="discuss-school-requirements" method="post" novalidate>
             <div class="govuk-form-group">
-              <p class="govuk-body">Have a Teams call with the school and share
-                relevant documents. You may want to:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>set expecations around timescales</li>
-                <li>explain what will be required from the school</li>
-                <li>record schools holidays and key dates that could affect
-                  the procurement</li>
-                <li>gather additional information</li>
-              </ul>
-              <p class="govuk-body">Make sure to record relevant information in
-                the case notes.</p>
+              <p class="govuk-body">Arrange a Teams call with the school and
+                share relevant documents. Record all relevant information in the
+                case notes.</p>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Get help with the call</span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>set expectations for timescales</li>
+                      <li>explain what will be required by the school</li>
+                      <li>record schools holidays non-working days and other key
+                        dates</li>
+                      <li>gather additional information</li>
+                    </ul>
+                  </div>
+                </details>
             </div>
             <div class="govuk-form-group">
               <h2 class="govuk-heading-m">Actions</h2>
               <fieldset class="govuk-fieldset">
                 <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagDiscussSchoolRequirements-1" name="tagDiscussSchoolRequirements" type="checkbox" value="Teams call to discuss the procurement" {{ checked("tagDiscussSchoolRequirements", "Teams call to discuss the procurement") }}>
+                    <input class="govuk-checkboxes__input" id="tagDiscussSchoolRequirements-1" name="tagDiscussSchoolRequirements" type="checkbox" value="Host Teams call to discuss the procurement" {{ checked("tagDiscussSchoolRequirements", "Host Teams call to discuss the procurement") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagDiscussSchoolRequirements-1">
-                      Teams call to discuss the procurement
+                      Host Teams call to discuss the procurement
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagDiscussSchoolRequirements-2" name="tagDiscussSchoolRequirements" type="checkbox" value="Record non-working days and completion date" {{ checked("tagDiscussSchoolRequirements", "Record non-working days and completion date") }}>
+                    <input class="govuk-checkboxes__input" id="tagDiscussSchoolRequirements-2" name="tagDiscussSchoolRequirements" type="checkbox" value="Record school holidays, non-working days and completion date" {{ checked("tagDiscussSchoolRequirements", "Record school holidays, non-working days and completion date") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagDiscussSchoolRequirements-2">
-                      Record non-working days and completion date
+                      Record school holidays, non-working days and completion date
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
