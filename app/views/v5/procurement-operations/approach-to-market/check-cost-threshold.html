@@ -17,8 +17,8 @@
                   services</a>
               </li>
               <li class="govuk-breadcrumbs__list-item">
-                <a class="govuk-breadcrumbs__link" href="#">Complete information
-                  gathering</a>
+                <a class="govuk-breadcrumbs__link" href="#">Check cost threshold
+                </a>
               </li>
             </ol>
           </nav>
@@ -28,35 +28,33 @@
         <div class="govuk-grid-column-two-thirds">
           <form action="check-cost-threshold" method="post" novalidate>
             <div class="govuk-form-group">
+              {% include "../../includes/case-identifiers.html" %}
+              <h1 class="govuk-heading-l" id="page-title">Check cost
+                threshold</h1>
+              <p class="govuk-body">Thresholds for procurements are revised
+                each January and can be found on <a href="https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-define-phase/guidance-thresholds-html" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                the GOV.UK website (opens in new tab)</a>. If the
+                procurement framework in use is above the threshold then it
+                will need additional checks from the Commercial Assurance
+                Board (CAB).</p>
+              <p class="govuk-body">Use the threshold for the year when the
+                framework or deal was created. If you are using a Bespoke
+                procurement then use this year's threshold.</p>
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                  {% include "../../includes/case-identifiers.html" %}
-                  <h1 class="govuk-heading-l" id="page-title">Check cost
-                    threshold</h1>
-                </legend>
-                <div for="page-title" class="govuk-hint">
-                  <p class="govuk-body">Thresholds for procurements are revised
-                    each January and can be found at <a href="https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-define-phase/guidance-thresholds-html" class="govuk-link" rel="noreferrer noopener" target="_blank">https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-define-phase/guidance-thresholds-html
-                      (opens in new tab)</a>. If the procurement
-                      framework in use exceeds the threshold then it will need
-                      additional checks from the CAB (Commercial Assurance
-                      Board)
-                  </p>
-                  <p class="govuk-body">Use the threshold for the year when the
-                    framework or deal was created. If you are using a Bespoke
-                    procurement then use this years threshold.</p>
-                </div>
+                  Is the procurement framework in use below the relevant
+                  threshold?</legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="costThresholdStatus" name="costThresholdStatus" type="radio" value="This procurement is below the relevant threshold" {{ checked("costThresholdStatus", "This procurement is below the relevant threshold") }}>
+                    <input class="govuk-radios__input" id="costThresholdStatus" name="costThresholdStatus" type="radio" value="Below the relevant threshold" {{ checked("costThresholdStatus", "Below the relevant threshold") }}>
                     <label class="govuk-label govuk-radios__label" for="costThresholdStatus">
-                      This procurement is below the relevant threshold
+                      Below the relevant threshold
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="costThresholdStatus-2" name="costThresholdStatus" type="radio" data-aria-controls="frameworkNameHolder" value="This procurement is above the relevant threshold" {{ checked("costThresholdStatus", "This procurement is above the relevant threshold") }}>
+                    <input class="govuk-radios__input" id="costThresholdStatus-2" name="costThresholdStatus" type="radio" data-aria-controls="frameworkNameHolder" value="Above the relevant threshold" {{ checked("costThresholdStatus", "Above the relevant threshold") }}>
                     <label class="govuk-label govuk-radios__label" for="costThresholdStatus-2">
-                      This procurement is above the relevant threshold
+                      Above the relevant threshold
                     </label>
                   </div>
                 </div>
