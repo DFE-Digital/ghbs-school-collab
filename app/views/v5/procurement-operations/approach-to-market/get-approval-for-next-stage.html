@@ -24,9 +24,9 @@
               </li>
               <li class="govuk-breadcrumbs__list-item">
                 <a class="govuk-breadcrumbs__link" href="#">
-                  {% if (data['costThresholdStatus'] == "This procurement is above the relevant threshold") %}
+                  {% if (data['costThresholdStatus'] == "Above the relevant threshold") %}
                     Get CAB approval
-                  {% elseif (data['costThresholdStatus'] == "This procurement is below the relevant threshold") %}
+                  {% elseif (data['costThresholdStatus'] == "Below the relevant threshold") %}
                     Get G7 approval
                   {% else %}
                     Get CAB/G7 approval
@@ -37,9 +37,9 @@
           </nav>
           {% include "../../includes/case-identifiers.html" %}
           <h1 class="govuk-heading-l">
-            {% if (data['costThresholdStatus'] == "This procurement is above the relevant threshold") %}
+            {% if (data['costThresholdStatus'] == "Above the relevant threshold") %}
               Get CAB approval
-            {% elseif (data['costThresholdStatus'] == "This procurement is below the relevant threshold") %}
+            {% elseif (data['costThresholdStatus'] == "Below the relevant threshold") %}
               Get G7 approval
             {% else %}
               Get CAB/G7 approval
@@ -52,13 +52,13 @@
           <form action="get-approval-for-next-stage" method="post" novalidate>
             <div class="govuk-form-group">
               <p class="govuk-body">
-                {% if (data['costThresholdStatus'] == "This procurement is above the relevant threshold") %}
+                {% if (data['costThresholdStatus'] == "Above the relevant threshold") %}
                   <p class="govuk-body">This procurement is above the cost
                     threshold and requires approval from the Commercial advisory
                     board. Follow the process outlined in the <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
                       commercial operating model (opens in new tab)</a>.
                   </p>
-                {% elseif (data['costThresholdStatus'] == "This procurement is below the relevant threshold") %}
+                {% elseif (data['costThresholdStatus'] == "Below the relevant threshold") %}
                   <p class="govuk-body">This procurement is below the cost
                     threshold and requires approval from a G7. Follow the
                     process outlined in the <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
@@ -76,7 +76,7 @@
             </div>
             <div class="govuk-form-group">
               <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
-                {% if (data['costThresholdStatus'] == "This procurement is above the relevant threshold") %}
+                {% if (data['costThresholdStatus'] == "Above the relevant threshold") %}
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-1" name="tagGetApprovalForStage2" type="checkbox" value="Complete commercial assurance document" {{ checked("tagGetApprovalForStage2", "Complete commercial assurance document") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-1">
@@ -101,7 +101,7 @@
                       Receive email to confirm approval
                     </label>
                   </div>
-                {% elseif (data['costThresholdStatus'] == "This procurement is below the relevant threshold") %}
+                {% elseif (data['costThresholdStatus'] == "Below the relevant threshold") %}
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-2" name="tagGetApprovalForStage2" type="checkbox" value="Complete email template" {{ checked("tagGetApprovalForStage2", "Complete email template") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-2">

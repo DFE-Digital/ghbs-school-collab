@@ -222,7 +222,7 @@ module.exports = function (router) {
     const tagGetApprovalForStage2 = req.session.data['tagGetApprovalForStage2']
     const costThresholdStatus = req.session.data['costThresholdStatus']
 
-    if (costThresholdStatus == 'This procurement is below the relevant threshold'){
+    if (costThresholdStatus == 'Below the relevant threshold'){
       if (tagGetApprovalForStage2.includes('Complete email template') &&
         tagGetApprovalForStage2.includes('Get approval from G7') &&
         tagGetApprovalForStage2.includes('empty')){
