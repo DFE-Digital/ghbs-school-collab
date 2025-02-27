@@ -258,7 +258,7 @@ module.exports = function (router) {
     const tagSchoolApproval = req.session.data['tagSchoolApproval']
 
     if (tagSchoolApproval.includes('Send email to school') &&
-      tagSchoolApproval.includes('Approval granted by school') &&
+      tagSchoolApproval.includes('Received approval from school') &&
       tagSchoolApproval.includes('empty')){
       req.session.data.tagSchoolApprovalStatus = 'complete'
     }else if (tagSchoolApproval == ('empty')){
