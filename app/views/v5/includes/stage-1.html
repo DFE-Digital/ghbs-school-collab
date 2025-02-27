@@ -145,9 +145,9 @@
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
       <a class="govuk-link govuk-task-list__link" href="approach-to-market/get-approval-for-next-stage">
-        {% if (data['costThresholdStatus'] == "This procurement is above the relevant threshold") %}
+        {% if (data['costThresholdStatus'] == "Above the relevant threshold") %}
           Get CAB approval
-        {% elseif (data['costThresholdStatus'] == "This procurement is below the relevant threshold") %}
+        {% elseif (data['costThresholdStatus'] == "Below the relevant threshold") %}
           Get G7 approval
         {% else %}
           Get CAB/G7 approval

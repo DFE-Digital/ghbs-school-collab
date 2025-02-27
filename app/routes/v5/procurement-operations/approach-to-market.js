@@ -222,7 +222,7 @@ module.exports = function (router) {
     const tagGetApprovalForStage2 = req.session.data['tagGetApprovalForStage2']
     const costThresholdStatus = req.session.data['costThresholdStatus']
 
-    if (costThresholdStatus == 'This procurement is below the relevant threshold'){
+    if (costThresholdStatus == 'Below the relevant threshold'){
       if (tagGetApprovalForStage2.includes('Complete email template') &&
         tagGetApprovalForStage2.includes('Get approval from G7') &&
         tagGetApprovalForStage2.includes('empty')){
@@ -258,7 +258,7 @@ module.exports = function (router) {
     const tagSchoolApproval = req.session.data['tagSchoolApproval']
 
     if (tagSchoolApproval.includes('Send email to school') &&
-      tagSchoolApproval.includes('Approval granted by school') &&
+      tagSchoolApproval.includes('Received approval from school') &&
       tagSchoolApproval.includes('empty')){
       req.session.data.tagSchoolApprovalStatus = 'complete'
     }else if (tagSchoolApproval == ('empty')){
