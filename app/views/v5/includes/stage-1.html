@@ -105,7 +105,7 @@
         {% elseif (data['tagInviteTheSchoolLeadStatus'] == "inProgress")%}
           <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
         {% else %}
-          <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['inviteTheSchoolLead']) | govukDate("truncate") }}  </strong>
+          <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['inviteTheSchoolLeadDuration']) | govukDate("truncate") }}  </strong>
         {% endif %}
       </div>
     </li>
