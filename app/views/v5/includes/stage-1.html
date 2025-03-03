@@ -13,7 +13,8 @@
       {% elseif (data['tagHandoverFromTriageStatus'] == "inProgress")%}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['handoverFromTriageDuration']) | govukDate("truncate") }}  </strong>
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['handoverFromTriageStartDate'] }}
+          - {{ data['handoverFromTriageEndDate']}}  </strong>
       {% endif %}
     </div>
   </li>
@@ -29,7 +30,8 @@
       {% elseif (data['tagDiscussSchoolRequirementsStatus'] == "inProgress")%}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['discussSchoolRequirementsDuration']) | govukDate("truncate") }}  </strong>
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['discussSchoolRequirementsStartDate'] }}
+          - {{ data['discussSchoolRequirementsEndDate'] }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -51,7 +53,8 @@
         {% elseif (data['tagResearchFrameworksStatus'] == "overdue") %}
           <strong class="govuk-tag govuk-tag--red">Overdue</strong>
         {% else %}
-          <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['researchFrameworksDuration']) | govukDate("truncate") }}  </strong>
+          <strong class="govuk-tag govuk-tag--blue">Due: {{ data['researchFrameworksStartDate'] }}
+            - {{ data['researchFrameworksEndDate'] }}  </strong>
         {% endif %}
       </div>
     </li>
@@ -73,7 +76,8 @@
         {% elseif (data['tagRecordRouteToMarketStatus'] == "overdue") %}
           <strong class="govuk-tag govuk-tag--red">Overdue</strong>
         {% else %}
-          <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['recordRouteToMarketDuration']) | govukDate("truncate") }}  </strong>
+          <strong class="govuk-tag govuk-tag--blue">Due: {{ data['recordRouteToMarketStartDate'] }}
+            - {{ data['recordRouteToMarketEndDate'] }}  </strong>
         {% endif %}
       </div>
     </li>
@@ -89,7 +93,8 @@
       {% elseif (data['tagSetProcurementTimelineStatus'] == "inProgress")%}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['setProcurementTimelineDuration']) | govukDate("truncate") }}  </strong>
+      <strong class="govuk-tag govuk-tag--blue">Due: {{ data['setProcurementTimelineStartDate'] }}
+        - {{ data['setProcurementTimelineEndDate'] }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -105,7 +110,8 @@
         {% elseif (data['tagInviteTheSchoolLeadStatus'] == "inProgress")%}
           <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
         {% else %}
-          <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['inviteTheSchoolLeadDuration']) | govukDate("truncate") }}  </strong>
+          <strong class="govuk-tag govuk-tag--blue">Due: {{ data['inviteTheSchoolLeadStartDate'] }}
+            - {{ data['inviteTheSchoolLeadEndDate'] }}  </strong>
         {% endif %}
       </div>
     </li>
@@ -122,7 +128,8 @@
       {% elseif (data['tagCreateRiskAssessmentStatus'] == "inProgress")%}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['createProcurementRiskAssessmentDuration']) | govukDate("truncate") }}  </strong>
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['createProcurementRiskAssessmentStartDate'] }}
+          - {{ data['createProcurementRiskAssessmentEndDate'] }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -138,7 +145,8 @@
       {% elseif (data['tagCheckCostThresholdStatus'] == "inProgress")%}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-          <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['checkCostThresholdDuration']) | govukDate("truncate") }}  </strong>
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['checkCostThresholdStartDate'] }}
+          - {{ data['checkCostThresholdEndDate'] }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -157,14 +165,16 @@
     <div class="govuk-task-list__status">
       {% if (data['costThresholdStatus']) %}
         {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagGetApprovalForStage2Status'] == "inProgress")%}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+          <strong class="govuk-tag govuk-tag--green">Complete</strong>
+        {% elseif (data['tagGetApprovalForStage2Status'] == "inProgress")%}
+          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Due: {{ data['getApprovalStartDate'] }}
+            - {{ data['getApprovalEndDate'] }}  </strong>
+        {% endif %}
       {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['getApprovalDuration']) | govukDate("truncate") }}  </strong>
-      {% endif %}
-      {% else %}
-        <strong class="govuk-tag govuk-tag--grey">Due: {{ "today" | duration(data['getApprovalDuration']) | govukDate("truncate") }}  </strong>
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['getApprovalStartDate'] }}
+          - {{ data['getApprovalEndDate'] }}  </strong>
       {% endif %}
     </div>
   </li>
@@ -180,7 +190,8 @@
       {% elseif (data['tagSchoolApprovalStatus'] == "inProgress")%}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(data['approvalFromSchoolOnApproachDuration']) | govukDate("truncate") }}  </strong>
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['approvalFromSchoolOnApproachStartDate'] }}
+          - {{ data['approvalFromSchoolOnApproachEndDate'] }}  </strong>
       {% endif %}
     </div>
   </li>

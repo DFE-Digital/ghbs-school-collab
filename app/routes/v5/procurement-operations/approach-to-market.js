@@ -249,7 +249,6 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
-
   router.get('/' + version + '/procurement-operations/approach-to-market/get-approval-from-school-on-approach', function (req, res) {
     res.render(version + '/procurement-operations/approach-to-market/get-approval-from-school-on-approach', {})
   })
@@ -269,4 +268,5 @@ module.exports = function (router) {
 
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
+
 }
