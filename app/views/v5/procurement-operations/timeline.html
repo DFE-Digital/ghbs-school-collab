@@ -208,4 +208,93 @@
       </div>
     </div>
   </div>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const rows = document.querySelectorAll('tbody tr');
+
+        rows.forEach((row, index) => {
+            const startDateInput = row.querySelector('input[name^="StartDate"]');
+            const endDateInput = row.querySelector('input[name^="EndDate"]');
+
+            startDateInput.addEventListener('change', () => {
+                updateDatesFromStart(index);
+            });
+
+            endDateInput.addEventListener('change', () => {
+                updateDatesFromEnd(index);
+            });
+        });
+
+        function updateDatesFromStart(startIndex) {
+            for (let i = startIndex; i < rows.length; i++) {
+                const row = rows[i];
+                const startDateInput = row.querySelector('input[name^="StartDate"]');
+                const endDateInput = row.querySelector('input[name^="EndDate"]');
+                const durationCell = row.querySelector('td:nth-child(3)');
+
+                const startDate = new Date(startDateInput.value);
+                const duration = parseInt(durationCell.textContent);
+
+                const endDate = new Date(startDate);
+                endDate.setDate(startDate.getDate() + duration);
+
+                endDateInput.value = formatDate(endDate);
+
+                if (i < rows.length - 1) {
+                    const nextRow = rows[i + 1];
+                    const nextStartDateInput = nextRow.querySelector('input[name^="StartDate"]');
+                    nextStartDateInput.value = formatDate(endDate);
+                }
+            }
+
+            for (let j = startIndex - 1; j >= 0; j--) {
+                const RemainRow = rows[j];
+                const endDateInput = RemainRow.querySelector('input[name^="EndDate"]');
+                const startDateInput = RemainRow.querySelector('input[name^="StartDate"]');
+
+                const durationCell = RemainRow.querySelector('td:nth-child(3)');
+
+                const duration = parseInt(durationCell.textContent);
+
+                const endDate = new Date(rows[j+1].querySelector('input[name^="StartDate"]').value);
+
+                const startDate = new Date(endDate);
+                startDate.setDate(endDate.getDate() - duration);
+
+                startDateInput.value = formatDate(startDate);
+                endDateInput.value = formatDate(endDate);
+            }
+        }
+
+        function updateDatesFromEnd(startIndex) {
+            for (let i = startIndex; i < rows.length; i++) {
+                const row = rows[i];
+                const startDateInput = row.querySelector('input[name^="StartDate"]');
+                const endDateInput = row.querySelector('input[name^="EndDate"]');
+                const durationCell = row.querySelector('td:nth-child(3)');
+
+                const startDate = new Date(startDateInput.value);
+                const endDate = new Date(endDateInput.value);
+
+                const duration = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+                durationCell.textContent = duration;
+
+                if (i < rows.length - 1) {
+                    const nextRow = rows[i + 1];
+                    const nextStartDateInput = nextRow.querySelector('input[name^="StartDate"]');
+                    nextStartDateInput.value = formatDate(endDate);
+                    updateDatesFromStart(i + 1);
+                }
+            }
+        }
+
+        function formatDate(date) {
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = date.toLocaleString('default', { month: 'short' });
+            const year = date.getFullYear();
+            return `${day} ${month} ${year}`;
+        }
+    });
+    </script>
 {% endblock %}
