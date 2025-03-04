@@ -8,6 +8,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+require('./routes/v5/procurement-operations/timeline.js')(router);
 require('./routes/v5/procurement-operations/approach-to-market.js')(router);
 require('./routes/v5/school-buyers/sign-in.js')(router);
 require('./routes/v5/school-buyers/approach-to-market.js')(router);
