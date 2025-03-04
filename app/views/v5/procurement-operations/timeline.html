@@ -211,27 +211,32 @@
   <script>
 
     document.addEventListener('DOMContentLoaded', function() {
-        const rows = document.querySelectorAll('tbody tr');
+        const timelineForm = document.querySelector('form[action="timeline"]');
+        let rows;
 
-        rows.forEach((row, index) => {
-            const startDateInput = row.querySelector('input[name^="StartDate"]');
-            const endDateInput = row.querySelector('input[name^="EndDate"]');
+        if (timelineForm) {
+            rows = timelineForm.querySelectorAll('tbody tr');
 
-            startDateInput.addEventListener('change', () => {
-                updateDatesFromStart(index);
+            rows.forEach((row, index) => {
+                const startDateInput = row.querySelector('td:nth-child(2) > input');
+                const endDateInput = row.querySelector('td:nth-child(3) > input');
+
+                startDateInput.addEventListener('change', () => {
+                    updateDatesFromStart(index);
+                });
+
+                endDateInput.addEventListener('change', () => {
+                    updateDatesFromEnd(index);
+                });
             });
-
-            endDateInput.addEventListener('change', () => {
-                updateDatesFromEnd(index);
-            });
-        });
+        }
 
         function updateDatesFromStart(startIndex) {
             for (let i = startIndex; i < rows.length; i++) {
                 const row = rows[i];
-                const startDateInput = row.querySelector('input[name^="StartDate"]');
-                const endDateInput = row.querySelector('input[name^="EndDate"]');
-                const durationCell = row.querySelector('td:nth-child(3)');
+                const startDateInput = row.querySelector('td:nth-child(2) > input');
+                const endDateInput = row.querySelector('td:nth-child(3) > input');
+                const durationCell = row.querySelector('td:nth-child(4)');
 
                 const startDate = new Date(startDateInput.value);
                 const duration = parseInt(durationCell.textContent);
@@ -243,21 +248,21 @@
 
                 if (i < rows.length - 1) {
                     const nextRow = rows[i + 1];
-                    const nextStartDateInput = nextRow.querySelector('input[name^="StartDate"]');
+                    const nextStartDateInput = nextRow.querySelector('td:nth-child(2) > input');
                     nextStartDateInput.value = formatDate(endDate);
                 }
             }
 
             for (let j = startIndex - 1; j >= 0; j--) {
                 const RemainRow = rows[j];
-                const endDateInput = RemainRow.querySelector('input[name^="EndDate"]');
-                const startDateInput = RemainRow.querySelector('input[name^="StartDate"]');
+                const endDateInput = RemainRow.querySelector('td:nth-child(3) > input');
+                const startDateInput = RemainRow.querySelector('td:nth-child(2) > input');
 
-                const durationCell = RemainRow.querySelector('td:nth-child(3)');
+                const durationCell = RemainRow.querySelector('td:nth-child(4)');
 
                 const duration = parseInt(durationCell.textContent);
 
-                const endDate = new Date(rows[j+1].querySelector('input[name^="StartDate"]').value);
+                const endDate = new Date(rows[j+1].querySelector('td:nth-child(2) > input').value);
 
                 const startDate = new Date(endDate);
                 startDate.setDate(endDate.getDate() - duration);
@@ -270,9 +275,9 @@
         function updateDatesFromEnd(startIndex) {
             for (let i = startIndex; i < rows.length; i++) {
                 const row = rows[i];
-                const startDateInput = row.querySelector('input[name^="StartDate"]');
-                const endDateInput = row.querySelector('input[name^="EndDate"]');
-                const durationCell = row.querySelector('td:nth-child(3)');
+                const startDateInput = row.querySelector('td:nth-child(2) > input');
+                const endDateInput = row.querySelector('td:nth-child(3) > input');
+                const durationCell = row.querySelector('td:nth-child(4)');
 
                 const startDate = new Date(startDateInput.value);
                 const endDate = new Date(endDateInput.value);
@@ -282,7 +287,7 @@
 
                 if (i < rows.length - 1) {
                     const nextRow = rows[i + 1];
-                    const nextStartDateInput = nextRow.querySelector('input[name^="StartDate"]');
+                    const nextStartDateInput = nextRow.querySelector('td:nth-child(2) > input');
                     nextStartDateInput.value = formatDate(endDate);
                     updateDatesFromStart(i + 1);
                 }
