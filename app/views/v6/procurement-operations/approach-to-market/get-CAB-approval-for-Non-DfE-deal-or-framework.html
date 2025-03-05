@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Get CAB approval for a Non-DfE deal or framework" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335 Catering
+                  services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Complete information
+                  gathering</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="get-CAB-approval-for-Non-DfE-deal-or-framework" method="post" novalidate>
+            <div class="govuk-form-group">
+              {% include "../../includes/case-identifiers.html" %}
+              <h1 class="govuk-heading-l">Get CAB approval for a Non-DfE deal or
+                framework</h1>
+              <div for="file-upload-1" class="govuk-hint">
+                <p class="govuk-body">The (CAB) Commercial Assurance Board meets
+                  Wednesdays for approval sessions. It may take longer than one
+                  week for the CAB to review this procurement.</p>
+              </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagCabApprovalNonDfeDealFramework" name="tagCabApprovalNonDfeDealFramework" type="checkbox" value="Submit to CAB for approval" {{ checked("tagCabApprovalNonDfeDealFramework", "Submit to CAB for approval") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCabApprovalNonDfeDealFramework">
+                      Submit to CAB for approval
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagCabApprovalNonDfeDealFramework-2" name="tagCabApprovalNonDfeDealFramework" type="checkbox" value="Granted approval to proceed" {{ checked("tagCabApprovalNonDfeDealFramework", "Granted approval to proceed") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCabApprovalNonDfeDealFramework-2">
+                      Granted approval from CAB
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagCabApprovalNonDfeDealFramework-0" name="tagCabApprovalNonDfeDealFramework" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCabApprovalNonDfeDealFramework-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
+                Continue
+              </button>
+              <a class="govuk-link" href="../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
