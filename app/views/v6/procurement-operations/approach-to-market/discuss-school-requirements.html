@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Discuss school requirements" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335 Catering
+                  services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Discuss school
+                  requirements</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Discuss school requirements</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="discuss-school-requirements" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Arrange a Teams call with the school and
+                share relevant documents. Record all relevant information in the
+                case notes.</p>
+
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Get help with the call</span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>set expectations for timescales</li>
+                      <li>explain what will be required by the school</li>
+                      <li>record schools holidays non-working days and other key
+                        dates</li>
+                      <li>gather additional information</li>
+                    </ul>
+                  </div>
+                </details>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDiscussSchoolRequirements-1" name="tagDiscussSchoolRequirements" type="checkbox" value="Host Teams call to discuss the procurement" {{ checked("tagDiscussSchoolRequirements", "Host Teams call to discuss the procurement") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussSchoolRequirements-1">
+                      Host Teams call to discuss the procurement
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDiscussSchoolRequirements-2" name="tagDiscussSchoolRequirements" type="checkbox" value="Record school holidays, non-working days and completion date" {{ checked("tagDiscussSchoolRequirements", "Record school holidays, non-working days and completion date") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussSchoolRequirements-2">
+                      Record school holidays, non-working days and completion date
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDiscussSchoolRequirements-3" name="tagDiscussSchoolRequirements" type="checkbox" value="Save completed information gathering document in SharePoint" {{ checked("tagDiscussSchoolRequirements", "Save completed information gathering document in SharePoint") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussSchoolRequirements-3">
+                      Save completed information gathering document in SharePoint
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagDiscussSchoolRequirements-0" name="tagDiscussSchoolRequirements" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussSchoolRequirements-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+              <a class="govuk-link" href="../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
