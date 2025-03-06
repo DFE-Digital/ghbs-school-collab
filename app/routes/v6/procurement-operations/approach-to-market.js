@@ -52,7 +52,7 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/research-frameworks', function (req, res) {
     const tagResearchFrameworks = req.session.data['tagResearchFrameworks']
 
-    if (tagResearchFrameworks.includes('Find suitable existing frameworks') &&
+    if (tagResearchFrameworks.includes('Research suitable existing frameworks') &&
         tagResearchFrameworks.includes('Discuss frameworks with the school') &&
         tagResearchFrameworks.includes('Agree framework for procurement') &&
         tagResearchFrameworks.includes('empty')){
