@@ -68,8 +68,13 @@
                     commercial assurance document.</p>
                 {% else %}
                   <div class="govuk-inset-text">
-                    This task cannot be started until your have completed the
-                    "Check cost threshold" task.
+                    <p class="govuk-body">The 'Check cost threshold' task must be 
+                      completed first.</p>
+                    <p class="govuk-body">Internal approval from DfE will be required, 
+                      but the route this takes depends on the cost threshold. 
+                      Procurements below the threshold need approval from a G7 and 
+                      those above the threshold will need to be approved by 
+                      the Commercial Assurance Board (CAB).</p> 
                   </div>
                 {% endif %}
               </p>
@@ -84,8 +89,8 @@
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-3" name="tagGetApprovalForStage2" type="checkbox" value="Get approval from G7" {{ checked("tagGetApprovalForStage2", "Get approval from G7") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-3">
+                    <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-2" name="tagGetApprovalForStage2" type="checkbox" value="Get approval from G7" {{ checked("tagGetApprovalForStage2", "Get approval from G7") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-2">
                       Get approval from G7
                     </label>
                   </div>
@@ -112,13 +117,6 @@
                     <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-3" name="tagGetApprovalForStage2" type="checkbox" value="Get approval from G7" {{ checked("tagGetApprovalForStage2", "Get approval from G7") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-3">
                       Get approval from G7
-                    </label>
-                  </div>
-                {% else %}
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-3" name="tagGetApprovalForStage2" type="checkbox" value="Get approval from G7" {{ checked("tagGetApprovalForStage2", "Get approval from G7") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-3">
-                      Actions will be added when the cost threshold is checked
                     </label>
                   </div>
                 {% endif %}
