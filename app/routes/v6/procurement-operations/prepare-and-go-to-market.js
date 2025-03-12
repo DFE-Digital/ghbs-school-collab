@@ -53,4 +53,25 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/create-quality-questions', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/create-quality-questions', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/create-quality-questions', function (req, res) {
+    const tagCreateQualityQuestions = req.session.data['tagCreateQualityQuestions']
+
+    if (tagCreateQualityQuestions.includes('School needs recorded as compliant questions') &&
+        tagCreateQualityQuestions.includes('Agree quality questions and weighting with school') &&
+        tagCreateQualityQuestions.includes('Save final documents in SharePoint') &&
+        tagCreateQualityQuestions.includes('empty')){
+      req.session.data.tagCreateQualityQuestionsStatus = 'complete'
+    } else if (tagCreateQualityQuestions == ('empty')){
+      req.session.data.tagCreateQualityQuestionsStatus = 'toDo'
+    } else {
+      req.session.data.tagCreateQualityQuestionsStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
+  })
+
 }
