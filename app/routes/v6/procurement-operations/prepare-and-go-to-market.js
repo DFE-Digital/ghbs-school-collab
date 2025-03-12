@@ -115,4 +115,24 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/sign-off-bid-document-with-school', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/sign-off-bid-document-with-school', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/sign-off-bid-document-with-school', function (req, res) {
+    const tagSignOffBidDocumentWithSchool = req.session.data['tagSignOffBidDocumentWithSchool']
+
+    if (tagSignOffBidDocumentWithSchool.includes('Email pack to the school') &&
+        tagSignOffBidDocumentWithSchool.includes('Save approval screenshot in SharePoint') &&
+        tagSignOffBidDocumentWithSchool.includes('empty')){
+      req.session.data.tagSignOffBidDocumentWithSchoolStatus = 'complete'
+    } else if (tagSignOffBidDocumentWithSchool == ('empty')){
+      req.session.data.tagSignOffBidDocumentWithSchoolStatus = 'toDo'
+    } else {
+      req.session.data.tagSignOffBidDocumentWithSchoolStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
+  })
+
 }
