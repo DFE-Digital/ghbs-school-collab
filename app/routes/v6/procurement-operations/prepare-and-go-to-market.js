@@ -74,4 +74,25 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-methodology', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/evaluation-methodology', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-methodology', function (req, res) {
+    const tagEvaluationMethodology = req.session.data['tagEvaluationMethodology']
+
+    if (tagEvaluationMethodology.includes('Create evaluation methodology') &&
+        tagEvaluationMethodology.includes('Refine with school') &&
+        tagEvaluationMethodology.includes('Save final documents in SharePoint') &&
+        tagEvaluationMethodology.includes('empty')){
+      req.session.data.tagEvaluationMethodologyStatus = 'complete'
+    } else if (tagEvaluationMethodology == ('empty')){
+      req.session.data.tagEvaluationMethodologyStatus = 'toDo'
+    } else {
+      req.session.data.tagEvaluationMethodologyStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
+  })
+
 }
