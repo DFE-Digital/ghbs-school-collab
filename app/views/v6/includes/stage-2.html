@@ -3,8 +3,8 @@
 <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#TODO">
-        Call off document preparations
+      <a class="govuk-link govuk-task-list__link" href="prepare-and-go-to-market/call-off-document-preparation">
+        Call off document preparation
       </a>
     </div>
     <div class="govuk-task-list__status">
@@ -12,104 +12,6 @@
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
         <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#TODO">
-        Create specification
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(26) | govukDate("truncate") }} - {{ "today" | duration(27) | govukDate("truncate") }}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#TODO">
-        Create pricing schedule
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(27) | govukDate("truncate") }} - {{ "today" | duration(28) | govukDate("truncate") }}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#TODO">
-        Create quality questions
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(28) | govukDate("truncate") }} - {{ "today" | duration(29) | govukDate("truncate") }}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#TODO">
-        Create evaluation methodology
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(29) | govukDate("truncate") }} - {{ "today" | duration(30) | govukDate("truncate") }}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#TODO">
-        Sign off scoring and criteria
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(30) | govukDate("truncate") }} - {{ "today" | duration(31) | govukDate("truncate") }}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#TODO">
-        Get approval for next stage
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(31) | govukDate("truncate") }} - {{ "today" | duration(38) | govukDate("truncate") }}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#TODO">
-        Publish call off to competition
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(38) | govukDate("truncate") }} - {{ "today" | duration(38) | govukDate("truncate") }}  </strong>
       {% endif %}
     </div>
   </li>

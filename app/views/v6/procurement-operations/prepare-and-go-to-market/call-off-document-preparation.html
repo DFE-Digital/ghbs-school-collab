@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Call off document preparation" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335 Catering
+                  services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Call off document
+                  preparation</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="call-off-document-preparation" method="post" novalidate>
+            <div class="govuk-form-group">
+              {% include "../../includes/case-identifiers.html" %}
+              <h1 class="govuk-heading-l" id="page-title">Call off document
+                preparation</h1>
+              <p class="govuk-body">Work with the school to create the document
+                pack. Create, refine documents with schools then save them in
+                SharePoint.</p>
+              <p class="govuk-body">Schools are legally responsible for ensuring
+                procurements are compliant. They must formally approve the pack
+                before the tender can be published.</p>
+            </div>
+            <div class="govuk-button-group">
+              <h2 class="govuk-heading-m">Sub tasks</h2>
+            </div>
+            <div class="govuk-form-group">
+              <ul class="govuk-task-list">
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="refine-specification-with-school">
+                      Refine specification with school
+                    </a>
+                  </div>
+                  <div class="govuk-task-list__status">
+                    {% if (data['tagRefineSpecificationWithSchoolStatus'] == "complete") %}
+                      <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                    {% elseif (data['tagRefineSpecificationWithSchoolStatus'] == "inProgress") %}
+                      <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+                    {% else %}
+                      <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
+                    {% endif %}
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
+                Continue
+              </button>
+              <a class="govuk-link" href="../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
