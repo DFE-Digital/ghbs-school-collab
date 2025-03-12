@@ -135,4 +135,23 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/publish-call-off-to-competition', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/publish-call-off-to-competition', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/publish-call-off-to-competition', function (req, res) {
+    const tagPublishCallOffToCompetition = req.session.data['tagPublishCallOffToCompetition']
+
+    if (tagPublishCallOffToCompetition.includes('Publish on appropriate portal') &&
+        tagPublishCallOffToCompetition.includes('empty')){
+      req.session.data.tagPublishCallOffToCompetitionStatus = 'complete'
+    } else if (tagPublishCallOffToCompetition == ('empty')){
+      req.session.data.tagPublishCallOffToCompetitionStatus = 'toDo'
+    } else {
+      req.session.data.tagPublishCallOffToCompetitionStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
+  })
+
 }
