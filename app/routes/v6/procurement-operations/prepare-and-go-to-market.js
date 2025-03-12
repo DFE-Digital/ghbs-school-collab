@@ -7,6 +7,25 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation', function (req, res) {
+    const tagRefineSpecificationWithSchoolStatus = req.session.data['tagRefineSpecificationWithSchoolStatus']
+    const tagSetPricingScheduleStatus = req.session.data['tagSetPricingScheduleStatus']
+    const tagCreateQualityQuestionsStatus = req.session.data['tagCreateQualityQuestionsStatus']
+    const tagEvaluationMethodologyStatus = req.session.data['tagEvaluationMethodologyStatus']
+
+    if (tagRefineSpecificationWithSchoolStatus == 'complete' &&
+        tagSetPricingScheduleStatus == 'complete' &&
+        tagCreateQualityQuestionsStatus == 'complete' &&
+        tagEvaluationMethodologyStatus == 'complete'){
+      req.session.data.tagCallOffDocumentPreparationStatus = 'complete'
+    } else if (tagRefineSpecificationWithSchoolStatus == 'toDo' &&
+               tagSetPricingScheduleStatus == 'toDo' &&
+               tagCreateQualityQuestionsStatus == 'toDo' &&
+               tagEvaluationMethodologyStatus == 'toDo'){
+      req.session.data.tagCallOffDocumentPreparationStatus = 'toDo'
+    } else {
+      req.session.data.tagCallOffDocumentPreparationStatus = 'inProgress'
+    }
+
 
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
