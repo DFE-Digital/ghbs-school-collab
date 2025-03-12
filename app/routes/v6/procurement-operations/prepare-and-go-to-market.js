@@ -32,4 +32,25 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/set-pricing-schedule', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/set-pricing-schedule', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/set-pricing-schedule', function (req, res) {
+    const tagSetPricingSchedule = req.session.data['tagSetPricingSchedule']
+
+    if (tagSetPricingSchedule.includes('Create pricing schedule') &&
+        tagSetPricingSchedule.includes('Refine with school') &&
+        tagSetPricingSchedule.includes('Save final documents in SharePoint') &&
+        tagSetPricingSchedule.includes('empty')){
+      req.session.data.tagSetPricingScheduleStatus = 'complete'
+    } else if (tagSetPricingSchedule == ('empty')){
+      req.session.data.tagSetPricingScheduleStatus = 'toDo'
+    } else {
+      req.session.data.tagSetPricingScheduleStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
+  })
+
 }

@@ -59,6 +59,22 @@
                     {% endif %}
                   </div>
                 </li>
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="set-pricing-schedule">
+                      Set pricing schedule
+                    </a>
+                  </div>
+                  <div class="govuk-task-list__status">
+                    {% if (data['tagSetPricingScheduleStatus'] == "complete") %}
+                      <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                    {% elseif (data['tagSetPricingScheduleStatus'] == "inProgress") %}
+                      <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+                    {% else %}
+                      <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
+                    {% endif %}
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="govuk-button-group">
