@@ -95,4 +95,24 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/get-g7-approval', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/get-g7-approval', {})
+  })
+
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/get-g7-approval', function (req, res) {
+    const tagGetG7Approval = req.session.data['tagGetG7Approval']
+
+    if (tagGetG7Approval.includes('Make the pack') &&
+        tagGetG7Approval.includes('Approved by G7') &&
+        tagGetG7Approval.includes('empty')){
+      req.session.data.tagGetG7ApprovalStatus = 'complete'
+    } else if (tagGetG7Approval == ('empty')){
+      req.session.data.tagGetG7ApprovalStatus = 'toDo'
+    } else {
+      req.session.data.tagGetG7ApprovalStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
+  })
+
 }
