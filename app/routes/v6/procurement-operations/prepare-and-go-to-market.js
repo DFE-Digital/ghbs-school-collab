@@ -112,7 +112,7 @@ module.exports = function (router) {
       req.session.data.tagGetG7ApprovalStatus = 'inProgress'
     }
 
-    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
+    res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
   router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/sign-off-bid-document-with-school', function (req, res) {
@@ -132,7 +132,7 @@ module.exports = function (router) {
       req.session.data.tagSignOffBidDocumentWithSchoolStatus = 'inProgress'
     }
 
-    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
+    res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
   router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/publish-call-off-to-competition', function (req, res) {
@@ -151,7 +151,7 @@ module.exports = function (router) {
       req.session.data.tagPublishCallOffToCompetitionStatus = 'inProgress'
     }
 
-    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
+    res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
 }

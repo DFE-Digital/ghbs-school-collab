@@ -107,38 +107,6 @@
                     {% endif %}
                   </div>
                 </li>
-                <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                  <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="get-g7-approval">
-                      Get G7 approval
-                    </a>
-                  </div>
-                  <div class="govuk-task-list__status">
-                    {% if (data['tagGetG7ApprovalStatus'] == "complete") %}
-                      <strong class="govuk-tag govuk-tag--green">Complete</strong>
-                    {% elseif (data['tagGetG7ApprovalStatus'] == "inProgress") %}
-                      <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-                    {% else %}
-                      <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
-                    {% endif %}
-                  </div>
-                </li>
-                <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                  <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="sign-off-bid-document-with-school">
-                      Sign off bid document with school
-                    </a>
-                  </div>
-                  <div class="govuk-task-list__status">
-                    {% if (data['tagSignOffBidDocumentWithSchoolStatus'] == "complete") %}
-                      <strong class="govuk-tag govuk-tag--green">Complete</strong>
-                    {% elseif (data['tagSignOffBidDocumentWithSchoolStatus'] == "inProgress") %}
-                      <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-                    {% else %}
-                      <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
-                    {% endif %}
-                  </div>
-                </li>
               </ul>
             </div>
             <div class="govuk-button-group">
