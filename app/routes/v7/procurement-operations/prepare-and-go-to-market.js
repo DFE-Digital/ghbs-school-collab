@@ -82,9 +82,10 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/create-quality-questions', function (req, res) {
     const tagCreateQualityQuestions = req.session.data['tagCreateQualityQuestions']
 
-    if (tagCreateQualityQuestions.includes('School needs recorded as compliant questions') &&
-        tagCreateQualityQuestions.includes('Agree quality questions and weighting with school') &&
-        tagCreateQualityQuestions.includes('Save final documents in SharePoint') &&
+    if (tagCreateQualityQuestions.includes('Create quality questions document') &&
+        tagCreateQualityQuestions.includes('Refine quality questions with school') &&
+        tagCreateQualityQuestions.includes('Agree quality questions with school') &&
+        tagCreateQualityQuestions.includes('Save quality questions document in SharePoint') &&
         tagCreateQualityQuestions.includes('empty')){
       req.session.data.tagCreateQualityQuestionsStatus = 'complete'
     } else if (tagCreateQualityQuestions == ('empty')){
