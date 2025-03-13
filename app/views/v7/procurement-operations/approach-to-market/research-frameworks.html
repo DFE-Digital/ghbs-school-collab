@@ -34,11 +34,6 @@
                   <strong class="govuk-tag govuk-tag--red govuk-!-margin-right-5">Overdue</strong>
                   <a href="../../common/change-due-date?dueDateTask=Research%20frameworks" class="govuk-link">Change due date</a>
                 </p>
-              {% else %}
-              <p class="govuk-body">
-                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-right-5">Due: {{ (data['researchFrameworksDate']) | govukDate("truncate") }} </strong>
-                <a href="../../common/change-due-date?dueDateTask=Research%20frameworks" class="govuk-link">Change due date</a>
-              </p>
               {% endif %}
             </div>
             <div class="govuk-form-group">
