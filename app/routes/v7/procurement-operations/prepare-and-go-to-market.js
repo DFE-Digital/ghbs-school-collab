@@ -146,6 +146,7 @@ module.exports = function (router) {
     const tagSignOffBidDocumentWithSchool = req.session.data['tagSignOffBidDocumentWithSchool']
 
     if (tagSignOffBidDocumentWithSchool.includes('Email pack to the school') &&
+        tagSignOffBidDocumentWithSchool.includes('Approval from school recieved') &&
         tagSignOffBidDocumentWithSchool.includes('Save approval screenshot in SharePoint') &&
         tagSignOffBidDocumentWithSchool.includes('empty')){
       req.session.data.tagSignOffBidDocumentWithSchoolStatus = 'complete'
