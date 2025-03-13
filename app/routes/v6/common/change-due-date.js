@@ -1,6 +1,6 @@
 module.exports = function (router) {
 
-  var version = "v5";
+  var version = "v6";
 
   router.get('/' + version + '/common/change-due-date', function (req, res) {
     res.render(version + '/common/change-due-date', {})

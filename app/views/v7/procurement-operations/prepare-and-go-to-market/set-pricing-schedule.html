@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Set pricing schedule" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Set pricing schedule</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Set pricing schedule</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="set-pricing-schedule" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Choose the correct <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
+                SharePoint template (opens in new tab)</a>, and
+                check that the formulas are correct.</p>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help setting the pricing schedule
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">The pricing schedule is and itemised
+                    list of the costs for the tender. Find the appropriate
+                    template in SharePoint for the category or procurement then.
+                  </p>
+                  <p class="govuk-body">Create a tab for each school in the
+                    procurement.</p>
+                  <p class="govuk-body">Setting the pricing schedule for goods
+                    is more simple, as you will list physical items and the
+                    number needed.</p>
+                  <p class="govuk-body">When procuring services consider:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>call out costs</li>
+                    <li>the cost of replacement parts</li>
+                    <li>labour costs for repairs</li>
+                    <li>the cost of consumables</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSetPricingSchedule-1" name="tagSetPricingSchedule" type="checkbox" value="Create pricing schedule" {{ checked("tagSetPricingSchedule", "Create pricing schedule") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSetPricingSchedule-1">
+                      Create pricing schedule
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSetPricingSchedule-2" name="tagSetPricingSchedule" type="checkbox" value="Refine with school" {{ checked("tagSetPricingSchedule", "Refine with school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSetPricingSchedule-2">
+                      Refine with school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSetPricingSchedule-3" name="tagSetPricingSchedule" type="checkbox" value="Save final documents in SharePoint" {{ checked("tagSetPricingSchedule", "Save final documents in SharePoint") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSetPricingSchedule-3">
+                      Save final documents in SharePoint
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagSetPricingSchedule-0" name="tagSetPricingSchedule" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSetPricingSchedule-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="call-off-document-preparation">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

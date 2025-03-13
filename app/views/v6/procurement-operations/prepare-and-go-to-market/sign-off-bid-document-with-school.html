@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Sign off bid document with school" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Sign off bid
+                  document with school</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Sign off bid document with school</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="sign-off-bid-document-with-school" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Share the pack with the school so that they
+                can formally approve all documents. Emphasize that they will be
+                legally responsible for ensuring compliance. Schools must reply
+                to your email to confirm approval of the pack.</p>
+              <p class="govuk-body">If you have lots of documents, consider
+                combining them into a single zip file.</p>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSignOffBidDocumentWithSchool-1" name="tagSignOffBidDocumentWithSchool" type="checkbox" value="Email pack to the school" {{ checked("tagSignOffBidDocumentWithSchool", "Email pack to the school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSignOffBidDocumentWithSchool-1">
+                      Email pack to the school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSignOffBidDocumentWithSchool-2" name="tagSignOffBidDocumentWithSchool" type="checkbox" value="Save approval screenshot in SharePoint" {{ checked("tagSignOffBidDocumentWithSchool", "Save approval screenshot in SharePoint") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSignOffBidDocumentWithSchool-2">
+                      Save approval screenshot in SharePoint
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagSignOffBidDocumentWithSchool-0" name="tagSignOffBidDocumentWithSchool" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSignOffBidDocumentWithSchool-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="call-off-document-preparation">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

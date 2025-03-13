@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Create quality questions" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Create quality
+                  questions</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Create quality questions</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="create-quality-questions" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Choose the correct <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
+                SharePoint template (opens in new tab)</a>, and
+                work with the school to create questions that identify the
+                best suppliers in a compliant way.</p>
+              <p class="govuk-body">Consider setting word limits and using
+                threshold (mandatory) or scored questions.</p>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help creating quality questions
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">Help schools convert their needs into
+                    compliant quality questions that identify the best suppliers.
+                  </p>
+                  <p class="govuk-body">Threshold questions are mandatory, and
+                    must be met for the supplier to be considered. Scored
+                    questions provide a way to compare answers between suppliers,
+                    but no supplier will be excluded regardless of score awarded.
+                  </p>
+                  <p class="govuk-body">Threshold questions normally start with
+                    "you must" and scored questions usually start with
+                    "demonstrate how you will".
+                  </p>
+                </div>
+              </details>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagCreateQualityQuestions-1" name="tagCreateQualityQuestions" type="checkbox" value="School needs recorded as compliant questions" {{ checked("tagCreateQualityQuestions", "School needs recorded as compliant questions") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCreateQualityQuestions-1">
+                      School needs recorded as compliant questions
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagCreateQualityQuestions-2" name="tagCreateQualityQuestions" type="checkbox" value="Agree quality questions and weighting with school" {{ checked("tagCreateQualityQuestions", "Agree quality questions and weighting with school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCreateQualityQuestions-2">
+                      Agree quality questions and weighting with school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagCreateQualityQuestions-3" name="tagCreateQualityQuestions" type="checkbox" value="Save final documents in SharePoint" {{ checked("tagCreateQualityQuestions", "Save final documents in SharePoint") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCreateQualityQuestions-3">
+                      Save final documents in SharePoint
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagCreateQualityQuestions-0" name="tagCreateQualityQuestions" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCreateQualityQuestions-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="call-off-document-preparation">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

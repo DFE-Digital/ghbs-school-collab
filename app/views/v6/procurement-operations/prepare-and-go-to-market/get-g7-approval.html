@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Get G7 approval" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Get G7 approval</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Get G7 approval</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="get-g7-approval" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Your procurement must be approved by G7
+                before they are shared with schools. This is normally your line
+                manager.</p>
+              <p class="govuk-body">The G7 will review the full pack to check:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>evaluation methodology</li>
+                <li>calculations in spreadsheets are correct</li>
+                <li>each fundamental part of the pack and any appendices are
+                  included</li>
+              </ul>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagGetG7Approval-1" name="tagGetG7Approval" type="checkbox" value="Make the pack" {{ checked("tagGetG7Approval", "Make the pack") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagGetG7Approval-1">
+                      Make the pack
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagGetG7Approval-2" name="tagGetG7Approval" type="checkbox" value="Approved by G7" {{ checked("tagGetG7Approval", "Approved by G7") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagGetG7Approval-2">
+                      Approved by G7
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagGetG7Approval-0" name="tagGetG7Approval" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagGetG7Approval-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="call-off-document-preparation">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
