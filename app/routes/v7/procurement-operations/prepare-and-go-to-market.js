@@ -61,8 +61,9 @@ module.exports = function (router) {
     const tagSetPricingSchedule = req.session.data['tagSetPricingSchedule']
 
     if (tagSetPricingSchedule.includes('Create pricing schedule') &&
-        tagSetPricingSchedule.includes('Refine with school') &&
-        tagSetPricingSchedule.includes('Save final documents in SharePoint') &&
+        tagSetPricingSchedule.includes('Refine pricing schedule with school') &&
+        tagSetPricingSchedule.includes('Agree pricing schedule with school') &&
+        tagSetPricingSchedule.includes('Save pricing schedule to SharePoint') &&
         tagSetPricingSchedule.includes('empty')){
       req.session.data.tagSetPricingScheduleStatus = 'complete'
     } else if (tagSetPricingSchedule == ('empty')){
