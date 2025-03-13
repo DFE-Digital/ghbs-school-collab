@@ -105,8 +105,8 @@ module.exports = function (router) {
     const tagEvaluationMethodology = req.session.data['tagEvaluationMethodology']
 
     if (tagEvaluationMethodology.includes('Create evaluation methodology') &&
-        tagEvaluationMethodology.includes('Refine with school') &&
-        tagEvaluationMethodology.includes('Save final documents in SharePoint') &&
+        tagEvaluationMethodology.includes('Refine evaluation methodology with school') &&
+        tagEvaluationMethodology.includes('Save evaluation methodology document in SharePoint') &&
         tagEvaluationMethodology.includes('empty')){
       req.session.data.tagEvaluationMethodologyStatus = 'complete'
     } else if (tagEvaluationMethodology == ('empty')){
