@@ -37,9 +37,11 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/refine-specification-with-school', function (req, res) {
     const tagRefineSpecificationWithSchool = req.session.data['tagRefineSpecificationWithSchool']
 
-    if (tagRefineSpecificationWithSchool.includes('Edit down template') &&
-        tagRefineSpecificationWithSchool.includes('Refine with school') &&
-        tagRefineSpecificationWithSchool.includes('Save final documents in SharePoint') &&
+    if (tagRefineSpecificationWithSchool.includes('Select relevant specification template') &&
+        tagRefineSpecificationWithSchool.includes('Populate and refine specification') &&
+        tagRefineSpecificationWithSchool.includes('Meeting with school to refine specification') &&
+        tagRefineSpecificationWithSchool.includes('Agree specification with school') &&
+        tagRefineSpecificationWithSchool.includes('Save specification to SharePoint') &&
         tagRefineSpecificationWithSchool.includes('empty')){
       req.session.data.tagRefineSpecificationWithSchoolStatus = 'complete'
     } else if (tagRefineSpecificationWithSchool == ('empty')){
@@ -59,8 +61,9 @@ module.exports = function (router) {
     const tagSetPricingSchedule = req.session.data['tagSetPricingSchedule']
 
     if (tagSetPricingSchedule.includes('Create pricing schedule') &&
-        tagSetPricingSchedule.includes('Refine with school') &&
-        tagSetPricingSchedule.includes('Save final documents in SharePoint') &&
+        tagSetPricingSchedule.includes('Refine pricing schedule with school') &&
+        tagSetPricingSchedule.includes('Agree pricing schedule with school') &&
+        tagSetPricingSchedule.includes('Save pricing schedule to SharePoint') &&
         tagSetPricingSchedule.includes('empty')){
       req.session.data.tagSetPricingScheduleStatus = 'complete'
     } else if (tagSetPricingSchedule == ('empty')){
@@ -79,9 +82,10 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/create-quality-questions', function (req, res) {
     const tagCreateQualityQuestions = req.session.data['tagCreateQualityQuestions']
 
-    if (tagCreateQualityQuestions.includes('School needs recorded as compliant questions') &&
-        tagCreateQualityQuestions.includes('Agree quality questions and weighting with school') &&
-        tagCreateQualityQuestions.includes('Save final documents in SharePoint') &&
+    if (tagCreateQualityQuestions.includes('Create quality questions document') &&
+        tagCreateQualityQuestions.includes('Refine quality questions with school') &&
+        tagCreateQualityQuestions.includes('Agree quality questions with school') &&
+        tagCreateQualityQuestions.includes('Save quality questions document in SharePoint') &&
         tagCreateQualityQuestions.includes('empty')){
       req.session.data.tagCreateQualityQuestionsStatus = 'complete'
     } else if (tagCreateQualityQuestions == ('empty')){
@@ -101,8 +105,8 @@ module.exports = function (router) {
     const tagEvaluationMethodology = req.session.data['tagEvaluationMethodology']
 
     if (tagEvaluationMethodology.includes('Create evaluation methodology') &&
-        tagEvaluationMethodology.includes('Refine with school') &&
-        tagEvaluationMethodology.includes('Save final documents in SharePoint') &&
+        tagEvaluationMethodology.includes('Refine evaluation methodology with school') &&
+        tagEvaluationMethodology.includes('Save evaluation methodology document in SharePoint') &&
         tagEvaluationMethodology.includes('empty')){
       req.session.data.tagEvaluationMethodologyStatus = 'complete'
     } else if (tagEvaluationMethodology == ('empty')){
@@ -142,6 +146,7 @@ module.exports = function (router) {
     const tagSignOffBidDocumentWithSchool = req.session.data['tagSignOffBidDocumentWithSchool']
 
     if (tagSignOffBidDocumentWithSchool.includes('Email pack to the school') &&
+        tagSignOffBidDocumentWithSchool.includes('Approval from school recieved') &&
         tagSignOffBidDocumentWithSchool.includes('Save approval screenshot in SharePoint') &&
         tagSignOffBidDocumentWithSchool.includes('empty')){
       req.session.data.tagSignOffBidDocumentWithSchoolStatus = 'complete'

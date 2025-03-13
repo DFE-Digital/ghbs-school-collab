@@ -29,31 +29,26 @@
         <div class="govuk-grid-column-two-thirds">
           <form action="set-pricing-schedule" method="post" novalidate>
             <div class="govuk-form-group">
-              <p class="govuk-body">Choose the correct <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
-                SharePoint template (opens in new tab)</a>, and
-                check that the formulas are correct.</p>
+              <p class="govuk-body">Select the correct <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
+                pricing schedule template from SharePoint (opens in new tab)</a>,
+                to create an itemised pricing schedule for the procurement.</p>
+              <p class="govuk-body">If buying for multiple schools, each school
+                should have its own tab on the pricing schedule.</p>
               <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
-                    Help setting the pricing schedule
+                    Help with creating the pricing schedule
                   </span>
                 </summary>
                 <div class="govuk-details__text">
-                  <p class="govuk-body">The pricing schedule is and itemised
-                    list of the costs for the tender. Find the appropriate
-                    template in SharePoint for the category or procurement then.
-                  </p>
-                  <p class="govuk-body">Create a tab for each school in the
-                    procurement.</p>
-                  <p class="govuk-body">Setting the pricing schedule for goods
-                    is more simple, as you will list physical items and the
-                    number needed.</p>
-                  <p class="govuk-body">When procuring services consider:</p>
+                  <p class="govuk-body">The pricing schedule is an itemised
+                    list making up the total contract value.</p>
+                  <p class="govuk-body">Make sure you think about longer term
+                    costs associated with this procurement, such as:</p>
                   <ul class="govuk-list govuk-list--bullet">
-                    <li>call out costs</li>
-                    <li>the cost of replacement parts</li>
-                    <li>labour costs for repairs</li>
-                    <li>the cost of consumables</li>
+                    <li>On-going support</li>
+                    <li>Call-out costs for technicians and engineers</li>
+                    <li>Spare parts and replacements</li>
                   </ul>
                 </div>
               </details>
@@ -69,15 +64,21 @@
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagSetPricingSchedule-2" name="tagSetPricingSchedule" type="checkbox" value="Refine with school" {{ checked("tagSetPricingSchedule", "Refine with school") }}>
+                    <input class="govuk-checkboxes__input" id="tagSetPricingSchedule-2" name="tagSetPricingSchedule" type="checkbox" value="Refine pricing schedule with school" {{ checked("tagSetPricingSchedule", "Refine pricing schedule with school") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagSetPricingSchedule-2">
-                      Refine with school
+                      Refine pricing schedule with school
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagSetPricingSchedule-3" name="tagSetPricingSchedule" type="checkbox" value="Save final documents in SharePoint" {{ checked("tagSetPricingSchedule", "Save final documents in SharePoint") }}>
+                    <input class="govuk-checkboxes__input" id="tagSetPricingSchedule-3" name="tagSetPricingSchedule" type="checkbox" value="Agree pricing schedule with school" {{ checked("tagSetPricingSchedule", "Agree pricing schedule with school") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagSetPricingSchedule-3">
-                      Save final documents in SharePoint
+                      Agree pricing schedule with school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSetPricingSchedule-4" name="tagSetPricingSchedule" type="checkbox" value="Save pricing schedule to SharePoint" {{ checked("tagSetPricingSchedule", "Save pricing schedule to SharePoint") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSetPricingSchedule-4">
+                      Save pricing schedule to SharePoint
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item" style="display: none;">

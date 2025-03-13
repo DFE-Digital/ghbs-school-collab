@@ -29,17 +29,28 @@
         <div class="govuk-grid-column-two-thirds">
           <form action="get-g7-approval" method="post" novalidate>
             <div class="govuk-form-group">
-              <p class="govuk-body">Your procurement must be approved by G7
-                before they are shared with schools. This is normally your line
-                manager.</p>
-              <p class="govuk-body">The G7 will review the full pack to check:</p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>evaluation methodology</li>
-                <li>calculations in spreadsheets are correct</li>
-                <li>each fundamental part of the pack and any appendices are
-                  included</li>
-              </ul>
+              <p class="govuk-body">Combine all the call off documents into a
+                single pack and get approval from a G7.</p>
             </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Help with G7 approval
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">The G7 who will give approval will usually
+                  be your line manager. They will check:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>All documents are included in the pack/li>
+                    <li>The name of the school is correct in all places</li>
+                    <li>The calculations in the spreadsheets are correct</li>
+                    <li>The evaluation methodology is compliant with existing legislation</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </div>
             <div class="govuk-form-group">
               <h2 class="govuk-heading-m">Actions</h2>
               <fieldset class="govuk-fieldset">
@@ -47,13 +58,13 @@
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="tagGetG7Approval-1" name="tagGetG7Approval" type="checkbox" value="Make the pack" {{ checked("tagGetG7Approval", "Make the pack") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagGetG7Approval-1">
-                      Make the pack
+                      Create document pack and save in SharePoint
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="tagGetG7Approval-2" name="tagGetG7Approval" type="checkbox" value="Approved by G7" {{ checked("tagGetG7Approval", "Approved by G7") }}>
                     <label class="govuk-label govuk-checkboxes__label" for="tagGetG7Approval-2">
-                      Approved by G7
+                      Get approval from G7
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item" style="display: none;">
@@ -69,7 +80,7 @@
               <button type="submit" class="govuk-button" data-module="govuk-button">
                 Save and continue
               </button>
-              <a class="govuk-link" href="call-off-document-preparation">Cancel</a>
+              <a class="govuk-link" href="../procurement">Cancel</a>
             </div>
           </form>
         </div>
