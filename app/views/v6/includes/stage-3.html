@@ -1,58 +1,58 @@
-<span class="govuk-caption-m">Complete on {{ "today" | duration(5, "months") | govukDate("truncate") }}</span>
+<span class="govuk-caption-m">Complete on {{ data['sendBidderNotificationLettersEndDate'] }}</span>
 <h3 class="govuk-heading-m">3. Decide</h3>
 <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">Call off deadline</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(38) | govukDate("truncate") }} - {{ "today" | duration(59) | govukDate("truncate") }}</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ data['callOffDeadlineStartDate'] }} - {{ data['callOffDeadlineEndDate'] }}</strong>
     </div>
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">Evaluate tenders</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(59) | govukDate("truncate") }} - {{ "today" | duration(71) | govukDate("truncate") }}</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ data['evaluateTendersStartDate'] }} - {{ data['evaluateTendersEndDate'] }}</strong>
     </div>
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">Moderation meeting</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(71) | govukDate("truncate") }} - {{ "today" | duration(72) | govukDate("truncate") }}</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ data['moderationMeetingStartDate'] }} - {{ data['moderationMeetingEndDate'] }}</strong>
     </div>
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">Finalise model and comments</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(72) | govukDate("truncate") }} - {{ "today" | duration(75) | govukDate("truncate") }}</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ data['finaliseModelAndCommentsStartDate'] }} - {{ data['finaliseModelAndCommentsEndDate'] }}</strong>
     </div>
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">School sign off moderation and award decision</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(75) | govukDate("truncate") }} - {{ "today" | duration(80) | govukDate("truncate") }}</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ data['schoolSignOffModerationStartDate'] }} - {{ data['schoolSignOffModerationEndDate'] }}</strong>
     </div>
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">Create stage 3 report</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(80) | govukDate("truncate") }} - {{ "today" | duration(85) | govukDate("truncate") }}</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ data['createStage3ReportStartDate'] }} - {{ data['createStage3ReportEndDate'] }}</strong>
     </div>
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">Approval of stage 3 report by CAB or G7</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(85) | govukDate("truncate") }} - {{ "today" | duration(86) | govukDate("truncate") }}</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ data['approvalStage3ReportStartDate'] }} - {{ data['approvalStage3ReportEndDate'] }}</strong>
     </div>
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">Complete bidder notification letters</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(86) | govukDate("truncate") }} - {{ "today" | duration(87) | govukDate("truncate") }}</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ data['completeBidderNotificationStartDate'] }} - {{ data['completeBidderNotificationEndDate'] }}</strong>
     </div>
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">Send bidder notification letters</div>
     <div class="govuk-task-list__status">
-      <strong class="govuk-tag govuk-tag--grey">{{ "today" | duration(87) | govukDate("truncate") }} - {{ "today" | duration(88) | govukDate("truncate") }}</strong>
+      <strong class="govuk-tag govuk-tag--grey">{{ data['sendBidderNotificationLettersStartDate'] }} - {{ data['sendBidderNotificationLettersEndDate'] }}</strong>
     </div>
   </li>
 </ul>

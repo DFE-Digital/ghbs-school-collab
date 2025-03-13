@@ -19,6 +19,7 @@ module.exports = {
   'stage1Duration' : '45',
 
   // Task start and end dates
+  // Stage 1
   'handoverFromTriageStartDate' : '22 Feb 2025',
   'handoverFromTriageEndDate' : '23 Feb 2025',
   'discussSchoolRequirementsStartDate' : '23 Feb 2025',
@@ -42,7 +43,68 @@ module.exports = {
   'approvalFromSchoolOnApproachStartDate' : '9 Mar 2025',
   'approvalFromSchoolOnApproachEndDate' : '20 Mar 2025',
 
+  // Stage 2 tasks
+  'callOffDocumentPreparationStartDate': '4 Apr 2025',
+  'callOffDocumentPreparationEndDate': '8 Apr 2025',
+  'createSpecificationStartDate': '4 Apr 2025',
+  'createSpecificationEndDate': '6 Apr 2025',
+  'createPricingScheduleStartDate': '6 Apr 2025',
+  'createPricingScheduleEndDate': '9 Apr 2025',
+  'createQualityQuestionsStartDate': '9 Apr 2025',
+  'createQualityQuestionsEndDate': '11 Apr 2025',
+  'createEvaluationMethodologyStartDate': '11 Apr 2025',
+  'createEvaluationMethodologyEndDate': '12 Apr 2025',
+  'signOffScoringAndCriteriaStartDate': '12 Apr 2025',
+  'signOffScoringAndCriteriaEndDate': '14 Apr 2025',
+  'getG7ApprovalStartDate': '15 Apr 2025',
+  'getG7ApprovalEndDate': '17 Apr 2025',
+  'signOffBidDocumentWithSchoolStartDate': '17 Apr 2025',
+  'signOffBidDocumentWithSchoolEndDate': '21 Apr 2025',
+  'publishCallOffToCompetitionStartDate': '21 Apr 2025',
+  'publishCallOffToCompetitionEndDate': '16 May 2025',
+
+  // Stage 3 tasks
+  'callOffDeadlineStartDate': '16 May 2025',
+  'callOffDeadlineEndDate': '23 May 2025',
+  'evaluateTendersStartDate': '23 May 2025',
+  'evaluateTendersEndDate': '30 May 2025',
+  'moderationMeetingStartDate': '30 May 2025',
+  'moderationMeetingEndDate': '6 Jun 2025',
+  'finaliseModelAndCommentsStartDate': '6 Jun 2025',
+  'finaliseModelAndCommentsEndDate': '13 Jun 2025',
+  'schoolSignOffModerationStartDate': '13 Jun 2025',
+  'schoolSignOffModerationEndDate': '20 Jun 2025',
+  'createStage3ReportStartDate': '20 Jun 2025',
+  'createStage3ReportEndDate': '27 Jun 2025',
+  'approvalStage3ReportStartDate': '27 Jun 2025',
+  'approvalStage3ReportEndDate': '4 Jul 2025',
+  'completeBidderNotificationStartDate': '4 Jul 2025',
+  'completeBidderNotificationEndDate': '11 Jul 2025',
+  'sendBidderNotificationLettersStartDate': '11 Jul 2025',
+  'sendBidderNotificationLettersEndDate': '18 Jul 2025',
+
+  // Stage 4 tasks
+  'observe10DayStandstillStartDate': '18 Jul 2025',
+  'observe10DayStandstillEndDate': '25 Jul 2025',
+  'finaliseCallOffContractStartDate': '25 Jul 2025',
+  'finaliseCallOffContractEndDate': '1 Aug 2025',
+  'sendContractToSchoolStartDate': '1 Aug 2025',
+  'sendContractToSchoolEndDate': '8 Aug 2025',
+  'tupeInformationStartDate': '8 Aug 2025',
+  'tupeInformationEndDate': '15 Aug 2025',
+  'updateSuccessfulProviderStartDate': '15 Aug 2025',
+  'updateSuccessfulProviderEndDate': '18 Aug 2025',
+  'completeHandoverDocumentStartDate': '18 Aug 2025',
+  'completeHandoverDocumentEndDate': '20 Aug 2025',
+  'recordSavingsAndFinaliseCmsStartDate': '20 Aug 2025',
+  'recordSavingsAndFinaliseCmsEndDate': '22 Aug 2025',
+  'sendFtsContractAwardNoticeStartDate': '22 Aug 2025',
+  'sendFtsContractAwardNoticeEndDate': '24 Aug 2025',
+  'resolveCaseOnCmsStartDate': '24 Aug 2025',
+  'resolveCaseOnCmsEndDate': '26 Aug 2025',
+
   // Tasks with errors
   'tagResearchFrameworksStatus': 'overdue',
   'tagRecordRouteToMarketStatus': 'overdue'
+
 }
