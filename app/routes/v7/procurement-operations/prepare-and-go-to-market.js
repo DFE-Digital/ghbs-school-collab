@@ -166,7 +166,7 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/publish-call-off-to-competition', function (req, res) {
     const tagPublishCallOffToCompetition = req.session.data['tagPublishCallOffToCompetition']
 
-    if (tagPublishCallOffToCompetition.includes('Publish on appropriate portal') &&
+    if (tagPublishCallOffToCompetition.includes('Publish on relevant portal') &&
         tagPublishCallOffToCompetition.includes('empty')){
       req.session.data.tagPublishCallOffToCompetitionStatus = 'complete'
     } else if (tagPublishCallOffToCompetition == ('empty')){
