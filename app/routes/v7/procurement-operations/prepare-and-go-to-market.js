@@ -37,9 +37,11 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/refine-specification-with-school', function (req, res) {
     const tagRefineSpecificationWithSchool = req.session.data['tagRefineSpecificationWithSchool']
 
-    if (tagRefineSpecificationWithSchool.includes('Edit down template') &&
-        tagRefineSpecificationWithSchool.includes('Refine with school') &&
-        tagRefineSpecificationWithSchool.includes('Save final documents in SharePoint') &&
+    if (tagRefineSpecificationWithSchool.includes('Select relevant specification template') &&
+        tagRefineSpecificationWithSchool.includes('Populate and refine specification') &&
+        tagRefineSpecificationWithSchool.includes('Meeting with school to refine specification') &&
+        tagRefineSpecificationWithSchool.includes('Agree specification with school') &&
+        tagRefineSpecificationWithSchool.includes('Save specification to SharePoint') &&
         tagRefineSpecificationWithSchool.includes('empty')){
       req.session.data.tagRefineSpecificationWithSchoolStatus = 'complete'
     } else if (tagRefineSpecificationWithSchool == ('empty')){
