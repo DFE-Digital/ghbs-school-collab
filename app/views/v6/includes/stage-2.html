@@ -12,6 +12,8 @@
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% elseif (data['tagCallOffDocumentPreparationStatus'] == "inProgress") %}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
       {% endif %}
     </div>
   </li>
