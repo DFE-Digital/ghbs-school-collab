@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Research frameworks" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Research frameworks</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Research frameworks</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="research-frameworks" method="post" novalidate>
+            <div class="govuk-form-group">
+              {% if (data['researchFrameworksError'] == "true") %}
+                <p class="govuk-body">
+                  <strong class="govuk-tag govuk-tag--red govuk-!-margin-right-5">Overdue</strong>
+                  <a href="../../common/change-due-date?dueDateTask=Research%20frameworks" class="govuk-link">Change due date</a>
+                </p>
+              {% else %}
+              <p class="govuk-body">
+                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-right-5">Due: {{ (data['researchFrameworksDate']) | govukDate("truncate") }} </strong>
+                <a href="../../common/change-due-date?dueDateTask=Research%20frameworks" class="govuk-link">Change due date</a>
+              </p>
+              {% endif %}
+            </div>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Identify suitable existing frameworks, while
+                considering specific school needs such as including incumbent
+                suppliers as this might limit frameworks that can be used.
+                Expressions of interest can also be considered</p>
+              <p class="govuk-body">Bespoke frameworks should only be considered
+                if no existing framework meets the school's needs.</p>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagResearchFrameworks" name="tagResearchFrameworks" type="checkbox" value="Research suitable existing frameworks" {{ checked("tagResearchFrameworks", "Research suitable existing frameworks") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagResearchFrameworks">
+                      Research suitable existing frameworks
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagResearchFrameworks-2" name="tagResearchFrameworks" type="checkbox" value="Discuss frameworks with the school" {{ checked("tagResearchFrameworks", "Discuss frameworks with the school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagResearchFrameworks-2">
+                      Discuss frameworks with the school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagResearchFrameworks-3" name="tagResearchFrameworks" type="checkbox" value="Agree framework for procurement" {{ checked("tagResearchFrameworks", "Agree framework for procurement") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagResearchFrameworks-3">
+                      Agree framework for procurement
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagResearchFrameworks-0" name="tagResearchFrameworks" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagResearchFrameworks-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+              </button>
+              <a class="govuk-link" href="../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends "layouts/main.html" %}
+
+{% if (data['costThresholdStatus'] == "This procurement is above the relevant threshold") %}
+  {% set pageName="Get CAB approval" %}
+{% elseif (data['costThresholdStatus'] == "This procurement is below the relevant threshold") %}
+  {% set pageName="Get G7 approval" %}
+{% else %}
+  {% set pageName="Get CAB/G7 approval" %}
+{% endif %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335 Catering
+                  services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">
+                  {% if (data['costThresholdStatus'] == "Above the relevant threshold") %}
+                    Get CAB approval
+                  {% elseif (data['costThresholdStatus'] == "Below the relevant threshold") %}
+                    Get G7 approval
+                  {% else %}
+                    Get CAB/G7 approval
+                  {% endif %}
+                </a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">
+            {% if (data['costThresholdStatus'] == "Above the relevant threshold") %}
+              Get CAB approval
+            {% elseif (data['costThresholdStatus'] == "Below the relevant threshold") %}
+              Get G7 approval
+            {% else %}
+              Get CAB/G7 approval
+            {% endif %}
+          </h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="get-approval-for-next-stage" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">
+                {% if (data['costThresholdStatus'] == "Above the relevant threshold") %}
+                  <p class="govuk-body">Procurements above the cost threshold
+                    requires approval from the Commercial advisory
+                    board. Follow the process outlined in the <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
+                      commercial operating model (opens in new tab)</a>.
+                  </p>
+                {% elseif (data['costThresholdStatus'] == "Below the relevant threshold") %}
+                  <p class="govuk-body">Procurements below the cost thresholds
+                    require approval from a G7. Follow the process outlined in
+                    the <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
+                      commercial operating model (opens in new tab)</a>.
+                  </p>
+                  <p class="govuk-body">You do not need to complete the
+                    commercial assurance document.</p>
+                {% else %}
+                  <div class="govuk-inset-text">
+                    <p class="govuk-body">The 'Check cost threshold' task must be 
+                      completed first.</p>
+                    <p class="govuk-body">Internal approval from DfE will be required, 
+                      but the route this takes depends on the cost threshold. 
+                      Procurements below the threshold need approval from a G7 and 
+                      those above the threshold will need to be approved by 
+                      the Commercial Assurance Board (CAB).</p> 
+                  </div>
+                {% endif %}
+              </p>
+            </div>
+            <div class="govuk-form-group">
+              <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                {% if (data['costThresholdStatus'] == "Above the relevant threshold") %}
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-1" name="tagGetApprovalForStage2" type="checkbox" value="Complete commercial assurance document" {{ checked("tagGetApprovalForStage2", "Complete commercial assurance document") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-1">
+                      Complete commercial assurance document
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-2" name="tagGetApprovalForStage2" type="checkbox" value="Get approval from G7" {{ checked("tagGetApprovalForStage2", "Get approval from G7") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-2">
+                      Get approval from G7
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-3" name="tagGetApprovalForStage2" type="checkbox" value="Add to secretariat agenda" {{ checked("tagGetApprovalForStage2", "Add to secretariat agenda") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-3">
+                      Add to secretariat agenda
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-4" name="tagGetApprovalForStage2" type="checkbox" value="Receive email to confirm approval" {{ checked("tagGetApprovalForStage2", "Receive email to confirm approval") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-4">
+                      Receive email to confirm approval
+                    </label>
+                  </div>
+                {% elseif (data['costThresholdStatus'] == "Below the relevant threshold") %}
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-2" name="tagGetApprovalForStage2" type="checkbox" value="Complete email template" {{ checked("tagGetApprovalForStage2", "Complete email template") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-2">
+                      Complete email template
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-3" name="tagGetApprovalForStage2" type="checkbox" value="Get approval from G7" {{ checked("tagGetApprovalForStage2", "Get approval from G7") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-3">
+                      Get approval from G7
+                    </label>
+                  </div>
+                {% endif %}
+                <div class="govuk-checkboxes__item" style="display: none;">
+                  <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-0" name="tagGetApprovalForStage2" type="checkbox" value="empty" checked="empty">
+                  <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-0">
+                    empty
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="govuk-button-group">
+              {% if (data['costThresholdStatus']) %}
+                <button type="submit" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
+                  Continue
+                </button>
+              {% else %}
+                <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
+                  Continue
+                </button>
+              {% endif %}
+              <a class="govuk-link" href="../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
