@@ -23,22 +23,25 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/discuss-school-requirements', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/discuss-school-requirements', {})
+  router.get('/' + version + '/procurement-operations/approach-to-market/discuss-requirements-and-route-to-market', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/discuss-requirements-and-route-to-market', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/discuss-school-requirements', function (req, res) {
-    const tagDiscussSchoolRequirements = req.session.data['tagDiscussSchoolRequirements']
+  router.post('/' + version + '/procurement-operations/approach-to-market/discuss-requirements-and-route-to-market', function (req, res) {
+    const tagDiscussRequirementsAndRouteToMarket = req.session.data['tagDiscussRequirementsAndRouteToMarket']
 
-    if (tagDiscussSchoolRequirements.includes('Host Teams call to discuss the procurement') &&
-      tagDiscussSchoolRequirements.includes('Record school holidays, non-working days and completion date') &&
-      tagDiscussSchoolRequirements.includes('Save completed information gathering document in SharePoint') &&
-      tagDiscussSchoolRequirements.includes('empty')){
-      req.session.data.tagDiscussSchoolRequirementsStatus = 'complete'
-    }else if (tagDiscussSchoolRequirements == ('empty')){
-      req.session.data.tagDiscussSchoolRequirementsStatus = 'toDo'
+    if (tagDiscussRequirementsAndRouteToMarket.includes('Research suitable routes to market') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('Host Teams call to discuss the procurement') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('Record school holidays, non-working days and completion date') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('Discuss route to market with school') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('Agree route to market') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('Save documents to SharePoint') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('empty')){
+      req.session.data.tagDiscussRequirementsAndRouteToMarketStatus = 'complete'
+    }else if (tagDiscussRequirementsAndRouteToMarket == ('empty')){
+      req.session.data.tagDiscussRequirementsAndRouteToMarketStatus = 'toDo'
     }else {
-      req.session.data.tagDiscussSchoolRequirementsStatus = 'inProgress'
+      req.session.data.tagDiscussRequirementsAndRouteToMarketStatus = 'inProgress'
     }
 
     res.redirect('/' + version + '/procurement-operations/procurement')

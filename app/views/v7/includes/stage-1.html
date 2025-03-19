@@ -20,44 +20,21 @@
   </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/discuss-school-requirements">
-        Discuss school requirements
+      <a class="govuk-link govuk-task-list__link" href="approach-to-market/discuss-requirements-and-route-to-market">
+        Discuss requirements and route to market
       </a>
     </div>
     <div class="govuk-task-list__status">
-      {% if (data['tagDiscussSchoolRequirementsStatus'] == "complete") %}
+      {% if (data['tagDiscussRequirementsAndRouteToMarketStatus'] == "complete") %}
         <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagDiscussSchoolRequirementsStatus'] == "inProgress")%}
+      {% elseif (data['tagDiscussRequirementsAndRouteToMarketStatus'] == "inProgress")%}
         <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
       {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['discussSchoolRequirementsStartDate'] }}
-          - {{ data['discussSchoolRequirementsEndDate'] }}  </strong>
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['discussRequirementsAndRouteToMarketStartDate'] }}
+        - {{ data['discussRequirementsAndRouteToMarketEndDate'] }}  </strong>
       {% endif %}
     </div>
   </li>
-  {% if (data['tagResearchFrameworksStatus'] == "overdue") %}
-    <li class="govuk-task-list__item govuk-task-list__item--with-link govuk-form-group--error" id="research-frameworks">
-  {% else %}
-    <li class="govuk-task-list__item govuk-task-list__item--with-link" id="research-frameworks">
-  {% endif %}
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/research-frameworks">
-          Research frameworks
-        </a>
-      </div>
-      <div class="govuk-task-list__status">
-        {% if (data['tagResearchFrameworksStatus'] == "complete") %}
-          <strong class="govuk-tag govuk-tag--green">Complete</strong>
-        {% elseif (data['tagResearchFrameworksStatus'] == "inProgress")%}
-          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-        {% elseif (data['tagResearchFrameworksStatus'] == "overdue") %}
-          <strong class="govuk-tag govuk-tag--red">Overdue</strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">Due: {{ data['researchFrameworksStartDate'] }}
-            - {{ data['researchFrameworksEndDate'] }}  </strong>
-        {% endif %}
-      </div>
-    </li>
   {% if (data['tagRecordRouteToMarketStatus'] == "overdue") %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link govuk-form-group--error" id="record-route-to-market">
   {% else %}

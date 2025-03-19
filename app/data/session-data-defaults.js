@@ -22,10 +22,8 @@ module.exports = {
   // Stage 1
   'handoverFromTriageStartDate' : '13 Mar 2025',
   'handoverFromTriageEndDate' : '14 Mar 2025',
-  'discussSchoolRequirementsStartDate' : '14 Mar 2025',
-  'discussSchoolRequirementsEndDate' : '15 Mar 2025',
-  'researchFrameworksStartDate' : '15 Mar 2025',
-  'researchFrameworksEndDate' : '20 Mar 2025',
+  'discussRequirementsAndRouteToMarketStartDate' : '14 Mar 2025',
+  'discussRequirementsAndRouteToMarketEndDate' : '20 Mar 2025',
   'recordRouteToMarketStartDate' : '20 Mar 2025',
   'recordRouteToMarketEndDate' : '21 Mar 2025',
   'createProcurementTimelineStartDate' : '21 Mar 2025',
