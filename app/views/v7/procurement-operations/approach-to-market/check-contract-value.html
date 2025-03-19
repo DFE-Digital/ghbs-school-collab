@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Check cost threshold" %}
+{% set pageName="Check contract value" %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -13,11 +13,11 @@
                 <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
               </li>
               <li class="govuk-breadcrumbs__list-item">
-                <a class="govuk-breadcrumbs__link" href="../procurement">004335 Catering
-                  services</a>
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
               </li>
               <li class="govuk-breadcrumbs__list-item">
-                <a class="govuk-breadcrumbs__link" href="#">Check cost threshold
+                <a class="govuk-breadcrumbs__link" href="#">Check contract value
                 </a>
               </li>
             </ol>
@@ -29,8 +29,8 @@
           <form action="check-cost-threshold" method="post" novalidate>
             <div class="govuk-form-group">
               {% include "../../includes/case-identifiers.html" %}
-              <h1 class="govuk-heading-l" id="page-title">Check cost
-                threshold</h1>
+              <h1 class="govuk-heading-l" id="page-title">Check contract
+                value is below the relevant threshold</h1>
               <p class="govuk-body">Thresholds for procurements are revised
                 each January and can be found on <a href="https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-define-phase/guidance-thresholds-html" class="govuk-link" rel="noreferrer noopener" target="_blank">
                 the GOV.UK website (opens in new tab)</a>. If the
@@ -42,7 +42,7 @@
                 procurement then use this year's threshold.</p>
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                  Is the procurement framework in use below the relevant
+                  Is the contract value below the relevant threshold?</legend>
                   threshold?</legend>
                 <div class="govuk-radios" data-module="govuk-radios">
                   <div class="govuk-radios__item">
