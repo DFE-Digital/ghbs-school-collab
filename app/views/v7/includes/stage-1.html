@@ -35,6 +35,23 @@
       {% endif %}
     </div>
   </li>
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="approach-to-market/check-cost-threshold">
+        Check cost threshold
+      </a>
+    </div>
+    <div class="govuk-task-list__status">
+      {% if (data['tagCheckCostThresholdStatus'] == "complete") %}
+        <strong class="govuk-tag govuk-tag--green">Complete</strong>
+      {% elseif (data['tagCheckCostThresholdStatus'] == "inProgress")%}
+        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['checkCostThresholdStartDate'] }}
+          - {{ data['checkCostThresholdEndDate'] }}  </strong>
+      {% endif %}
+    </div>
+  </li>
   {% if (data['tagRecordRouteToMarketStatus'] == "overdue") %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link govuk-form-group--error" id="record-route-to-market">
   {% else %}
@@ -107,23 +124,6 @@
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">Due: {{ data['createProcurementRiskAssessmentStartDate'] }}
           - {{ data['createProcurementRiskAssessmentEndDate'] }}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/check-cost-threshold">
-        Check cost threshold
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagCheckCostThresholdStatus'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagCheckCostThresholdStatus'] == "inProgress")%}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['checkCostThresholdStartDate'] }}
-          - {{ data['checkCostThresholdEndDate'] }}  </strong>
       {% endif %}
     </div>
   </li>
