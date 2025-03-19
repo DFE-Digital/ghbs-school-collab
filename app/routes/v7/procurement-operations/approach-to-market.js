@@ -11,7 +11,6 @@ module.exports = function (router) {
 
     if (tagHandoverFromTriage.includes('Send participation agreement') &&
       tagHandoverFromTriage.includes('Participation agreement signed') &&
-      tagHandoverFromTriage.includes('Resource board allocation') &&
       tagHandoverFromTriage.includes('Assigned to procurement operations lead') &&
       tagHandoverFromTriage.includes('empty')){
       req.session.data.tagHandoverFromTriageStatus = 'complete'
