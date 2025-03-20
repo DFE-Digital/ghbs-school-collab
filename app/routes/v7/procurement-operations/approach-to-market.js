@@ -11,7 +11,6 @@ module.exports = function (router) {
 
     if (tagHandoverFromTriage.includes('Send participation agreement') &&
       tagHandoverFromTriage.includes('Participation agreement signed') &&
-      tagHandoverFromTriage.includes('Resource board allocation') &&
       tagHandoverFromTriage.includes('Assigned to procurement operations lead') &&
       tagHandoverFromTriage.includes('empty')){
       req.session.data.tagHandoverFromTriageStatus = 'complete'
@@ -24,22 +23,25 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/discuss-school-requirements', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/discuss-school-requirements', {})
+  router.get('/' + version + '/procurement-operations/approach-to-market/discuss-requirements-and-route-to-market', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/discuss-requirements-and-route-to-market', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/discuss-school-requirements', function (req, res) {
-    const tagDiscussSchoolRequirements = req.session.data['tagDiscussSchoolRequirements']
+  router.post('/' + version + '/procurement-operations/approach-to-market/discuss-requirements-and-route-to-market', function (req, res) {
+    const tagDiscussRequirementsAndRouteToMarket = req.session.data['tagDiscussRequirementsAndRouteToMarket']
 
-    if (tagDiscussSchoolRequirements.includes('Host Teams call to discuss the procurement') &&
-      tagDiscussSchoolRequirements.includes('Record school holidays, non-working days and completion date') &&
-      tagDiscussSchoolRequirements.includes('Save completed information gathering document in SharePoint') &&
-      tagDiscussSchoolRequirements.includes('empty')){
-      req.session.data.tagDiscussSchoolRequirementsStatus = 'complete'
-    }else if (tagDiscussSchoolRequirements == ('empty')){
-      req.session.data.tagDiscussSchoolRequirementsStatus = 'toDo'
+    if (tagDiscussRequirementsAndRouteToMarket.includes('Research suitable routes to market') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('Host Teams call to discuss the procurement') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('Record school holidays, non-working days and completion date') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('Discuss route to market with school') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('Agree route to market') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('Save documents to SharePoint') &&
+      tagDiscussRequirementsAndRouteToMarket.includes('empty')){
+      req.session.data.tagDiscussRequirementsAndRouteToMarketStatus = 'complete'
+    }else if (tagDiscussRequirementsAndRouteToMarket == ('empty')){
+      req.session.data.tagDiscussRequirementsAndRouteToMarketStatus = 'toDo'
     }else {
-      req.session.data.tagDiscussSchoolRequirementsStatus = 'inProgress'
+      req.session.data.tagDiscussRequirementsAndRouteToMarketStatus = 'inProgress'
     }
 
     res.redirect('/' + version + '/procurement-operations/procurement')
@@ -67,21 +69,22 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/record-route-to-market', function (req, res) {
+  router.get('/' + version + '/procurement-operations/approach-to-market/record-route-to-market-and-contract-value', function (req, res) {
     req.session.data.pageAction = ''
-    res.render(version + '/procurement-operations/approach-to-market/record-route-to-market', {})
+    res.render(version + '/procurement-operations/approach-to-market/record-route-to-market-and-contract-value', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/record-route-to-market', function (req, res) {
-    const tagRecordRouteToMarket = req.session.data['tagRecordRouteToMarket']
+  router.post('/' + version + '/procurement-operations/approach-to-market/record-route-to-market-and-contract-value', function (req, res) {
+    const tagRecordRouteToMarket = req.session.data['routeToMarket']
+    const tagReasonForRouteToMarket = req.session.data['reasonForRouteToMarket']
+    const tagContractValue = req.session.data['tagContractValue']
 
-    if (tagRecordRouteToMarket.includes('Record route to market') &&
-      tagRecordRouteToMarket.includes('empty')){
-      req.session.data.tagRecordRouteToMarketStatus = 'complete'
-    }else if (tagRecordRouteToMarket == ('empty')){
-      req.session.data.tagRecordRouteToMarketStatus = 'toDo'
+    if (tagRecordRouteToMarket &&
+        tagReasonForRouteToMarket &&
+        tagContractValue){
+      req.session.data.tagRecordRouteToMarketAndContractValueStatus = 'complete'
     }else {
-      req.session.data.tagRecordRouteToMarketStatus = 'inProgress'
+       req.session.data.tagRecordRouteToMarketAndContractValueStatus = 'inProgress'
     }
 
     res.redirect('/' + version + '/procurement-operations/procurement')
@@ -176,22 +179,6 @@ module.exports = function (router) {
     } else {
       res.redirect('/' + version + '/procurement-operations/procurement')
     }
-  })
-
-  router.get('/' + version + '/procurement-operations/approach-to-market/check-cost-threshold', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/check-cost-threshold', {})
-  })
-
-  router.post('/' + version + '/procurement-operations/approach-to-market/check-cost-threshold', function (req, res) {
-    const tagCheckCostThreshold = req.session.data['costThresholdStatus']
-
-    if (tagCheckCostThreshold){
-      req.session.data.tagCheckCostThresholdStatus = 'complete'
-    }else{
-      req.session.data.tagCheckCostThresholdStatus = 'toDo'
-    }
-
-    res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
   router.get('/' + version + '/procurement-operations/approach-to-market/get-CAB-approval-for-Non-DfE-deal-or-framework', function (req, res) {

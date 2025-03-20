@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Record route to market" %}
+{% set pageName="Record route to market and contract value" %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -23,12 +23,12 @@
             </ol>
           </nav>
           {% include "../../includes/case-identifiers.html" %}
-          <h1 class="govuk-heading-l">Record route to market</h1>
+          <h1 class="govuk-heading-l">Record route to market and contract value</h1>
         </div>
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form action="record-route-to-market" method="post" novalidate>
+          <form action="record-route-to-market-and-contract-value" method="post" novalidate>
             <div class="govuk-form-group">
               {% if (data['recordRouteToMarketError'] == "true") %}
                 <p class="govuk-body">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="govuk-form-group">
                       <label class="govuk-label" for="ePortalReference">
-                        E-portal reference
+                        E-portal reference (if known)
                       </label>
                       <input class="govuk-input" id="ePortalReference" name="ePortalReference" type="text" spellcheck="false" value="{{data['ePortalReference']}}">
                     </div>
@@ -116,19 +116,45 @@
               </fieldset>
             </div>
             <div class="govuk-form-group">
-              <h2 class="govuk-heading-m">Actions</h2>
               <fieldset class="govuk-fieldset">
-                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket" name="tagRecordRouteToMarket" type="checkbox" value="Record route to market" {{ checked("tagRecordRouteToMarket", "Record route to market") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket">
-                      Record route to market
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">Is the contract value
+                    below the relevant threshold?</h2>
+                </legend>
+                <p class="govuk-body">Thresholds for procurements are revised
+                  each January and can be found on <a href="https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-define-phase/guidance-thresholds-html" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                  the GOV.UK website (opens in new tab)</a>.</p>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Get help with contract value threshold
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">This is the contract value for the
+                      entire duration of the contract. This must include any
+                      options to extend and take into consideration things like
+                      inflationary increases, national living wage, etc.</p>
+                    <p class="govuk-body">Use the threshold for the current
+                      year. If the figure is within 10% of the threshold then
+                      you should discuss this with your line manager and may
+                      need to indicate the procurement is above threshold.</p>
+                    <p class="govuk-body">If the contract value is above the
+                      threshold then it will need additional checks from the
+                      Commercial Assurance Board (CAB).</p>
+                  </div>
+                </details>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tagContractValue" name="tagContractValue" type="radio" value="Yes, its below the relevant threshold" {{ checked("tagContractValue", "Yes, its below the relevant threshold") }}>
+                    <label class="govuk-label govuk-radios__label" for="tagContractValue">
+                      Yes, its below the relevant threshold
                     </label>
                   </div>
-                  <div class="govuk-checkboxes__item" style="display: none;">
-                    <input class="govuk-checkboxes__input" id="tagRecordRouteToMarket-0" name="tagRecordRouteToMarket" type="checkbox" value="empty" checked="empty">
-                    <label class="govuk-label govuk-checkboxes__label" for="tagRecordRouteToMarket-0">
-                      empty
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tagContractValue-2" name="tagContractValue" type="radio" data-aria-controls="frameworkNameHolder" value="No, its above the relevant threshold" {{ checked("tagContractValue", "No, its above the relevant threshold") }}>
+                    <label class="govuk-label govuk-radios__label" for="tagContractValue-2">
+                      No, its above the relevant threshold
                     </label>
                   </div>
                 </div>
