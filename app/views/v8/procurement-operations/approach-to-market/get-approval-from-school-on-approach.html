@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Get approval from school on approach" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Get approval from
+                  school on approach</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Get approval from school on approach</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="get-approval-from-school-on-approach" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">The school need to approve the route to
+                market before the procurement can continue. Use the email
+                template to send the school the required information.</p>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSchoolApproval-1" name="tagSchoolApproval" type="checkbox" value="Send email to school" {{ checked("tagSchoolApproval", "Send email to school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSchoolApproval-1">
+                      Send email to school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSchoolApproval-2" name="tagSchoolApproval" type="checkbox" value="Received approval from school" {{ checked("tagSchoolApproval", "Received approval from school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSchoolApproval-2">
+                      Received approval from school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagSchoolApproval-0" name="tagSchoolApproval" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSchoolApproval-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

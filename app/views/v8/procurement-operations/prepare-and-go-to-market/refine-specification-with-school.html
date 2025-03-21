@@ -1,0 +1,116 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Refine specification with school" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Refine specification
+                  with school</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Refine specification with school</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="refine-specification-with-school" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Select the correct <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
+                specification template from SharePoint (opens in new tab)</a>,
+                and check for any legislation which could affect the procurement
+                to ensure compliance.</p>
+              <p class="govuk-body">Remove any unnecessary sections and complete
+                the specification based on the information the school has
+                already provided. The specification can then be refined
+                following a meeting with the school.</p>
+              <p class="govuk-body">A specification is required for each school
+                involved in the procurement.</p>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with refining the specification
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">If a the school has previously used this
+                    service then you can look back over <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
+                    previous specifications in SharePoint (opens in new tab)</a>
+                    .</p>
+                  <p class="govuk-body">During the refinement call with the
+                    school, make sure all the requirements are collected in
+                    details. You should not just think about what the school
+                    needs right now from the supplier, but future needs as well,
+                    such as on-going support.</p>
+                </div>
+              </details>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagRefineSpecificationWithSchool-1" name="tagRefineSpecificationWithSchool" type="checkbox" value="Select relevant specification template" {{ checked("tagRefineSpecificationWithSchool", "Select relevant specification template") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagRefineSpecificationWithSchool-1">
+                      Select relevant specification template
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagRefineSpecificationWithSchool-2" name="tagRefineSpecificationWithSchool" type="checkbox" value="Populate and refine specification" {{ checked("tagRefineSpecificationWithSchool", "Populate and refine specification") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagRefineSpecificationWithSchool-2">
+                      Populate and refine specification
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagRefineSpecificationWithSchool-3" name="tagRefineSpecificationWithSchool" type="checkbox" value="Meeting with school to refine specification" {{ checked("tagRefineSpecificationWithSchool", "Meeting with school to refine specification") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagRefineSpecificationWithSchool-3">
+                      Meeting with school to refine specification
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagRefineSpecificationWithSchool-4" name="tagRefineSpecificationWithSchool" type="checkbox" value="Agree specification with school" {{ checked("tagRefineSpecificationWithSchool", "Agree specification with school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagRefineSpecificationWithSchool-4">
+                      Agree specification with school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagRefineSpecificationWithSchool-5" name="tagRefineSpecificationWithSchool" type="checkbox" value="Save specification to SharePoint" {{ checked("tagRefineSpecificationWithSchool", "Save specification to SharePoint") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagRefineSpecificationWithSchool-5">
+                      Save specification to SharePoint
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagRefineSpecificationWithSchool-0" name="tagRefineSpecificationWithSchool" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagRefineSpecificationWithSchool-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="call-off-document-preparation">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

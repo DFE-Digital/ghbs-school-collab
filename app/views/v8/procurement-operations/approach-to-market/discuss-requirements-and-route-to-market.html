@@ -1,0 +1,120 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Discuss requirements and route to market" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335 Catering
+                  services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Discuss requirements
+                  and route to market</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Discuss requirements and route to market</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="discuss-requirements-and-route-to-market" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Arrange a Teams call with the school and
+                share relevant documents and discuss a suitable route to market.
+                Consider needs such as including incumbent suppliers and
+                expressions of interest as this may limit suitable routes to
+                market.</p>
+              <p class="govuk-body">Record all relevant information in the
+                Record all relevant information in the case notes.</p>
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Get help with discussing requirements and route to market
+                      </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p class="govuk-body">On the call you should:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>set expectations for timescales</li>
+                      <li>explain what will be required from the school</li>
+                      <li>record schools holidays, non-working days and other
+                        key dates that will affect timescales</li>
+                      <li>discuss and, ideally, agree a suitable route to market
+                        </li>
+                      <li>gather additional information</li>
+                    </ul>
+                  </div>
+                </details>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDiscussRequirementsAndRouteToMarket-1" name="tagDiscussRequirementsAndRouteToMarket" type="checkbox" value="Research suitable routes to market" {{ checked("tagDiscussRequirementsAndRouteToMarket", "Research suitable routes to market") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussRequirementsAndRouteToMarket-1">
+                      Research suitable routes to market
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDiscussRequirementsAndRouteToMarket-2" name="tagDiscussRequirementsAndRouteToMarket" type="checkbox" value="Host Teams call to discuss the procurement" {{ checked("tagDiscussRequirementsAndRouteToMarket", "Host Teams call to discuss the procurement") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussRequirementsAndRouteToMarket-2">
+                      Host Teams call to discuss the procurement
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDiscussRequirementsAndRouteToMarket-3" name="tagDiscussRequirementsAndRouteToMarket" type="checkbox" value="Record school holidays, non-working days and completion date" {{ checked("tagDiscussRequirementsAndRouteToMarket", "Record school holidays, non-working days and completion date") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussRequirementsAndRouteToMarket-3">
+                      Record school holidays, non-working days and completion date
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDiscussRequirementsAndRouteToMarket-4" name="tagDiscussRequirementsAndRouteToMarket" type="checkbox" value="Discuss route to market with school" {{ checked("tagDiscussRequirementsAndRouteToMarket", "Discuss route to market with school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussRequirementsAndRouteToMarket-4">
+                      Discuss route to market with school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDiscussRequirementsAndRouteToMarket-5" name="tagDiscussRequirementsAndRouteToMarket" type="checkbox" value="Agree route to market" {{ checked("tagDiscussRequirementsAndRouteToMarket", "Agree route to market") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussRequirementsAndRouteToMarket-5">
+                      Agree route to market
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDiscussRequirementsAndRouteToMarket-6" name="tagDiscussRequirementsAndRouteToMarket" type="checkbox" value="Save documents to SharePoint" {{ checked("tagDiscussRequirementsAndRouteToMarket", "Save documents to SharePoint") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussRequirementsAndRouteToMarket-6">
+                      Save documents to SharePoint
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagDiscussRequirementsAndRouteToMarket-0" name="tagDiscussRequirementsAndRouteToMarket" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDiscussRequirementsAndRouteToMarket-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
