@@ -155,11 +155,11 @@ module.exports = function (router) {
     }
   })
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/invite-the-school-lead', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/invite-the-school-lead', {})
+  router.get('/' + version + '/procurement-operations/approach-to-market/invite-school-lead-to-portal', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/invite-school-lead-to-portal', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/invite-the-school-lead', function (req, res) {
+  router.post('/' + version + '/procurement-operations/approach-to-market/invite-school-lead-to-portal', function (req, res) {
     const tagInviteTheSchoolLead = req.session.data['tagInviteTheSchoolLead']
     const pageAction = req.session.data['pageAction']
 
