@@ -59,8 +59,7 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/set-pricing-schedule', function (req, res) {
     const tagSetPricingSchedule = req.session.data['tagSetPricingSchedule']
 
-    if (tagSetPricingSchedule.includes('Create pricing schedule') &&
-        tagSetPricingSchedule.includes('Refine pricing schedule with school') &&
+    if (tagSetPricingSchedule.includes('Create and refine pricing schedule') &&
         tagSetPricingSchedule.includes('Agree pricing schedule with school') &&
         tagSetPricingSchedule.includes('Save pricing schedule to SharePoint') &&
         tagSetPricingSchedule.includes('empty')){
