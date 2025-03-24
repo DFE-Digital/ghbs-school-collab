@@ -117,6 +117,7 @@ module.exports = function (router) {
     const tagCreateRiskAssessment = req.session.data['tagCreateRiskAssessment']
 
     if (tagCreateRiskAssessment.includes('Download template') &&
+      tagCreateRiskAssessment.includes('Complete procurement risk assessment') &&
       tagCreateRiskAssessment.includes('Save completed form in SharePoint') &&
       tagCreateRiskAssessment.includes('empty')){
       req.session.data.tagCreateRiskAssessmentStatus = 'complete'
