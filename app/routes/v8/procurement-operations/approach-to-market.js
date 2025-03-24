@@ -116,8 +116,7 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/create-procurement-risk-assessment', function (req, res) {
     const tagCreateRiskAssessment = req.session.data['tagCreateRiskAssessment']
 
-    if (tagCreateRiskAssessment.includes('Download template') &&
-      tagCreateRiskAssessment.includes('Complete procurement risk assessment') &&
+    if (tagCreateRiskAssessment.includes('Complete procurement risk assessment') &&
       tagCreateRiskAssessment.includes('Save completed form in SharePoint') &&
       tagCreateRiskAssessment.includes('empty')){
       req.session.data.tagCreateRiskAssessmentStatus = 'complete'
