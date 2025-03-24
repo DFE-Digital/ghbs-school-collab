@@ -39,7 +39,6 @@ module.exports = function (router) {
 
     if (tagRefineSpecificationWithSchool.includes('Select relevant specification template') &&
         tagRefineSpecificationWithSchool.includes('Populate and refine specification') &&
-        tagRefineSpecificationWithSchool.includes('Meeting with school to refine specification') &&
         tagRefineSpecificationWithSchool.includes('Agree specification with school') &&
         tagRefineSpecificationWithSchool.includes('Save specification to SharePoint') &&
         tagRefineSpecificationWithSchool.includes('empty')){
