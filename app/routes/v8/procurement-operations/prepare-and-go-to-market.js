@@ -115,7 +115,7 @@ module.exports = function (router) {
       req.session.data.tagEvaluationMethodologyStatus = 'inProgress'
     }
 
-    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
+    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/get-school-sign-off-for-document-pack')
   })
 
   router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/get-g7-approval', function (req, res) {
@@ -138,11 +138,11 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
-  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/sign-off-bid-document-with-school', function (req, res) {
-    res.render(version + '/procurement-operations/prepare-and-go-to-market/sign-off-bid-document-with-school', {})
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/get-school-sign-off-for-document-pack', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/get-school-sign-off-for-document-pack', {})
   })
 
-  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/sign-off-bid-document-with-school', function (req, res) {
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/get-school-sign-off-for-document-pack', function (req, res) {
     const tagSignOffBidDocumentWithSchool = req.session.data['tagSignOffBidDocumentWithSchool']
 
     if (tagSignOffBidDocumentWithSchool.includes('Email pack to the school') &&
