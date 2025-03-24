@@ -80,8 +80,7 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/create-quality-questions', function (req, res) {
     const tagCreateQualityQuestions = req.session.data['tagCreateQualityQuestions']
 
-    if (tagCreateQualityQuestions.includes('Create quality questions document') &&
-        tagCreateQualityQuestions.includes('Refine quality questions with school') &&
+    if (tagCreateQualityQuestions.includes('Create and refine quality questions document') &&
         tagCreateQualityQuestions.includes('Agree quality questions with school') &&
         tagCreateQualityQuestions.includes('Save quality questions document in SharePoint') &&
         tagCreateQualityQuestions.includes('empty')){
