@@ -101,8 +101,7 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-methodology', function (req, res) {
     const tagEvaluationMethodology = req.session.data['tagEvaluationMethodology']
 
-    if (tagEvaluationMethodology.includes('Create evaluation methodology') &&
-        tagEvaluationMethodology.includes('Refine evaluation methodology with school') &&
+    if (tagEvaluationMethodology.includes('Create and refine evaluation methodology') &&
         tagEvaluationMethodology.includes('Save evaluation methodology document in SharePoint') &&
         tagEvaluationMethodology.includes('empty')){
       req.session.data.tagEvaluationMethodologyStatus = 'complete'
