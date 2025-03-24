@@ -31,7 +31,6 @@ module.exports = function (router) {
     const tagDiscussRequirementsAndRouteToMarket = req.session.data['tagDiscussRequirementsAndRouteToMarket']
 
     if (tagDiscussRequirementsAndRouteToMarket.includes('Research suitable routes to market') &&
-      tagDiscussRequirementsAndRouteToMarket.includes('Host Teams call to discuss the procurement') &&
       tagDiscussRequirementsAndRouteToMarket.includes('Record school holidays, non-working days and completion date') &&
       tagDiscussRequirementsAndRouteToMarket.includes('Discuss route to market with school') &&
       tagDiscussRequirementsAndRouteToMarket.includes('Agree route to market') &&
