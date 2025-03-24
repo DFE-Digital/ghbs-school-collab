@@ -122,6 +122,7 @@ module.exports = function (router) {
     const tagGetG7Approval = req.session.data['tagGetG7Approval']
 
     if (tagGetG7Approval.includes('Make the pack') &&
+        tagGetG7Approval.includes('Raise approval request from G7 in CMS') &&
         tagGetG7Approval.includes('Approved by G7') &&
         tagGetG7Approval.includes('empty')){
       req.session.data.tagGetG7ApprovalStatus = 'complete'
