@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Create Procurement Risk Assessment" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Create
+                  procurement risk assessment</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Create Procurement Risk Assessment</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="create-procurement-risk-assessment" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body"><a href="/public/documents/procurement-risk-assessment-tool.xlsx" class="govuk-link">
+                Download the template</a>,
+                complete the procurement risk assessment then save it to
+                SharePoint. This document is a way to highlight risk, but
+                risk should be considered throughout the procurement.</p>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with creating a procurement risk assessment
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">When creating a risk assessment
+                    consider:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>the risk level of the procurement</li>
+                    <li>how the route to market will affect the risk</li>
+                    <li>if categories of spend affect the risk</li>
+                  </ul>
+                  <p class="govuk-body">This will be discussed at the Commercial
+                    assurance board. The board meet every Wednesday.</p>
+                </div>
+              </details>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagCreateRiskAssessment-1" name="tagCreateRiskAssessment" type="checkbox" value="Download template" {{ checked("tagCreateRiskAssessment", "Download template") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCreateRiskAssessment-1">
+                      Download template
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagCreateRiskAssessment-2" name="tagCreateRiskAssessment" type="checkbox" value="Save completed form in SharePoint" {{ checked("tagCreateRiskAssessment", "Save completed form in SharePoint") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCreateRiskAssessment-2">
+                      Save completed form in SharePoint
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagCreateRiskAssessment-0" name="tagCreateRiskAssessment" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCreateRiskAssessment-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
