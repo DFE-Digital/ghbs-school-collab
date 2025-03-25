@@ -52,22 +52,21 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
-  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/set-pricing-schedule', function (req, res) {
-    res.render(version + '/procurement-operations/prepare-and-go-to-market/set-pricing-schedule', {})
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/develop-pricing-schedule', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/develop-pricing-schedule', {})
   })
 
-  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/set-pricing-schedule', function (req, res) {
-    const tagSetPricingSchedule = req.session.data['tagSetPricingSchedule']
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/develop-pricing-schedule', function (req, res) {
+    const tagDevelopPricingSchedule = req.session.data['tagDevelopPricingSchedule']
 
-    if (tagSetPricingSchedule.includes('Create and refine pricing schedule') &&
-        tagSetPricingSchedule.includes('Agree pricing schedule with school') &&
-        tagSetPricingSchedule.includes('Save pricing schedule to SharePoint') &&
-        tagSetPricingSchedule.includes('empty')){
-      req.session.data.tagSetPricingScheduleStatus = 'complete'
-    } else if (tagSetPricingSchedule == ('empty')){
-      req.session.data.tagSetPricingScheduleStatus = 'toDo'
+    if (tagDevelopPricingSchedule.includes('Copy and rename the relevant templates to your SharePoint case folder') &&
+        tagDevelopPricingSchedule.includes('Populate pricing schedule') &&
+        tagDevelopPricingSchedule.includes('empty')){
+      req.session.data.tagDevelopPricingScheduleStatus = 'complete'
+    } else if (tagDevelopPricingSchedule == ('empty')){
+      req.session.data.tagDevelopPricingScheduleStatus = 'toDo'
     } else {
-      req.session.data.tagSetPricingScheduleStatus = 'inProgress'
+      req.session.data.tagDevelopPricingScheduleStatus = 'inProgress'
     }
 
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
