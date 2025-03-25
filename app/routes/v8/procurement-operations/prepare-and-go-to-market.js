@@ -37,10 +37,9 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/refine-specification-with-school', function (req, res) {
     const tagRefineSpecificationWithSchool = req.session.data['tagRefineSpecificationWithSchool']
 
-    if (tagRefineSpecificationWithSchool.includes('Select relevant specification template') &&
+    if (tagRefineSpecificationWithSchool.includes('Copy relevant specification templates and rename them to your case file') &&
         tagRefineSpecificationWithSchool.includes('Populate and refine specification') &&
         tagRefineSpecificationWithSchool.includes('Agree specification with school') &&
-        tagRefineSpecificationWithSchool.includes('Save specification to SharePoint') &&
         tagRefineSpecificationWithSchool.includes('empty')){
       req.session.data.tagRefineSpecificationWithSchoolStatus = 'complete'
     } else if (tagRefineSpecificationWithSchool == ('empty')){
@@ -119,9 +118,9 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/get-g7-approval', function (req, res) {
     const tagGetG7Approval = req.session.data['tagGetG7Approval']
 
-    if (tagGetG7Approval.includes('Make the pack') &&
+    if (tagGetG7Approval.includes('Create document pack and save in SharePoint') &&
         tagGetG7Approval.includes('Raise approval request from G7 in CMS') &&
-        tagGetG7Approval.includes('Approved by G7') &&
+        tagGetG7Approval.includes('Approval from G7 received') &&
         tagGetG7Approval.includes('empty')){
       req.session.data.tagGetG7ApprovalStatus = 'complete'
     } else if (tagGetG7Approval == ('empty')){
