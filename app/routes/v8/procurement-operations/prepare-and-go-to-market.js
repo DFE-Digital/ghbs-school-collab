@@ -92,24 +92,24 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
-  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-methodology', function (req, res) {
-    res.render(version + '/procurement-operations/prepare-and-go-to-market/evaluation-methodology', {})
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-model', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/evaluation-model', {})
   })
 
-  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-methodology', function (req, res) {
-    const tagEvaluationMethodology = req.session.data['tagEvaluationMethodology']
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-model', function (req, res) {
+    const tagEvaluationModel = req.session.data['tagEvaluationModel']
 
-    if (tagEvaluationMethodology.includes('Create and refine evaluation methodology') &&
-        tagEvaluationMethodology.includes('Save evaluation methodology document in SharePoint') &&
-        tagEvaluationMethodology.includes('empty')){
-      req.session.data.tagEvaluationMethodologyStatus = 'complete'
-    } else if (tagEvaluationMethodology == ('empty')){
-      req.session.data.tagEvaluationMethodologyStatus = 'toDo'
+    if (tagEvaluationModel.includes('Copy and rename the relevant templates to your SharePoint case folder') &&
+        tagEvaluationModel.includes('Create score card template') &&
+        tagEvaluationModel.includes('empty')){
+      req.session.data.tagEvaluationModelStatus = 'complete'
+    } else if (tagEvaluationModel == ('empty')){
+      req.session.data.tagEvaluationModelStatus = 'toDo'
     } else {
-      req.session.data.tagEvaluationMethodologyStatus = 'inProgress'
+      req.session.data.tagEvaluationModelStatus = 'inProgress'
     }
 
-    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/get-school-sign-off-for-document-pack')
+    res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
   router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/get-g7-approval', function (req, res) {
