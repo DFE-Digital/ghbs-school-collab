@@ -94,14 +94,30 @@
                 </li>
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="evaluation-methodology">
-                      Evaluation methodology
+                    <a class="govuk-link govuk-task-list__link" href="evaluation-model">
+                      Evaluation model
                     </a>
                   </div>
                   <div class="govuk-task-list__status">
-                    {% if (data['tagEvaluationMethodologyStatus'] == "complete") %}
+                    {% if (data['tagEvaluationModelStatus'] == "complete") %}
                       <strong class="govuk-tag govuk-tag--green">Complete</strong>
-                    {% elseif (data['tagEvaluationMethodologyStatus'] == "inProgress") %}
+                    {% elseif (data['tagEvaluationModelStatus'] == "inProgress") %}
+                      <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+                    {% else %}
+                      <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
+                    {% endif %}
+                  </div>
+                </li>
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="#">
+                      Further competition documents
+                    </a>
+                  </div>
+                  <div class="govuk-task-list__status">
+                    {% if (data['tagFurtherCompetitionDocumentsStatus'] == "complete") %}
+                      <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                    {% elseif (data['tagFurtherCompetitionDocumentsStatus'] == "inProgress") %}
                       <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
                     {% else %}
                       <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
