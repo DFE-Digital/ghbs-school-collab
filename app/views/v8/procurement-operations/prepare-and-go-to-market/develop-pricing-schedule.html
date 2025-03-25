@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Develop pricing schedule" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Set pricing schedule</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Develop pricing schedule</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="develop-pricing-schedule" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body"><a href="https://educationgovuk.sharepoint.com.mcas.ms/sites/lvewp00219/Case%20Documents%20and%20Templates/Forms/AllItems.aspx?FolderCTID=0x0120006A9D583CA91D924CAC6C1108A407579B&viewid=14b476ce%2D1669%2D4e8d%2D83ff%2D9404ae850816" class="govuk-link" target="_blank" rel="noopener noreferrer">
+                Find the most up to date pricing schedule template from
+                SharePoint (opens in new tab)</a>. Review the
+                template to make sure it is suitable for the procurement.</p>
+              <p class="govuk-body">If buying for multiple schools, each school
+                should have its own tab on the pricing schedule Excel document.</p>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with creating the pricing schedule
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">The pricing schedule is an itemised
+                    list making up the total contract value.</p>
+                  <p class="govuk-body">Make sure you think about longer term
+                    costs associated with this procurement, such as:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>on-going support</li>
+                    <li>inflationary increases</li>
+                    <li>national living wage changes (for services contracts)</li>
+                    <li>call-out costs for technicians and engineers</li>
+                    <li>spare parts and replacements</li>
+                    <li>capital outlay for equipment</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDevelopPricingSchedule-1" name="tagDevelopPricingSchedule" type="checkbox" value="Copy and rename the relevant templates to your SharePoint case folder" {{ checked("tagDevelopPricingSchedule", "Copy and rename the relevant templates to your SharePoint case folder") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDevelopPricingSchedule-1">
+                      Copy and rename the relevant templates to your SharePoint
+                      case folder</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagDevelopPricingSchedule-2" name="tagDevelopPricingSchedule" type="checkbox" value="Populate pricing schedule" {{ checked("tagDevelopPricingSchedule", "Populate pricing schedule") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDevelopPricingSchedule-2">
+                      Populate pricing schedule
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagDevelopPricingSchedule-0" name="tagDevelopPricingSchedule" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagDevelopPricingSchedule-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="call-off-document-preparation">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

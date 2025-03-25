@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Invite school lead" %}
+{% set pageName="Invite school lead to portal" %}
 
 {% block content %}
   <div class="govuk-grid-row">
@@ -13,8 +13,8 @@
                 <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
               </li>
               <li class="govuk-breadcrumbs__list-item">
-                <a class="govuk-breadcrumbs__link" href="../procurement">004335 Catering
-                  services</a>
+                <a class="govuk-breadcrumbs__link" href="../procurement">004335
+                  Catering services</a>
               </li>
               <li class="govuk-breadcrumbs__list-item">
                 <a class="govuk-breadcrumbs__link" href="#">Complete information
@@ -26,11 +26,14 @@
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form action="invite-the-school-lead" method="post" novalidate>
+          <form action="invite-the-school-lead-to-portal" method="post" novalidate>
             {% include "../../includes/case-identifiers.html" %}
-            <h1 class="govuk-heading-l" id="task">Invite school lead</h1>
-            <p class="govuk-body">Add the school lead and any other contacts
-              that will need to view or work on the procurement.</p>
+            <h1 class="govuk-heading-l" id="task">Invite school lead to portal</h1>
+            <p class="govuk-body">Inviting the school lead to the portal will
+              allow them to access the school's task list, view deadline dates
+              and receive documents.</p>
+            <p class="govuk-body">You can add other contacts to the portal
+              later.</p>
             <div class="govuk-form-group">
               <table class="govuk-table">
                 <caption class="govuk-table__caption govuk-table__caption--m">

@@ -31,16 +31,16 @@
               {% include "../../includes/case-identifiers.html" %}
               <h1 class="govuk-heading-l" id="page-title">Call off document
                 preparation</h1>
-              <p class="govuk-body">The call off document pack contains all the documents 
+              <p class="govuk-body">The call off document pack contains all the documents
                 required to publish the procurement for competition.</p>
-              <p class="govuk-body">You should create the documents, refine them with the 
+              <p class="govuk-body">You should create the documents, refine them with the
                 school and save them to SharePoint.</p>
-              <p class="govuk-body">The school is legally responsible for ensuring 
-                procurements are compliant. They must formally approve the pack before 
+              <p class="govuk-body">The school is legally responsible for ensuring
+                procurements are compliant. They must formally approve the pack before
                 the tender can be published. </p>
             </div>
             <div class="govuk-button-group">
-              <h2 class="govuk-heading-m">Sub tasks</h2>
+              <h2 class="govuk-heading-m">Required documents</h2>
             </div>
             <div class="govuk-form-group">
               <ul class="govuk-task-list">
@@ -62,14 +62,14 @@
                 </li>
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="set-pricing-schedule">
-                      Set pricing schedule
+                    <a class="govuk-link govuk-task-list__link" href="develop-pricing-schedule">
+                      Develop pricing schedule
                     </a>
                   </div>
                   <div class="govuk-task-list__status">
-                    {% if (data['tagSetPricingScheduleStatus'] == "complete") %}
+                    {% if (data['tagDevelopPricingScheduleStatus'] == "complete") %}
                       <strong class="govuk-tag govuk-tag--green">Complete</strong>
-                    {% elseif (data['tagSetPricingScheduleStatus'] == "inProgress") %}
+                    {% elseif (data['tagDevelopPricingScheduleStatus'] == "inProgress") %}
                       <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
                     {% else %}
                       <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
@@ -94,14 +94,30 @@
                 </li>
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="evaluation-methodology">
-                      Evaluation methodology
+                    <a class="govuk-link govuk-task-list__link" href="evaluation-model">
+                      Evaluation model
                     </a>
                   </div>
                   <div class="govuk-task-list__status">
-                    {% if (data['tagEvaluationMethodologyStatus'] == "complete") %}
+                    {% if (data['tagEvaluationModelStatus'] == "complete") %}
                       <strong class="govuk-tag govuk-tag--green">Complete</strong>
-                    {% elseif (data['tagEvaluationMethodologyStatus'] == "inProgress") %}
+                    {% elseif (data['tagEvaluationModelStatus'] == "inProgress") %}
+                      <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+                    {% else %}
+                      <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>
+                    {% endif %}
+                  </div>
+                </li>
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="#">
+                      Further competition documents
+                    </a>
+                  </div>
+                  <div class="govuk-task-list__status">
+                    {% if (data['tagFurtherCompetitionDocumentsStatus'] == "complete") %}
+                      <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                    {% elseif (data['tagFurtherCompetitionDocumentsStatus'] == "inProgress") %}
                       <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
                     {% else %}
                       <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(22) | govukDate("truncate") }} - {{ "today" | duration(26) | govukDate("truncate") }}  </strong>

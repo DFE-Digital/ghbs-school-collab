@@ -31,7 +31,6 @@ module.exports = function (router) {
     const tagDiscussRequirementsAndRouteToMarket = req.session.data['tagDiscussRequirementsAndRouteToMarket']
 
     if (tagDiscussRequirementsAndRouteToMarket.includes('Research suitable routes to market') &&
-      tagDiscussRequirementsAndRouteToMarket.includes('Host Teams call to discuss the procurement') &&
       tagDiscussRequirementsAndRouteToMarket.includes('Record school holidays, non-working days and completion date') &&
       tagDiscussRequirementsAndRouteToMarket.includes('Discuss route to market with school') &&
       tagDiscussRequirementsAndRouteToMarket.includes('Agree route to market') &&
@@ -117,7 +116,7 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/approach-to-market/create-procurement-risk-assessment', function (req, res) {
     const tagCreateRiskAssessment = req.session.data['tagCreateRiskAssessment']
 
-    if (tagCreateRiskAssessment.includes('Download template') &&
+    if (tagCreateRiskAssessment.includes('Complete procurement risk assessment') &&
       tagCreateRiskAssessment.includes('Save completed form in SharePoint') &&
       tagCreateRiskAssessment.includes('empty')){
       req.session.data.tagCreateRiskAssessmentStatus = 'complete'
@@ -156,11 +155,11 @@ module.exports = function (router) {
     }
   })
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/invite-the-school-lead', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/invite-the-school-lead', {})
+  router.get('/' + version + '/procurement-operations/approach-to-market/invite-school-lead-to-portal', function (req, res) {
+    res.render(version + '/procurement-operations/approach-to-market/invite-school-lead-to-portal', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/invite-the-school-lead', function (req, res) {
+  router.post('/' + version + '/procurement-operations/approach-to-market/invite-school-lead-to-portal', function (req, res) {
     const tagInviteTheSchoolLead = req.session.data['tagInviteTheSchoolLead']
     const pageAction = req.session.data['pageAction']
 
@@ -207,30 +206,17 @@ module.exports = function (router) {
 
   router.post('/' + version + '/procurement-operations/approach-to-market/get-approval-for-next-stage', function (req, res) {
     const tagGetApprovalForStage2 = req.session.data['tagGetApprovalForStage2']
-    const costThresholdStatus = req.session.data['costThresholdStatus']
 
-    if (costThresholdStatus == 'Below the relevant threshold'){
-      if (tagGetApprovalForStage2.includes('Complete email template') &&
-        tagGetApprovalForStage2.includes('Get approval from G7') &&
-        tagGetApprovalForStage2.includes('empty')){
-        req.session.data.tagGetApprovalForStage2Status = 'complete'
-      }else if (tagGetApprovalForStage2 == ('empty')){
-        req.session.data.tagGetApprovalForStage2Status = 'toDo'
-      }else {
-        req.session.data.tagGetApprovalForStage2Status = 'inProgress'
-      }
-    } else {
-      if (tagGetApprovalForStage2.includes('Complete commercial assurance document') &&
-        tagGetApprovalForStage2.includes('Get approval from G7') &&
-        tagGetApprovalForStage2.includes('Add to secretariat agenda') &&
-        tagGetApprovalForStage2.includes('Receive email to confirm approval') &&
-        tagGetApprovalForStage2.includes('empty')){
-        req.session.data.tagGetApprovalForStage2Status = 'complete'
-      }else if (tagGetApprovalForStage2 == ('empty')){
-        req.session.data.tagGetApprovalForStage2Status = 'toDo'
-      }else {
-        req.session.data.tagGetApprovalForStage2Status = 'inProgress'
-      }
+    if (tagGetApprovalForStage2.includes('Complete commercial assurance document') &&
+      tagGetApprovalForStage2.includes('Get approval from G7') &&
+      tagGetApprovalForStage2.includes('Add to secretariat agenda') &&
+      tagGetApprovalForStage2.includes('Approval received from CAB') &&
+      tagGetApprovalForStage2.includes('empty')){
+      req.session.data.tagGetApprovalForStage2Status = 'complete'
+    }else if (tagGetApprovalForStage2 == ('empty')){
+      req.session.data.tagGetApprovalForStage2Status = 'toDo'
+    }else {
+      req.session.data.tagGetApprovalForStage2Status = 'inProgress'
     }
 
     res.redirect('/' + version + '/procurement-operations/procurement')

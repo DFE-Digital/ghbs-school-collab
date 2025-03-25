@@ -37,11 +37,9 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/refine-specification-with-school', function (req, res) {
     const tagRefineSpecificationWithSchool = req.session.data['tagRefineSpecificationWithSchool']
 
-    if (tagRefineSpecificationWithSchool.includes('Select relevant specification template') &&
+    if (tagRefineSpecificationWithSchool.includes('Copy relevant specification templates and rename them to your case file') &&
         tagRefineSpecificationWithSchool.includes('Populate and refine specification') &&
-        tagRefineSpecificationWithSchool.includes('Meeting with school to refine specification') &&
         tagRefineSpecificationWithSchool.includes('Agree specification with school') &&
-        tagRefineSpecificationWithSchool.includes('Save specification to SharePoint') &&
         tagRefineSpecificationWithSchool.includes('empty')){
       req.session.data.tagRefineSpecificationWithSchoolStatus = 'complete'
     } else if (tagRefineSpecificationWithSchool == ('empty')){
@@ -53,23 +51,21 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
-  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/set-pricing-schedule', function (req, res) {
-    res.render(version + '/procurement-operations/prepare-and-go-to-market/set-pricing-schedule', {})
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/develop-pricing-schedule', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/develop-pricing-schedule', {})
   })
 
-  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/set-pricing-schedule', function (req, res) {
-    const tagSetPricingSchedule = req.session.data['tagSetPricingSchedule']
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/develop-pricing-schedule', function (req, res) {
+    const tagDevelopPricingSchedule = req.session.data['tagDevelopPricingSchedule']
 
-    if (tagSetPricingSchedule.includes('Create pricing schedule') &&
-        tagSetPricingSchedule.includes('Refine pricing schedule with school') &&
-        tagSetPricingSchedule.includes('Agree pricing schedule with school') &&
-        tagSetPricingSchedule.includes('Save pricing schedule to SharePoint') &&
-        tagSetPricingSchedule.includes('empty')){
-      req.session.data.tagSetPricingScheduleStatus = 'complete'
-    } else if (tagSetPricingSchedule == ('empty')){
-      req.session.data.tagSetPricingScheduleStatus = 'toDo'
+    if (tagDevelopPricingSchedule.includes('Copy and rename the relevant templates to your SharePoint case folder') &&
+        tagDevelopPricingSchedule.includes('Populate pricing schedule') &&
+        tagDevelopPricingSchedule.includes('empty')){
+      req.session.data.tagDevelopPricingScheduleStatus = 'complete'
+    } else if (tagDevelopPricingSchedule == ('empty')){
+      req.session.data.tagDevelopPricingScheduleStatus = 'toDo'
     } else {
-      req.session.data.tagSetPricingScheduleStatus = 'inProgress'
+      req.session.data.tagDevelopPricingScheduleStatus = 'inProgress'
     }
 
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
@@ -82,10 +78,8 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/create-quality-questions', function (req, res) {
     const tagCreateQualityQuestions = req.session.data['tagCreateQualityQuestions']
 
-    if (tagCreateQualityQuestions.includes('Create quality questions document') &&
-        tagCreateQualityQuestions.includes('Refine quality questions with school') &&
+    if (tagCreateQualityQuestions.includes('Copy and rename the relevant templates to your SharePoint case folder') &&
         tagCreateQualityQuestions.includes('Agree quality questions with school') &&
-        tagCreateQualityQuestions.includes('Save quality questions document in SharePoint') &&
         tagCreateQualityQuestions.includes('empty')){
       req.session.data.tagCreateQualityQuestionsStatus = 'complete'
     } else if (tagCreateQualityQuestions == ('empty')){
@@ -97,22 +91,21 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
   })
 
-  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-methodology', function (req, res) {
-    res.render(version + '/procurement-operations/prepare-and-go-to-market/evaluation-methodology', {})
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-model', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/evaluation-model', {})
   })
 
-  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-methodology', function (req, res) {
-    const tagEvaluationMethodology = req.session.data['tagEvaluationMethodology']
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/evaluation-model', function (req, res) {
+    const tagEvaluationModel = req.session.data['tagEvaluationModel']
 
-    if (tagEvaluationMethodology.includes('Create evaluation methodology') &&
-        tagEvaluationMethodology.includes('Refine evaluation methodology with school') &&
-        tagEvaluationMethodology.includes('Save evaluation methodology document in SharePoint') &&
-        tagEvaluationMethodology.includes('empty')){
-      req.session.data.tagEvaluationMethodologyStatus = 'complete'
-    } else if (tagEvaluationMethodology == ('empty')){
-      req.session.data.tagEvaluationMethodologyStatus = 'toDo'
+    if (tagEvaluationModel.includes('Copy and rename the relevant templates to your SharePoint case folder') &&
+        tagEvaluationModel.includes('Create score card template') &&
+        tagEvaluationModel.includes('empty')){
+      req.session.data.tagEvaluationModelStatus = 'complete'
+    } else if (tagEvaluationModel == ('empty')){
+      req.session.data.tagEvaluationModelStatus = 'toDo'
     } else {
-      req.session.data.tagEvaluationMethodologyStatus = 'inProgress'
+      req.session.data.tagEvaluationModelStatus = 'inProgress'
     }
 
     res.redirect('/' + version + '/procurement-operations/prepare-and-go-to-market/call-off-document-preparation')
@@ -125,8 +118,9 @@ module.exports = function (router) {
   router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/get-g7-approval', function (req, res) {
     const tagGetG7Approval = req.session.data['tagGetG7Approval']
 
-    if (tagGetG7Approval.includes('Make the pack') &&
-        tagGetG7Approval.includes('Approved by G7') &&
+    if (tagGetG7Approval.includes('Create document pack and save in SharePoint') &&
+        tagGetG7Approval.includes('Raise approval request from G7 in CMS') &&
+        tagGetG7Approval.includes('Approval from G7 received') &&
         tagGetG7Approval.includes('empty')){
       req.session.data.tagGetG7ApprovalStatus = 'complete'
     } else if (tagGetG7Approval == ('empty')){
@@ -138,11 +132,11 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
-  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/sign-off-bid-document-with-school', function (req, res) {
-    res.render(version + '/procurement-operations/prepare-and-go-to-market/sign-off-bid-document-with-school', {})
+  router.get('/' + version + '/procurement-operations/prepare-and-go-to-market/get-school-sign-off-for-document-pack', function (req, res) {
+    res.render(version + '/procurement-operations/prepare-and-go-to-market/get-school-sign-off-for-document-pack', {})
   })
 
-  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/sign-off-bid-document-with-school', function (req, res) {
+  router.post('/' + version + '/procurement-operations/prepare-and-go-to-market/get-school-sign-off-for-document-pack', function (req, res) {
     const tagSignOffBidDocumentWithSchool = req.session.data['tagSignOffBidDocumentWithSchool']
 
     if (tagSignOffBidDocumentWithSchool.includes('Email pack to the school') &&
