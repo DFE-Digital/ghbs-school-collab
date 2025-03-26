@@ -23,11 +23,11 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/discuss-requirements-and-route-to-market', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/discuss-requirements-and-route-to-market', {})
+  router.get('/' + version + '/stages/approach-to-market/discuss-requirements-and-route-to-market', function (req, res) {
+    res.render(version + '/stages/approach-to-market/discuss-requirements-and-route-to-market', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/discuss-requirements-and-route-to-market', function (req, res) {
+  router.post('/' + version + '/stages/approach-to-market/discuss-requirements-and-route-to-market', function (req, res) {
     const tagDiscussRequirementsAndRouteToMarket = req.session.data['tagDiscussRequirementsAndRouteToMarket']
 
     if (tagDiscussRequirementsAndRouteToMarket.includes('Research suitable routes to market') &&
@@ -43,7 +43,7 @@ module.exports = function (router) {
       req.session.data.tagDiscussRequirementsAndRouteToMarketStatus = 'inProgress'
     }
 
-    res.redirect('/' + version + '/procurement-operations/procurement')
+    res.redirect('/' + version + '/procurement')
   })
 
   router.get('/' + version + '/procurement-operations/approach-to-market/research-frameworks', function (req, res) {
@@ -68,12 +68,12 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/record-route-to-market-and-contract-value', function (req, res) {
+  router.get('/' + version + '/stages/approach-to-market/record-route-to-market-and-contract-value', function (req, res) {
     req.session.data.pageAction = ''
-    res.render(version + '/procurement-operations/approach-to-market/record-route-to-market-and-contract-value', {})
+    res.render(version + '/stages/approach-to-market/record-route-to-market-and-contract-value', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/record-route-to-market-and-contract-value', function (req, res) {
+  router.post('/' + version + '/stages/approach-to-market/record-route-to-market-and-contract-value', function (req, res) {
     const tagRecordRouteToMarket = req.session.data['routeToMarket']
     const tagReasonForRouteToMarket = req.session.data['reasonForRouteToMarket']
     const tagContractValue = req.session.data['tagContractValue']
@@ -86,7 +86,7 @@ module.exports = function (router) {
        req.session.data.tagRecordRouteToMarketAndContractValueStatus = 'inProgress'
     }
 
-    res.redirect('/' + version + '/procurement-operations/procurement')
+    res.redirect('/' + version + '/procurement')
   })
 
   router.get('/' + version + '/procurement-operations/approach-to-market/set-procurement-timeline', function (req, res) {
