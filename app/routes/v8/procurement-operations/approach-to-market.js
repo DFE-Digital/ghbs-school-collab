@@ -2,11 +2,11 @@ module.exports = function (router) {
 
   var version = "v8";
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/handover-from-triage', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/handover-from-triage', {})
+  router.get('/' + version + '/stages/approach-to-market/handover-from-triage', function (req, res) {
+    res.render(version + '/stages/approach-to-market/handover-from-triage', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/handover-from-triage', function (req, res) {
+  router.post('/' + version + '/stages/approach-to-market/handover-from-triage', function (req, res) {
     const tagHandoverFromTriage = req.session.data['tagHandoverFromTriage']
 
     if (tagHandoverFromTriage.includes('Send participation agreement') &&
@@ -20,7 +20,7 @@ module.exports = function (router) {
       req.session.data.tagHandoverFromTriageStatus = 'inProgress'
     }
 
-    res.redirect('/' + version + '/procurement-operations/procurement')
+    res.redirect('/' + version + '/procurement')
   })
 
   router.get('/' + version + '/stages/approach-to-market/discuss-requirements-and-route-to-market', function (req, res) {
@@ -44,28 +44,6 @@ module.exports = function (router) {
     }
 
     res.redirect('/' + version + '/procurement')
-  })
-
-  router.get('/' + version + '/procurement-operations/approach-to-market/research-frameworks', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/research-frameworks', {})
-  })
-
-  router.post('/' + version + '/procurement-operations/approach-to-market/research-frameworks', function (req, res) {
-    const tagResearchFrameworks = req.session.data['tagResearchFrameworks']
-
-    if (tagResearchFrameworks.includes('Research suitable existing frameworks') &&
-        tagResearchFrameworks.includes('Discuss frameworks with the school') &&
-        tagResearchFrameworks.includes('Agree framework for procurement') &&
-        tagResearchFrameworks.includes('empty')){
-      req.session.data.tagResearchFrameworksStatus = 'complete'
-      req.session.data.researchFrameworksError = 'false'
-    }else if (tagResearchFrameworks == ('empty')){
-      req.session.data.tagResearchFrameworksStatus = 'toDo'
-    }else {
-      req.session.data.tagResearchFrameworksStatus = 'inProgress'
-    }
-
-    res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
   router.get('/' + version + '/stages/approach-to-market/record-route-to-market-and-contract-value', function (req, res) {
@@ -112,57 +90,11 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement')
   })
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/create-procurement-risk-assessment', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/create-procurement-risk-assessment', {})
+  router.get('/' + version + '/stages/approach-to-market/invite-school-lead-to-portal', function (req, res) {
+    res.render(version + '/stages/approach-to-market/invite-school-lead-to-portal', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/create-procurement-risk-assessment', function (req, res) {
-    const tagCreateRiskAssessment = req.session.data['tagCreateRiskAssessment']
-
-    if (tagCreateRiskAssessment.includes('Complete procurement risk assessment') &&
-      tagCreateRiskAssessment.includes('Save completed form in SharePoint') &&
-      tagCreateRiskAssessment.includes('empty')){
-      req.session.data.tagCreateRiskAssessmentStatus = 'complete'
-    }else if (tagCreateRiskAssessment == ('empty')){
-      req.session.data.tagCreateRiskAssessmentStatus = 'toDo'
-    }else {
-      req.session.data.tagCreateRiskAssessmentStatus = 'inProgress'
-    }
-
-    res.redirect('/' + version + '/procurement-operations/procurement')
-  })
-
-  router.get('/' + version + '/procurement-operations/approach-to-market/complete-information-gathering', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/complete-information-gathering', {})
-  })
-
-  router.post('/' + version + '/procurement-operations/approach-to-market/complete-information-gathering', function (req, res) {
-    const tagCompleteInformationGathering = req.session.data['tagCompleteInformationGathering']
-    const pageAction = req.session.data['pageAction']
-
-    if (tagCompleteInformationGathering.includes('Review information gathered during triage') &&
-      tagCompleteInformationGathering.includes('Share requirements document with school') &&
-      tagCompleteInformationGathering.includes('Approve requirements document') &&
-      tagCompleteInformationGathering.includes('empty')){
-      req.session.data.tagCompleteInformationGatheringStatus = 'complete'
-    }else if (tagCompleteInformationGathering == ('empty')){
-      req.session.data.tagCompleteInformationGatheringStatus = 'toDo'
-    }else {
-      req.session.data.tagCompleteInformationGatheringStatus = 'inProgress'
-    }
-
-    if (pageAction == 'uploadInformationGathering'){
-      res.redirect('/' + version + '/common/upload-document')
-    } else {
-      res.redirect('/' + version + '/procurement-operations/procurement')
-    }
-  })
-
-  router.get('/' + version + '/procurement-operations/approach-to-market/invite-school-lead-to-portal', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/invite-school-lead-to-portal', {})
-  })
-
-  router.post('/' + version + '/procurement-operations/approach-to-market/invite-school-lead-to-portal', function (req, res) {
+  router.post('/' + version + '/stages/approach-to-market/invite-school-lead-to-portal', function (req, res) {
     const tagInviteTheSchoolLead = req.session.data['tagInviteTheSchoolLead']
     const pageAction = req.session.data['pageAction']
 
@@ -179,8 +111,28 @@ module.exports = function (router) {
     if (pageAction == 'addUser'){
       res.redirect('/' + version + '/common/add-user')
     } else {
-      res.redirect('/' + version + '/procurement-operations/procurement')
+      res.redirect('/' + version + '/procurement')
     }
+  })
+
+  router.get('/' + version + '/stages/approach-to-market/create-procurement-risk-assessment', function (req, res) {
+    res.render(version + '/stages/approach-to-market/create-procurement-risk-assessment', {})
+  })
+
+  router.post('/' + version + '/stages/approach-to-market/create-procurement-risk-assessment', function (req, res) {
+    const tagCreateRiskAssessment = req.session.data['tagCreateRiskAssessment']
+
+    if (tagCreateRiskAssessment.includes('Complete procurement risk assessment') &&
+      tagCreateRiskAssessment.includes('Save completed form in SharePoint') &&
+      tagCreateRiskAssessment.includes('empty')){
+      req.session.data.tagCreateRiskAssessmentStatus = 'complete'
+    }else if (tagCreateRiskAssessment == ('empty')){
+      req.session.data.tagCreateRiskAssessmentStatus = 'toDo'
+    }else {
+      req.session.data.tagCreateRiskAssessmentStatus = 'inProgress'
+    }
+
+    res.redirect('/' + version + '/procurement')
   })
 
   router.get('/' + version + '/procurement-operations/approach-to-market/get-CAB-approval-for-Non-DfE-deal-or-framework', function (req, res) {
@@ -203,11 +155,11 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement-operations/procurement')
   })
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/get-approval-for-next-stage', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/get-approval-for-next-stage', {})
+  router.get('/' + version + '/stages/approach-to-market/get-approval-for-next-stage', function (req, res) {
+    res.render(version + '/stages/approach-to-market/get-approval-for-next-stage', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/get-approval-for-next-stage', function (req, res) {
+  router.post('/' + version + '/stages/approach-to-market/get-approval-for-next-stage', function (req, res) {
     const tagGetApprovalForStage2 = req.session.data['tagGetApprovalForStage2']
 
     if (tagGetApprovalForStage2.includes('Complete commercial assurance document') &&
@@ -222,27 +174,7 @@ module.exports = function (router) {
       req.session.data.tagGetApprovalForStage2Status = 'inProgress'
     }
 
-    res.redirect('/' + version + '/procurement-operations/procurement')
-  })
-
-  router.get('/' + version + '/procurement-operations/approach-to-market/get-approval-from-school-on-approach', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/get-approval-from-school-on-approach', {})
-  })
-
-  router.post('/' + version + '/procurement-operations/approach-to-market/get-approval-from-school-on-approach', function (req, res) {
-    const tagSchoolApproval = req.session.data['tagSchoolApproval']
-
-    if (tagSchoolApproval.includes('Send email to school') &&
-      tagSchoolApproval.includes('Received approval from school') &&
-      tagSchoolApproval.includes('empty')){
-      req.session.data.tagSchoolApprovalStatus = 'complete'
-    }else if (tagSchoolApproval == ('empty')){
-      req.session.data.tagSchoolApprovalStatus = 'toDo'
-    }else {
-      req.session.data.tagSchoolApprovalStatus = 'inProgress'
-    }
-
-    res.redirect('/' + version + '/procurement-operations/procurement')
+    res.redirect('/' + version + '/procurement')
   })
 
 }
