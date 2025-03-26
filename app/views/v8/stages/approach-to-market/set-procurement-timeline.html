@@ -55,13 +55,21 @@
               <fieldset class="govuk-fieldset">
                 <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagSetProcurementTimeline-1" name="tagSetProcurementTimeline" type="checkbox" value="Review and set dates for tasks" {{ checked("tagSetProcurementTimeline", "Review and set dates for tasks") }}>
+                    {% if (data['userType'] == 'procurement-operations') %}
+                      <input class="govuk-checkboxes__input" id="tagSetProcurementTimeline-1" name="tagSetProcurementTimeline" type="checkbox" value="Review and set dates for tasks" {{ checked("tagSetProcurementTimeline", "Review and set dates for tasks") }}>
+                    {% else %}
+                      <input disabled aria-disabled="true" class="govuk-checkboxes__input" id="tagSetProcurementTimeline-1" name="tagSetProcurementTimeline" type="checkbox" value="Review and set dates for tasks" {{ checked("tagSetProcurementTimeline", "Review and set dates for tasks") }} >
+                    {% endif %}
                     <label class="govuk-label govuk-checkboxes__label" for="tagSetProcurementTimeline-1">
                       Review and set dates for tasks
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagSetProcurementTimeline-2" name="tagSetProcurementTimeline" type="checkbox" value="Share dates with the school" {{ checked("tagSetProcurementTimeline", "Share dates with the school") }}>
+                    {% if (data['userType'] == 'procurement-operations') %}
+                      <input class="govuk-checkboxes__input" id="tagSetProcurementTimeline-2" name="tagSetProcurementTimeline" type="checkbox" value="Share dates with the school" {{ checked("tagSetProcurementTimeline", "Share dates with the school") }}>
+                    {% else %}
+                      <input disabled aria-disabled="true" class="govuk-checkboxes__input" id="tagSetProcurementTimeline-2" name="tagSetProcurementTimeline" type="checkbox" value="Share dates with the school" {{ checked("tagSetProcurementTimeline", "Share dates with the school") }} >
+                    {% endif %}
                     <label class="govuk-label govuk-checkboxes__label" for="tagSetProcurementTimeline-2">
                       Share dates with the school
                     </label>

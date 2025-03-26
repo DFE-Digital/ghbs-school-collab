@@ -89,24 +89,27 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement')
   })
 
-  router.get('/' + version + '/procurement-operations/approach-to-market/set-procurement-timeline', function (req, res) {
-    res.render(version + '/procurement-operations/approach-to-market/set-procurement-timeline', {})
+  router.get('/' + version + '/stages/approach-to-market/set-procurement-timeline', function (req, res) {
+    res.render(version + '/stages/approach-to-market/set-procurement-timeline', {})
   })
 
-  router.post('/' + version + '/procurement-operations/approach-to-market/set-procurement-timeline', function (req, res) {
+  router.post('/' + version + '/stages/approach-to-market/set-procurement-timeline', function (req, res) {
     const tagSetProcurementTimeline = req.session.data['tagSetProcurementTimeline']
+    const userType = req.session.data['userType']
 
-    if (tagSetProcurementTimeline.includes('Review and set dates for tasks') &&
-      tagSetProcurementTimeline.includes('Share dates with the school') &&
-      tagSetProcurementTimeline.includes('empty')){
-      req.session.data.tagSetProcurementTimelineStatus = 'complete'
-    }else if (tagSetProcurementTimeline == ('empty')){
-      req.session.data.tagSetProcurementTimelineStatus = 'toDo'
-    }else {
-      req.session.data.tagSetProcurementTimelineStatus = 'inProgress'
+    if (userType == 'procurement-operations'){
+      if (tagSetProcurementTimeline.includes('Review and set dates for tasks') &&
+        tagSetProcurementTimeline.includes('Share dates with the school') &&
+        tagSetProcurementTimeline.includes('empty')){
+        req.session.data.tagSetProcurementTimelineStatus = 'complete'
+      }else if (tagSetProcurementTimeline == ('empty')){
+        req.session.data.tagSetProcurementTimelineStatus = 'toDo'
+      }else {
+        req.session.data.tagSetProcurementTimelineStatus = 'inProgress'
+      }
     }
 
-    res.redirect('/' + version + '/procurement-operations/procurement')
+    res.redirect('/' + version + '/procurement')
   })
 
   router.get('/' + version + '/procurement-operations/approach-to-market/create-procurement-risk-assessment', function (req, res) {
