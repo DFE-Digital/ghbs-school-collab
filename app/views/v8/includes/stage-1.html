@@ -6,7 +6,7 @@
   {% if (data['userType'] == 'procurement-operations') %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/handover-from-triage">
+        <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/handover-from-triage">
           Handover from Triage
         </a>
       </div>
@@ -24,7 +24,7 @@
   {% endif %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/discuss-requirements-and-route-to-market">
+      <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/discuss-requirements-and-route-to-market">
         Discuss requirements and route to market
       </a>
     </div>
@@ -45,7 +45,7 @@
     <li class="govuk-task-list__item govuk-task-list__item--with-link" id="record-route-to-market">
   {% endif %}
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/record-route-to-market-and-contract-value" aria-describedby="company-details-2-status">
+        <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/record-route-to-market-and-contract-value" aria-describedby="company-details-2-status">
           Record route to market and contract value
         </a>
       </div>
@@ -64,7 +64,7 @@
     </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/set-procurement-timeline">
+      <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/set-procurement-timeline">
         Set procurement timeline
       </a>
     </div>
@@ -82,7 +82,7 @@
   {% if (data['userType'] == 'procurement-operations') %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/invite-school-lead-to-portal">
+        <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/invite-school-lead-to-portal">
           Invite school lead to portal
         </a>
       </div>
@@ -101,7 +101,7 @@
   {% if (data['userType'] == 'procurement-operations') %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/create-procurement-risk-assessment">
+        <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/create-procurement-risk-assessment">
           Create Procurement Risk Assessment Tool (PRAT)
         </a>
       </div>
@@ -119,7 +119,7 @@
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
         {% if (data['tagContractValue'] == "No, its above the relevant threshold") %}
-          <a class="govuk-link govuk-task-list__link" href="approach-to-market/get-approval-for-next-stage">
+          <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/get-approval-for-next-stage">
             Get CAB approval
           </a>
         {% else %}
@@ -141,4 +141,5 @@
         {% endif %}
       </div>
     </li>
-  {% endif %}</ul>
+  {% endif %}
+</ul>
