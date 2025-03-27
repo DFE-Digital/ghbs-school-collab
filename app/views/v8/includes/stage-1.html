@@ -1,26 +1,30 @@
 <span class="govuk-caption-m">Complete on {{ "today" | duration(data['stage1Duration']) | govukDate("truncate") }}</span>
+
+
 <h3 class="govuk-heading-m">1. Approach to market</h3>
 <ul class="govuk-task-list">
+  {% if (data['userType'] == 'procurement-operations') %}
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/handover-from-triage">
+          Handover from Triage
+        </a>
+      </div>
+      <div class="govuk-task-list__status">
+        {% if (data['tagHandoverFromTriageStatus'] == "complete") %}
+          <strong class="govuk-tag govuk-tag--green">Complete</strong>
+        {% elseif (data['tagHandoverFromTriageStatus'] == "inProgress")%}
+          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--blue">Due: {{ data['handoverFromTriageStartDate'] }}
+            -  {{ data['handoverFromTriageEndDate']}}  </strong>
+        {% endif %}
+      </div>
+    </li>
+  {% endif %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/handover-from-triage">
-        Handover from Triage
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagHandoverFromTriageStatus'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagHandoverFromTriageStatus'] == "inProgress")%}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['handoverFromTriageStartDate'] }}
-          - {{ data['handoverFromTriageEndDate']}}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/discuss-requirements-and-route-to-market">
+      <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/discuss-requirements-and-route-to-market">
         Discuss requirements and route to market
       </a>
     </div>
@@ -41,7 +45,7 @@
     <li class="govuk-task-list__item govuk-task-list__item--with-link" id="record-route-to-market">
   {% endif %}
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/record-route-to-market-and-contract-value" aria-describedby="company-details-2-status">
+        <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/record-route-to-market-and-contract-value" aria-describedby="company-details-2-status">
           Record route to market and contract value
         </a>
       </div>
@@ -60,7 +64,7 @@
     </li>
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/set-procurement-timeline">
+      <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/set-procurement-timeline">
         Set procurement timeline
       </a>
     </div>
@@ -78,7 +82,7 @@
   {% if (data['userType'] == 'procurement-operations') %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/invite-school-lead-to-portal">
+        <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/invite-school-lead-to-portal">
           Invite school lead to portal
         </a>
       </div>
@@ -94,117 +98,48 @@
       </div>
     </li>
   {% endif %}
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/create-procurement-risk-assessment">
-        Create Procurement Risk Assessment Tool (PRAT)
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagCreateRiskAssessmentStatus'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagCreateRiskAssessmentStatus'] == "inProgress")%}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['createProcurementRiskAssessmentStartDate'] }}
-          - {{ data['createProcurementRiskAssessmentEndDate'] }}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      {% if (data['tagContractValue'] == "No, its above the relevant threshold") %}
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/get-approval-for-next-stage">
-          Get CAB approval
-        </a>
-      {% else %}
-        Get CAB approval
-      {% endif %}
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagContractValue'] == "Yes, its below the relevant threshold") %}
-        <strong class="govuk-tag govuk-tag--grey">Not needed</strong>
-      {% else %}
-        {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
-          <strong class="govuk-tag govuk-tag--green">Complete</strong>
-        {% elseif (data['tagGetApprovalForStage2Status'] == "inProgress")%}
-          <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">Due: {{ data['getApprovalStartDate'] }}
-            - {{ data['getApprovalEndDate'] }}  </strong>
-        {% endif %}
-      {% endif %}
-    </div>
-  </li>
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/get-approval-from-school-on-approach">
-        Get approval from school on approach
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagSchoolApprovalStatus'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagSchoolApprovalStatus'] == "inProgress")%}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ data['approvalFromSchoolOnApproachStartDate'] }}
-          - {{ data['approvalFromSchoolOnApproachEndDate'] }}  </strong>
-      {% endif %}
-    </div>
-  </li>
-  <!-- {% if (data['userType'] == 'procurement-operations') %}
-    {% if (data['routeToMarket'] == "Non-DfE approved deal or framework") %}
-      <li class="govuk-task-list__item govuk-task-list__item--with-link">
-        <div class="govuk-task-list__name-and-hint">
-          <a class="govuk-link govuk-task-list__link" href="approach-to-market/get-CAB-approval-for-Non-DfE-deal-or-framework" aria-describedby="company-details-2-status">
-            Get CAB approval for Non-DfE deal or framework
-          </a>
-        </div>
-        <div class="govuk-task-list__status">
-          {% if (data['tagCabApprovalNonDfeDealFrameworkStatus'] == "complete") %}
-            <strong class="govuk-tag govuk-tag--green">Complete</strong>
-          {% elseif (data['tagCabApprovalNonDfeDealFrameworkStatus'] == "inProgress")%}
-            <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-          {% else %}
-            <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(21) | govukDate("truncate") }}  </strong>
-          {% endif %}
-        </div>
-      </li>
-    {% endif %}
-  {% endif %} -->
-  <!-- <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="approach-to-market/complete-information-gathering">
-        Complete information gathering
-      </a>
-    </div>
-    <div class="govuk-task-list__status">
-      {% if (data['tagCompleteInformationGatheringStatus'] == "complete") %}
-        <strong class="govuk-tag govuk-tag--green">Complete</strong>
-      {% elseif (data['tagCompleteInformationGatheringStatus'] == "inProgress")%}
-        <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
-      {% else %}
-        <strong class="govuk-tag govuk-tag--blue">Due: {{ "today" | duration(7) | govukDate("truncate") }}  </strong>
-      {% endif %}
-    </div>
-  </li>
   {% if (data['userType'] == 'procurement-operations') %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="approach-to-market/check-cost-threshold">
-          Check cost threshold
+        <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/create-procurement-risk-assessment">
+          Create Procurement Risk Assessment Tool (PRAT)
         </a>
       </div>
       <div class="govuk-task-list__status">
-        {% if (data['tagCheckCostThresholdStatus'] == "complete") %}
+        {% if (data['tagCreateRiskAssessmentStatus'] == "complete") %}
           <strong class="govuk-tag govuk-tag--green">Complete</strong>
-        {% elseif (data['tagCheckCostThresholdStatus'] == "inProgress")%}
+        {% elseif (data['tagCreateRiskAssessmentStatus'] == "inProgress")%}
           <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
         {% else %}
-          <strong class="govuk-tag govuk-tag--blue">To do</strong>
+          <strong class="govuk-tag govuk-tag--blue">Due: {{ data['createProcurementRiskAssessmentStartDate'] }}
+            - {{ data['createProcurementRiskAssessmentEndDate'] }}  </strong>
         {% endif %}
       </div>
     </li>
-  {% endif %} -->
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        {% if (data['tagContractValue'] == "No, its above the relevant threshold") %}
+          <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/get-approval-for-next-stage">
+            Get CAB approval
+          </a>
+        {% else %}
+          Get CAB approval
+        {% endif %}
+      </div>
+      <div class="govuk-task-list__status">
+        {% if (data['tagContractValue'] == "Yes, its below the relevant threshold") %}
+          <strong class="govuk-tag govuk-tag--grey">Not needed</strong>
+        {% else %}
+          {% if (data['tagGetApprovalForStage2Status'] == "complete") %}
+            <strong class="govuk-tag govuk-tag--green">Complete</strong>
+          {% elseif (data['tagGetApprovalForStage2Status'] == "inProgress")%}
+            <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+          {% else %}
+            <strong class="govuk-tag govuk-tag--blue">Due: {{ data['getApprovalStartDate'] }}
+              - {{ data['getApprovalEndDate'] }}  </strong>
+          {% endif %}
+        {% endif %}
+      </div>
+    </li>
+  {% endif %}
 </ul>

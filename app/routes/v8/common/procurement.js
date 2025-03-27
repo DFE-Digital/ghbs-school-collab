@@ -2,7 +2,7 @@ module.exports = function (router) {
 
   var version = "v8";
 
-  router.get('/' + version + '/procurement-operations/procurement', function (req, res) {
+  router.get('/' + version + '/procurement', function (req, res) {
     const tagCompleteInformationGatheringStatus = req.session.data['tagCompleteInformationGatheringStatus']
     const tagRecordRouteToMarketStatus = req.session.data['tagRecordRouteToMarketStatus']
     const tagCheckCostThresholdStatus = req.session.data['tagCheckCostThresholdStatus']
@@ -19,9 +19,25 @@ module.exports = function (router) {
       res.locals.data.stage1ApprovalBlocked = 'true'
     }
 
-    res.render(version + '/procurement-operations/procurement', {})
+    res.render(version + '/procurement', {})
   })
 
-  router.post('/' + version + '/procurement-operations/procurement', function (req, res) {
+  router.post('/' + version + '/procurement', function (req, res) {
+  })
+
+  router.get('/' + version + '/sign-in', function (req, res) {
+    res.render(version + '/sign-in', {})
+  })
+
+  router.post('/' + version + '/sign-in', function (req, res) {
+    res.redirect('/' + version + '/password')
+  })
+
+  router.get('/' + version + '/password', function (req, res) {
+    res.render(version + '/password', {})
+  })
+
+  router.post('/' + version + '/password', function (req, res) {
+    res.redirect('/' + version + '/procurement')
   })
 }
