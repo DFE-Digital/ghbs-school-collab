@@ -68,46 +68,48 @@
           </div>
         {% endif %}
       </div>
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <nav class="moj-sub-navigation" aria-label="Sub navigation">
-            <ul class="moj-sub-navigation__list">
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" aria-current="page" href="#">
-                  Task list</a>
-              </li>
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="timeline">
-                  Timeline</a>
-              </li>
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#">School details</a>
-              </li>
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#">Case details</a>
-              </li>
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#">Request</a>
-              </li>
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#">Messages</a>
-              </li>
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#">Contacts</a>
-              </li>
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#">History</a>
-              </li>
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#">Attachments</a>
-              </li>
-              <li class="moj-sub-navigation__item">
-                <a class="moj-sub-navigation__link" href="#">Files</a>
-              </li>
-            </ul>
-          </nav>
+      {% if (data['userType'] == 'procurement-operations') %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+              <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" aria-current="page" href="#">
+                    Task list</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="timeline">
+                    Timeline</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">School details</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Case details</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Request</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Messages</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Contacts</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">History</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Attachments</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Files</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-      </div>
+      {% endif %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-l">Procurement task list</h2>
