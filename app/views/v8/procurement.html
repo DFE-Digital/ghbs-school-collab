@@ -47,24 +47,26 @@
           <h1 class="govuk-heading-l">Catering Services</h1>
           {% include "./includes/key-procurement-info.html" %}
         </div>
-        <div class="govuk-grid-column-one-quarter" style="text-align: right;">
-          <div class="moj-button-menu" data-module="moj-button-menu" data-button-text="Actions" data-button-classes="govuk-button--secondary" data-align-menu="right">
-            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
-              Add a case note</a>
-            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
-              Move emails to existing case</a>
-            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
-              Change case owner</a>
-            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
-              Log contact with school</a>
-            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
-              Place on hold</a>
-            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
-              Resolve case</a>
-            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
-              Reject case</a>
+        {% if (data['userType'] == 'procurement-operations') %}
+          <div class="govuk-grid-column-one-quarter" style="text-align: right;">
+            <div class="moj-button-menu" data-module="moj-button-menu" data-button-text="Actions" data-button-classes="govuk-button--secondary" data-align-menu="right">
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Add a case note</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Move emails to existing case</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Change case owner</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Log contact with school</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Place on hold</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Resolve case</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Reject case</a>
+            </div>
           </div>
-        </div>
+        {% endif %}
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
