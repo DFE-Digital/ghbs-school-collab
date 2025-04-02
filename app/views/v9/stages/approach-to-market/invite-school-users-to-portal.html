@@ -32,20 +32,22 @@
             {% include "../../includes/case-identifiers.html" %}
             <h1 class="govuk-heading-l" id="task">Invite school users to portal
               </h1>
-            <p class="govuk-body">Inviting the school lead to the portal will
-              allow them to access the school's task list, view deadline dates
-              and receive documents.</p>
-            <p class="govuk-body">You can add other contacts to the portal
-              later.</p>
+            <p class="govuk-body">Invite the school users, like schools
+              business professionals, to the portal. This will allow them to
+              access the school's task list, view deadline dates and receive
+              documents.</p>
+            <p class="govuk-body">Do not use this to invite evaluators, or they
+              will be able to view all school information about this procurement.</p>
+            <p class="govuk-body">You can school users at any time.</p>
             <div class="govuk-form-group">
               <table class="govuk-table">
                 <caption class="govuk-table__caption govuk-table__caption--m">
-                  School leads</caption>
+                  School users</caption>
                 <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header">Name</th>
                     <th scope="col" class="govuk-table__header">Email</th>
-                    <th scope="col" class="govuk-table__header">Date sent</th>
+                    <th scope="col" class="govuk-table__header">Invited</th>
                     <th scope="col" class="govuk-table__header"></th>
                   </tr>
                 </thead>
@@ -55,7 +57,7 @@
                     <td class="govuk-table__cell">Emmie.Duke@school.com</td>
                     <td class="govuk-table__cell">
                       {% if (data['sbp1Emailed'] != 'true') %}
-                        not emailed
+                        Not invited
                       {% else %}
                         {{ "now" | govukTime }}
                       {% endif %}
