@@ -90,22 +90,18 @@ module.exports = function (router) {
     res.redirect('/' + version + '/procurement')
   })
 
-  router.get('/' + version + '/stages/approach-to-market/invite-school-lead-to-portal', function (req, res) {
-    res.render(version + '/stages/approach-to-market/invite-school-lead-to-portal', {})
+  router.get('/' + version + '/stages/approach-to-market/invite-school-users-to-portal', function (req, res) {
+    res.render(version + '/stages/approach-to-market/invite-school-users-to-portal', {})
   })
 
-  router.post('/' + version + '/stages/approach-to-market/invite-school-lead-to-portal', function (req, res) {
-    const tagInviteTheSchoolLead = req.session.data['tagInviteTheSchoolLead']
+  router.post('/' + version + '/stages/approach-to-market/invite-school-users-to-portal', function (req, res) {
+    const sbp1Emailed = req.session.data['sbp1Emailed']
     const pageAction = req.session.data['pageAction']
 
-    if (tagInviteTheSchoolLead.includes('Add school leads') &&
-      tagInviteTheSchoolLead.includes('Send invites') &&
-      tagInviteTheSchoolLead.includes('empty')){
-      req.session.data.tagInviteTheSchoolLeadStatus = 'complete'
-    }else if (tagInviteTheSchoolLead == ('empty')){
-      req.session.data.tagInviteTheSchoolLeadStatus = 'toDo'
+    if (sbp1Emailed == 'true'){
+      req.session.data.tagInviteSchoolUsersToPortalStatus = 'complete'
     }else {
-      req.session.data.tagInviteTheSchoolLeadStatus = 'inProgress'
+      req.session.data.tagInviteSchoolUsersToPortalStatus = 'toDo'
     }
 
     if (pageAction == 'addUser'){

@@ -28,7 +28,7 @@
       </div>
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <form action="invite-school-lead-to-portal" method="post" novalidate>
+          <form action="invite-school-users-to-portal" method="post" novalidate>
             {% include "../../includes/case-identifiers.html" %}
             <h1 class="govuk-heading-l" id="task">Invite school users to portal
               </h1>
@@ -70,31 +70,6 @@
               <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="addUser">
                 Add user
               </button>
-            </div>
-            <div class="govuk-form-group">
-              <h2 class="govuk-heading-m">Actions</h2>
-              <fieldset class="govuk-fieldset">
-                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagInviteTheSchoolLead" name="tagInviteTheSchoolLead" type="checkbox" value="Add school leads" {{ checked("tagInviteTheSchoolLead", "Add school leads") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="tagInviteTheSchoolLead">
-                      Add school leads
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="tagInviteTheSchoolLead-3" name="tagInviteTheSchoolLead" type="checkbox" value="Send invites" {{ checked("tagInviteTheSchoolLead", "Send invites") }}>
-                    <label class="govuk-label govuk-checkboxes__label" for="tagInviteTheSchoolLead-3">
-                      Send invites
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item" style="display: none;">
-                    <input class="govuk-checkboxes__input" id="tagInviteTheSchoolLead-0" name="tagInviteTheSchoolLead" type="checkbox" value="empty" checked="empty">
-                    <label class="govuk-label govuk-checkboxes__label" for="tagInviteTheSchoolLead-0">
-                      empty
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
             </div>
             <div class="govuk-button-group">
               <button type="submit" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
