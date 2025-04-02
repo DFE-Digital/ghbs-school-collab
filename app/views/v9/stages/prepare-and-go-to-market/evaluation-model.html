@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Evaluation model" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              {% if (data['userType'] == 'procurement-operations') %}
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+                </li>
+              {% endif %}
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Evaluation
+                  methodology</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Evaluation model</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="evaluation-model" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">The evaluation model outlines how the
+                bids will be scored. This should be a clear and transparent
+                process, both for the school evaluators and the potential
+                supplier.</p>
+              <p class="govuk-body">The evaluation model should accurately
+                explain how bids will be scored and the weighting applied to
+                each question.</p>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagEvaluationModel-1" name="tagEvaluationModel" type="checkbox" value="Copy and rename the relevant templates to your SharePoint case folder" {{ checked("tagEvaluationModel", "Copy and rename the relevant templates to your SharePoint case folder") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagEvaluationModel-1">
+                      Copy and rename the relevant templates to your SharePoint
+                      case folder</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagEvaluationModel-2" name="tagEvaluationModel" type="checkbox" value="Create score card template" {{ checked("tagEvaluationModel", "Create score card template") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagEvaluationModel-2">
+                      Create score card template</label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagEvaluationModel-0" name="tagEvaluationModel" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagEvaluationModel-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="call-off-document-preparation">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

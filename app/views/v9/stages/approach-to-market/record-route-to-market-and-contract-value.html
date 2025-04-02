@@ -1,0 +1,234 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Record route to market and contract value" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              {% if (data['userType'] == 'procurement-operations') %}
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+                </li>
+              {% endif %}
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../../procurement">004335 Catering
+                  services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Complete information
+                  gathering</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Record route to market and contract value</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="record-route-to-market-and-contract-value" method="post" novalidate>
+            <div class="govuk-form-group">
+              {% if (data['recordRouteToMarketError'] == "true") %}
+                <p class="govuk-body">
+                  <strong class="govuk-tag govuk-tag--red govuk-!-margin-right-5">Overdue</strong>
+                  <a href="../../common/change-due-date?dueDateTask=Record%20route%20to%20market" class="govuk-link">Change due date</a>
+                </p>
+              {% endif %}
+            </div>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                {% if (data['userType'] == 'procurement-operations') %}
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Route to market
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="routeToMarket" name="routeToMarket" type="radio" value="Bespoke procurement" {{ checked("routeToMarket", "Bespoke procurement") }}>
+                      <label class="govuk-label govuk-radios__label" for="routeToMarket">
+                        Bespoke procurement
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="routeToMarket-2" name="routeToMarket" type="radio" data-aria-controls="frameworkNameHolder" value="DfE approved deal or framework" {{ checked("routeToMarket", "DfE approved deal or framework") }}>
+                      <label class="govuk-label govuk-radios__label" for="routeToMarket-2">
+                        DfE approved deal or framework
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="frameworkNameHolder">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="frameworkName">
+                          Name of framework
+                        </label>
+                        <input class="govuk-input" id="frameworkName" name="frameworkName" type="text" spellcheck="false" value="{{data['frameworkName']}}">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="ePortalReference">
+                          E-portal reference (if known)
+                        </label>
+                        <input class="govuk-input" id="ePortalReference" name="ePortalReference" type="text" spellcheck="false" value="{{data['ePortalReference']}}">
+                      </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="routeToMarket-3" name="routeToMarket" type="radio" value="Non-DfE approved deal or framework" {{ checked("routeToMarket", "Non-DfE approved deal or framework") }}>
+                      <label class="govuk-label govuk-radios__label" for="routeToMarket-3">
+                        Non-DfE approved deal or framework
+                      </label>
+                    </div>
+                  </div>
+                {% else %}
+                  <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Route selected
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['routeToMarket'] }}
+                      </dd>
+                    </div>
+                    {% if (data['routeToMarket'] == "DfE approved deal or framework") %}
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Name of framework
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['frameworkName'] }}
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          E-portal reference
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          {{ data['ePortalReference'] }}
+                        </dd>
+                      </div>
+                    {% endif %}
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Reason for route to market
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['reasonForRouteToMarket'] }}
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Contract value below threshold
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        {{ data['tagContractValue'] }}
+                      </dd>
+                    </div>
+                  </dl>
+                {% endif %}
+              </fieldset>
+            </div>
+            {% if (data['userType'] == 'procurement-operations') %}
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Reason for route to market
+                    </h2>
+                  </legend>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="reasonForRouteToMarket" name="reasonForRouteToMarket" type="radio" value="Better specification or terms than DfE deal" {{ checked("reasonForRouteToMarket", "Better specification or terms than DfE deal") }}>
+                      <label class="govuk-label govuk-radios__label" for="reasonForRouteToMarket">
+                        Better specification or terms than DfE deal
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="reasonForRouteToMarket-2" name="reasonForRouteToMarket" type="radio" value="DfE deal or framework selected" {{ checked("reasonForRouteToMarket", "DfE deal or framework selected") }}>
+                      <label class="govuk-label govuk-radios__label" for="reasonForRouteToMarket-2">
+                        DfE deal or framework selected
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="reasonForRouteToMarket-3" name="reasonForRouteToMarket" type="radio" value="No DfE deal or framework selected" {{ checked("reasonForRouteToMarket", "No DfE deal or framework selected") }}>
+                      <label class="govuk-label govuk-radios__label" for="reasonForRouteToMarket-3">
+                        No DfE deal or framework selected
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="reasonForRouteToMarket-4" name="reasonForRouteToMarket" type="radio" value="Bespoke procurement" {{ checked("reasonForRouteToMarket", "Bespoke procurement") }}>
+                      <label class="govuk-label govuk-radios__label" for="reasonForRouteToMarket-4">
+                        School preference
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            {% endif %}
+            {% if (data['userType'] == 'procurement-operations') %}
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">Is the contract value
+                      below the relevant threshold?</h2>
+                  </legend>
+                  <p class="govuk-body">All current frameworks use the 2015 PCR
+                    rules, calloffs run under those rules until the framework
+                    closes. Any frameworks started before 2026 could run under
+                    the 2015 PCR rules, speak to your line manager if you are
+                    unsure.</p>
+                  <p class="govuk-body"><a href="https://www.gov.uk/government/publications/ppn-1123-new-thresholds/procurement-policy-note-1123-new-thresholds-html" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                    Check PCR 2015 thresholds (opens in new tab)</a>.</p>
+                  <p class="govuk-body"><a href="https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-define-phase/guidance-thresholds-html" class="govuk-link" rel="noreferrer noopener" target="_blank">
+                    Check thresholds for the Procurement Act 2023 (opens in new tab)</a>.</p>
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Get help with contract value threshold
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p class="govuk-body">This is the contract value for the
+                        entire duration of the contract. This must include any
+                        options to extend and consider inflationary changes,
+                        increases to the national living wage and other
+                        longer-term factors.</p>
+                      <p class="govuk-body"If the total contract value is within
+                        10% of relevant the threshold for the current year, it
+                        should be discussed with your line manager. It may need
+                        to be considered as above the threshold.</p>
+                      <p class="govuk-body">Contracts above the threshold
+                        will need additional checks from the Commercial Assurance
+                        Board (CAB).</p>
+                    </div>
+                  </details>
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="tagContractValue" name="tagContractValue" type="radio" value="Yes, its below the relevant threshold" {{ checked("tagContractValue", "Yes, its below the relevant threshold") }}>
+                      <label class="govuk-label govuk-radios__label" for="tagContractValue">
+                        Yes, its below the relevant threshold
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="tagContractValue-2" name="tagContractValue" type="radio" data-aria-controls="frameworkNameHolder" value="No, its above the relevant threshold" {{ checked("tagContractValue", "No, its above the relevant threshold") }}>
+                      <label class="govuk-label govuk-radios__label" for="tagContractValue-2">
+                        No, its above the relevant threshold
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            {% endif %}
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and Continue
+              </button>
+              <a class="govuk-link" href="../../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

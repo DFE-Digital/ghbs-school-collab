@@ -16,3 +16,14 @@
 .govuk-width-container, .dfe-width-container, .dfe-header__container, .dfe-header__navigation{
   max-width: 1200px !important;
 }
+
+// Use Inter font
+@import url('https://rsms.me/inter/inter.css');
+*{
+  font-family: 'Inter', sans-serif !important;
+}
+
+// User Inter in tables (you need to apply the classes too)
+.tableNumbers{
+    font-feature-settings: 'tnum' 1, 'ss01' 1, 'zero' 1;
+}

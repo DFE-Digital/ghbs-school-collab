@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Publish call off to competition" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              {% if (data['userType'] == 'procurement-operations') %}
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+                </li>
+              {% endif %}
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Publish call off to
+                  competition</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Publish call off to competition</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="publish-call-off-to-competition" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Publish the procurement to the relevant
+                framework portal. Most of these will go on the framework
+                providers portal.</p>
+              <p class="govuk-body">If you are unsure where to publish, check
+                the route to market information.</p>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">Help with publishing
+                  call off to competition</summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">When publishing the procurement on the
+                    framework portal, you should use the option to notify all
+                    suppliers.</p>
+                  <p class="govuk-body">Clarification questions from potential
+                    suppliers should be answered in consultation with the
+                    school and responded to on the portal so it is available
+                    to all suppliers.</p>
+                  <p class="govuk-body">When selecting the duration of the
+                    tender process, think about how much information suppliers
+                    will need to consider and what they will be asked to
+                    provide.</p>
+                  <p class="govuk-body">It is recommended all tenders last for
+                    at least 20 working days.</p>
+                </div>
+              </details>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagPublishCallOffToCompetition-1" name="tagPublishCallOffToCompetition" type="checkbox" value="Publish on relevant portal" {{ checked("tagPublishCallOffToCompetition", "Publish on relevant portal") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagPublishCallOffToCompetition-1">
+                      Publish on relevant portal
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagPublishCallOffToCompetition-0" name="tagPublishCallOffToCompetition" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagPublishCallOffToCompetition-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="../../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

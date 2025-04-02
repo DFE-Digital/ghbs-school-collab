@@ -1,0 +1,126 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Catering services Multi academy trust 004335" %}
+
+{% block content %}
+{% if (data['tagResearchFrameworksStatus'] == 'overdue' or data['tagRecordRouteToMarketStatus'] == 'overdue')%}
+  <div class="govuk-error-summary" data-module="govuk-error-summary">
+    <div role="alert">
+      <h2 class="govuk-error-summary__title">
+        Tasks are overdue
+      </h2>
+      <div class="govuk-error-summary__body">
+        <p class="govuk-body">Complete the tasks now, or set the required due
+          dates to a date in the future.</p>
+        <ul class="govuk-list govuk-error-summary__list">
+          {% if (data['tagResearchFrameworksStatus'] == 'overdue') %}
+            <li>
+              <a href="#research-frameworks">Research frameworks</a>
+            </li>
+          {% endif %}
+          {% if (data['tagRecordRouteToMarketStatus'] == 'overdue') %}
+            <li>
+              <a href="#record-route-to-market">Record route to market</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endif %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              {% if (data['userType'] == 'procurement-operations') %}
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+                </li>
+              {% endif %}
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">004335 Catering
+                  services</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "./includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Catering Services</h1>
+          {% include "./includes/key-procurement-info.html" %}
+        </div>
+        {% if (data['userType'] == 'procurement-operations') %}
+          <div class="govuk-grid-column-one-quarter" style="text-align: right;">
+            <div class="moj-button-menu" data-module="moj-button-menu" data-button-text="Actions" data-button-classes="govuk-button--secondary" data-align-menu="right">
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Add a case note</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Move emails to existing case</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Change case owner</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Log contact with school</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Place on hold</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Resolve case</a>
+              <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+                Reject case</a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      {% if (data['userType'] == 'procurement-operations') %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+              <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" aria-current="page" href="#">
+                    Task list</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="timeline">
+                    Timeline</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">School details</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Case details</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Request</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Messages</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Contacts</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">History</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Attachments</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                  <a class="moj-sub-navigation__link" href="#">Files</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      {% endif %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-heading-l">Procurement task list</h2>
+          {% include "./includes/stage-1.html" %}
+          {% include "./includes/stage-2.html" %}
+          {% include "./includes/stage-3.html" %}
+          {% include "./includes/stage-4.html" %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
