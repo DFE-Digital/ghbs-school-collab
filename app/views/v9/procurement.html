@@ -115,6 +115,24 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-l">Procurement task list</h2>
+          {% if (data['userType'] == 'procurement-operations') %}
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Get help using the task list
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">The task list is a suggested order of
+                  tasks that should be relevant for all categories of
+                  procurement and does not force a specific way of working.</p>
+                <p class="govuk-body">Complete tasks in the order best suited for
+                  this procurement, however it is recommended that each stage is
+                  completed before substantial work on the following stage is
+                  done.</p>
+              </div>
+            </details>
+          {% endif %}
           {% include "./includes/stage-1.html" %}
           {% include "./includes/stage-2.html" %}
           {% include "./includes/stage-3.html" %}
