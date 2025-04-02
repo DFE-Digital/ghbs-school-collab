@@ -82,18 +82,18 @@
   {% if (data['userType'] == 'procurement-operations') %}
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/invite-school-lead-to-portal">
-          Invite school lead to portal
+        <a class="govuk-link govuk-task-list__link" href="stages/approach-to-market/invite-school-users-to-portal">
+          Invite school users to portal
         </a>
       </div>
       <div class="govuk-task-list__status">
-        {% if (data['tagInviteTheSchoolLeadStatus'] == "complete") %}
+        {% if (data['tagInviteSchoolUsersToPortalStatus'] == "complete") %}
           <strong class="govuk-tag govuk-tag--green">Complete</strong>
-        {% elseif (data['tagInviteTheSchoolLeadStatus'] == "inProgress")%}
+        {% elseif (data['tagInviteSchoolUsersToPortalStatus'] == "inProgress")%}
           <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
         {% else %}
-          <strong class="govuk-tag govuk-tag--blue">Due: {{ data['inviteTheSchoolLeadStartDate'] }}
-            - {{ data['inviteTheSchoolLeadEndDate'] }}  </strong>
+          <strong class="govuk-tag govuk-tag--blue">Due: {{ data['inviteSchoolUsersToPortalStartDate'] }}
+            - {{ data['inviteSchoolUsersToPortalEndDate'] }}  </strong>
         {% endif %}
       </div>
     </li>
