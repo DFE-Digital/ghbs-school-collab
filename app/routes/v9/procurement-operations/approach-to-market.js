@@ -96,16 +96,17 @@ module.exports = function (router) {
 
   router.post('/' + version + '/stages/approach-to-market/invite-school-users-to-portal', function (req, res) {
     const sbp1Emailed = req.session.data['sbp1Emailed']
+    const sbp2Emailed = req.session.data['sbp2Emailed']
     const pageAction = req.session.data['pageAction']
 
-    if (sbp1Emailed == 'true'){
+    if (sbp1Emailed == 'true' || sbp2Emailed == 'true'){
       req.session.data.tagInviteSchoolUsersToPortalStatus = 'complete'
     }else {
       req.session.data.tagInviteSchoolUsersToPortalStatus = 'toDo'
     }
 
     if (pageAction == 'addUser'){
-      res.redirect('/' + version + '/common/add-user')
+      res.redirect('/' + version + '/stages/approach-to-market/invite-school-users-to-portal?sbp2Emailed=true')
     } else {
       res.redirect('/' + version + '/procurement')
     }

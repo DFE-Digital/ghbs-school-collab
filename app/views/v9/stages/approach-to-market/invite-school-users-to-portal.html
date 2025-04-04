@@ -5,6 +5,20 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+      {% if (data['showEmailSuccessBanner'] == 'true') %}
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Success
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-notification-banner__heading">
+              Invitation email sent
+            </p>
+          </div>
+        </div>
+      {% endif %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
           <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
@@ -53,18 +67,37 @@
                 </thead>
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Emmie Duke</td>
-                    <td class="govuk-table__cell">Emmie.Duke@school.com</td>
+                    <td class="govuk-table__cell">Marissa Dale</td>
+                    <td class="govuk-table__cell">m.dale@united-learning.org.uk</td>
                     <td class="govuk-table__cell">
                       {% if (data['sbp1Emailed'] != 'true') %}
                         Not invited
                       {% else %}
-                        {{ "now" | govukTime }}
+                        Today at {{ "now" | govukTime }}
                       {% endif %}
                     </td>
                     <td class="govuk-table__cell">
-                      <a href="?sbp1Emailed=true" class="govuk-link">Send email</a></td>
+                      <a href="?sbp1Emailed=true&showEmailSuccessBanner=true" class="govuk-link">
+                        Send email</a>
+                    </td>
                   </tr>
+                  {% if (data['sbp2Emailed'] == 'true') %}
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">John Smith</td>
+                      <td class="govuk-table__cell">j.smith@united-learning.org.uk</td>
+                      <td class="govuk-table__cell">
+                        {% if (data['sbp2Emailed'] != 'true') %}
+                          Not invited
+                        {% else %}
+                          Today at {{ "now" | govukTime }}
+                        {% endif %}
+                      </td>
+                      <td class="govuk-table__cell">
+                        <a href="?sbp2Emailed=true&showEmailSuccessBanner=true" class="govuk-link">
+                          Send email</a>
+                      </td>
+                    </tr>
+                  {% endif %}
                 </tbody>
               </table>
               <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="addUser">
