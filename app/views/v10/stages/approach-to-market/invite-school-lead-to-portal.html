@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Invite school lead to portal" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              {% if (data['userType'] == 'procurement-operations') %}
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+                </li>
+              {% endif %}
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Complete information
+                  gathering</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="invite-school-lead-to-portal" method="post" novalidate>
+            {% include "../../includes/case-identifiers.html" %}
+            <h1 class="govuk-heading-l" id="task">Invite school lead to portal</h1>
+            <p class="govuk-body">Inviting the school lead to the portal will
+              allow them to access the school's task list, view deadline dates
+              and receive documents.</p>
+            <p class="govuk-body">You can add other contacts to the portal
+              later.</p>
+            <div class="govuk-form-group">
+              <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">
+                  School leads</caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Name</th>
+                    <th scope="col" class="govuk-table__header">Email</th>
+                    <th scope="col" class="govuk-table__header">Date sent</th>
+                    <th scope="col" class="govuk-table__header"></th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Emmie Duke</td>
+                    <td class="govuk-table__cell">Emmie.Duke@school.com</td>
+                    <td class="govuk-table__cell">
+                      {% if (data['sbp1Emailed'] != 'true') %}
+                        not emailed
+                      {% else %}
+                        {{ "now" | govukTime }}
+                      {% endif %}
+                    </td>
+                    <td class="govuk-table__cell">
+                      <a href="?sbp1Emailed=true" class="govuk-link">Send email</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="pageAction" value="addUser">
+                Add user
+              </button>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagInviteTheSchoolLead" name="tagInviteTheSchoolLead" type="checkbox" value="Add school leads" {{ checked("tagInviteTheSchoolLead", "Add school leads") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagInviteTheSchoolLead">
+                      Add school leads
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagInviteTheSchoolLead-3" name="tagInviteTheSchoolLead" type="checkbox" value="Send invites" {{ checked("tagInviteTheSchoolLead", "Send invites") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagInviteTheSchoolLead-3">
+                      Send invites
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagInviteTheSchoolLead-0" name="tagInviteTheSchoolLead" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagInviteTheSchoolLead-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
+                Continue
+              </button>
+              <a class="govuk-link" href="../../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

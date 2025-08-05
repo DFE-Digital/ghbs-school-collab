@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Management" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">CMS Management</h1>
+      <h2 class="govuk-heading-m">Configuration</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="#">
+            Agents
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Categories
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Email templates
+          </a>
+        </li>
+      </ul>
+      <h2 class="govuk-heading-m">Templates</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="documents">
+            Documents
+          </a>
+        </li>
+      </ul>
+      <h2 class="govuk-heading-m">Tasks</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="#">
+            Synchronise frameworks
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            All cases survey
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
