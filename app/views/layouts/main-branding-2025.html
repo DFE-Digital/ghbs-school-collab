@@ -1,16 +1,91 @@
 {#
   For guidance on how to use layouts see:
   https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-  #}
+#}
 
-  {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-  {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-  {% block header %}
-
-      {{ govukHeader() }}
-      {{ govukServiceNavigation({
-          serviceName: serviceName
-      })}}
-
-  {% endblock %}
+{% block header %}
+  <header class="govuk-header" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+        <div class="govuk-header__logo">
+          <a href="/" class="govuk-header__link govuk-header__link--homepage">
+              <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+          </a>
+        </div>
+    </div>
+  </header>
+  <section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation" data-govuk-service-navigation-init="">
+    <div class="govuk-width-container">
+        <div class="govuk-service-navigation__container">
+            <span class="govuk-service-navigation__service-name">
+                <a href="/" class="govuk-service-navigation__link ">
+                {{serviceName}}
+            </a>
+            </span>
+            <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+                <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden="">
+                Menu
+            </button>
+                <ul class="govuk-service-navigation__list" id="navigation">
+                    {% if (data['navSelected'] == 'My cases') %}
+                      <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                    {% else %}
+                      <li class="govuk-service-navigation__item">
+                    {% endif %}
+                      <a class="govuk-service-navigation__link" href="/v10/procurement?navSelected=My cases">
+                        My cases
+                      </a>
+                    </li>
+                    {% if (data['navSelected'] == 'Notifications') %}
+                      <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                    {% else %}
+                      <li class="govuk-service-navigation__item">
+                    {% endif %}
+                      <a class="govuk-service-navigation__link" href="?navSelected=Notifications">
+                        Notifications
+                      </a>
+                    </li>
+                    {% if (data['navSelected'] == 'Find a case') %}
+                      <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                    {% else %}
+                      <li class="govuk-service-navigation__item">
+                    {% endif %}
+                      <a class="govuk-service-navigation__link" href="?navSelected=Find a case">
+                        Find a case
+                      </a>
+                    </li>
+                    {% if (data['navSelected'] == 'Case statistics') %}
+                      <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                    {% else %}
+                      <li class="govuk-service-navigation__item">
+                    {% endif %}
+                      <a class="govuk-service-navigation__link" href="?navSelected=Case statistics">
+                        Case statistics
+                      </a>
+                    </li>
+                    {% if (data['navSelected'] == 'Frameworks') %}
+                      <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                    {% else %}
+                      <li class="govuk-service-navigation__item">
+                    {% endif %}
+                      <a class="govuk-service-navigation__link" href="?navSelected=Frameworks">
+                        Frameworks
+                      </a>
+                    </li>
+                    {% if (data['navSelected'] == 'Management') %}
+                      <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                    {% else %}
+                      <li class="govuk-service-navigation__item">
+                    {% endif %}
+                      <a class="govuk-service-navigation__link" href="?navSelected=Management">
+                        Management
+                      </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+  </section>
+{% endblock %}
