@@ -1,0 +1,105 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% set pageName="Create quality questions" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              {% if (data['userType'] == 'procurement-operations') %}
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+                </li>
+              {% endif %}
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Create quality
+                  questions</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Create quality questions</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="create-quality-questions" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">The quality questions should be based on
+                what aspects are important to the school and must help to
+                differentiate between good and poor suppliers.</p>
+              <p class="govuk-body">Review the <a href="https://educationgovuk.sharepoint.com.mcas.ms/sites/lvewp00219/Case%20Documents%20and%20Templates/Forms/AllItems.aspx?FolderCTID=0x0120006A9D583CA91D924CAC6C1108A407579B&viewid=14b476ce%2D1669%2D4e8d%2D83ff%2D9404ae850816" class="govuk-link" target="_blank" rel="noopener noreferrer">
+                quality questions library (opens in new tab)</a>.
+                These can be used as a starting point and tweaked to meet the
+                needs of the school.</p>
+              <p class="govuk-body">Questions should either ensure potential
+                suppliers meet a mandatory threshold, or can be scored. Quality
+                questions can be refined with the school to help them identify
+                the best suppliers.</p>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help with creating quality questions
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">Threshold questions are mandatory
+                    requirements which all potential suppliers must meet. For
+                    example, does the supplier have the relevant certification?
+                  </p>
+                  <p class="govuk-body">Threshold questions normally start with
+                    'You must'.</p>
+                  <p class="govuk-body">Scored questions are marked on a scale
+                    determined in the evaluation methodology.</p>
+                    <p class="govuk-body">Scored questions normally start with
+                      'Demonstrate how you will'.</p>
+                    <p class="govuk-body">It is best to set word limits for the
+                      responses to questions and determine what appendecies are
+                      and are not allowed in addition to their response.</p>
+                </div>
+              </details>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagCreateQualityQuestions-1" name="tagCreateQualityQuestions" type="checkbox" value="Copy and rename the relevant templates to your SharePoint case folder" {{ checked("tagCreateQualityQuestions", "Copy and rename the relevant templates to your SharePoint case folder") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCreateQualityQuestions-1">
+                      Copy and rename the relevant templates to your SharePoint
+                      case folder</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagCreateQualityQuestions-2" name="tagCreateQualityQuestions" type="checkbox" value="Agree quality questions with school" {{ checked("tagCreateQualityQuestions", "Agree quality questions with school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCreateQualityQuestions-2">
+                      Agree quality questions with school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagCreateQualityQuestions-0" name="tagCreateQualityQuestions" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagCreateQualityQuestions-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="call-off-document-preparation">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

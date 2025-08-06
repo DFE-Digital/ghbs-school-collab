@@ -1,0 +1,58 @@
+          {% extends "layouts/main-branding-2025.html" %}
+
+{% set pageName="Upload document" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="procurement">004335 Catering
+                  services</a>
+              </li>
+              {% if data['pageAction'] == 'uploadInformationGathering' %}
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="approach-to-market/complete-information-gathering">
+                    Complete information gathering</a>
+                </li>
+              {% endif %}
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Upload documents</a>
+              </li>
+            </ol>
+          </nav>
+          <span class="govuk-caption-l">004335 - Multi academy trust</span>
+          {% if data['pageAction'] == 'uploadInformationGathering' %}
+            <h1 class="govuk-heading-l">Upload information gathering documents</h1>
+          {% else %}
+            <h1 class="govuk-heading-l">Upload document</h1>
+          {% endif %}
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="upload-document" method="post" novalidate>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label>
+              <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="#" onclick="history.back()">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

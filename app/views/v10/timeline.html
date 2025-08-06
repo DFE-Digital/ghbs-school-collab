@@ -1,0 +1,305 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% set pageName="Catering services Multi academy trust 004335" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">004335 Catering services</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Catering Services</h1>
+          {% include "../includes/key-procurement-info.html" %}
+        </div>
+        <div class="govuk-grid-column-one-quarter" style="text-align: right;">
+          <div class="moj-button-menu" data-module="moj-button-menu" data-button-text="Actions" data-button-classes="govuk-button--secondary" data-align-menu="right">
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+              Add a case note</a>
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+              Move emails to existing case</a>
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+              Change case owner</a>
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+              Log contact with school</a>
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+              Place on hold</a>
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+              Resolve case</a>
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary" data-module="govuk-button">
+              Reject case</a>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="procurement">Task list</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" aria-current="page" href="#">
+                  Timeline</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">School details</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Case details</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Request</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Messages</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Contacts</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">History</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Attachments</a>
+              </li>
+              <li class="moj-sub-navigation__item">
+                <a class="moj-sub-navigation__link" href="#">Files</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <form action="timeline" method="post" novalidate>
+            <h2 class="govuk-heading-l">Procurement timeline</h2>
+            <table class="govuk-table">
+              <caption class="govuk-table__caption govuk-table__caption--m">Stage
+              1</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Task name</th>
+                  <th scope="col" class="govuk-table__header">Start date</th>
+                  <th scope="col" class="govuk-table__header">End date</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">Days</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <!-- Stage 1 tasks -->
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Handover from Triage</td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="handoverFromTriageStartDate" name="handoverFromTriageStartDate" type="text" value="{{ data['handoverFromTriageStartDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="handoverFromTriageEndDate" name="handoverFromTriageEndDate" type="text" value="{{ data['handoverFromTriageEndDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['handoverFromTriageDuration'] }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Discuss school requirements</td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="discussSchoolRequirementsStartDate" name="discussSchoolRequirementsStartDate" type="text" value="{{ data['discussSchoolRequirementsStartDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="discussSchoolRequirementsEndDate" name="discussSchoolRequirementsEndDate" type="text" value="{{ data['discussSchoolRequirementsEndDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['discussSchoolRequirementsDuration'] }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Research frameworks</td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="researchFrameworksStartDate" name="researchFrameworksStartDate" type="text" value="{{ data['researchFrameworksStartDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="researchFrameworksEndDate" name="researchFrameworksEndDate" type="text" value="{{ data['researchFrameworksEndDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['researchFrameworksDuration'] }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Record route to market</td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="recordRouteToMarketStartDate" name="recordRouteToMarketStartDate" type="text" value="{{ data['recordRouteToMarketStartDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="recordRouteToMarketEndDate" name="recordRouteToMarketEndDate" type="text" value="{{ data['recordRouteToMarketEndDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['recordRouteToMarketDuration'] }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Set procurement timeline</td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="setProcurementTimelineStartDate" name="setProcurementTimelineStartDate" type="text" value="{{ data['setProcurementTimelineStartDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="setProcurementTimelineEndDate" name="setProcurementTimelineEndDate" type="text" value="{{ data['setProcurementTimelineEndDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['setProcurementTimelineDuration'] }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Invite school lead</td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="inviteTheSchoolLeadStartDate" name="inviteTheSchoolLeadStartDate" type="text" value="{{ data['inviteTheSchoolLeadStartDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="inviteTheSchoolLeadEndDate" name="inviteTheSchoolLeadEndDate" type="text" value="{{ data['inviteTheSchoolLeadEndDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['inviteTheSchoolLeadDuration'] }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Create Procurement Risk Assessment Tool (PRAT)</td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="createProcurementRiskAssessmentStartDate" name="createProcurementRiskAssessmentStartDate" type="text" value="{{ data['createProcurementRiskAssessmentStartDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="createProcurementRiskAssessmentEndDate" name="createProcurementRiskAssessmentEndDate" type="text" value="{{ data['createProcurementRiskAssessmentEndDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['createProcurementRiskAssessmentDuration'] }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Check cost threshold</td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="checkCostThresholdStartDate" name="checkCostThresholdStartDate" type="text" value="{{ data['checkCostThresholdStartDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="checkCostThresholdEndDate" name="checkCostThresholdEndDate" type="text" value="{{ data['checkCostThresholdEndDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['checkCostThresholdDuration'] }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Get CAB/G7 approval</td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="getApprovalStartDate" name="getApprovalStartDate" type="text" value="{{ data['getApprovalStartDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="getApprovalEndDate" name="getApprovalEndDate" type="text" value="{{ data['getApprovalEndDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['getApprovalDuration'] }}</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Get approval from school on approach</td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="approvalFromSchoolOnApproachStartDate" name="approvalFromSchoolOnApproachStartDate" type="text" value="{{ data['approvalFromSchoolOnApproachStartDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell">
+                    <input class="govuk-input govuk-input--width-10" id="approvalFromSchoolOnApproachEndDate" name="approvalFromSchoolOnApproachEndDate" type="text" value="{{ data['approvalFromSchoolOnApproachEndDate'] }}">
+                  </td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['approvalFromSchoolOnApproachDuration'] }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="govuk-button-group">
+              <button class="govuk-button" data-module="govuk-button">Save
+                changes</button>
+              <a href="timeline" class="govuk-link">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const timelineForm = document.querySelector('form[action="timeline"]');
+        let rows;
+
+        if (timelineForm) {
+            rows = timelineForm.querySelectorAll('tbody tr');
+
+            rows.forEach((row, index) => {
+                const startDateInput = row.querySelector('td:nth-child(2) > input');
+                const endDateInput = row.querySelector('td:nth-child(3) > input');
+
+                startDateInput.addEventListener('change', () => {
+                    updateDatesFromStart(index);
+                });
+
+                endDateInput.addEventListener('change', () => {
+                    updateDatesFromEnd(index);
+                });
+            });
+        }
+
+        function updateDatesFromStart(startIndex) {
+            for (let i = startIndex; i < rows.length; i++) {
+                const row = rows[i];
+                const startDateInput = row.querySelector('td:nth-child(2) > input');
+                const endDateInput = row.querySelector('td:nth-child(3) > input');
+                const durationCell = row.querySelector('td:nth-child(4)');
+
+                const startDate = new Date(startDateInput.value);
+                const duration = parseInt(durationCell.textContent);
+
+                const endDate = new Date(startDate);
+                endDate.setDate(startDate.getDate() + duration);
+
+                endDateInput.value = formatDate(endDate);
+
+                if (i < rows.length - 1) {
+                    const nextRow = rows[i + 1];
+                    const nextStartDateInput = nextRow.querySelector('td:nth-child(2) > input');
+                    nextStartDateInput.value = formatDate(endDate);
+                }
+            }
+
+            for (let j = startIndex - 1; j >= 0; j--) {
+                const RemainRow = rows[j];
+                const endDateInput = RemainRow.querySelector('td:nth-child(3) > input');
+                const startDateInput = RemainRow.querySelector('td:nth-child(2) > input');
+
+                const durationCell = RemainRow.querySelector('td:nth-child(4)');
+
+                const duration = parseInt(durationCell.textContent);
+
+                const endDate = new Date(rows[j+1].querySelector('td:nth-child(2) > input').value);
+
+                const startDate = new Date(endDate);
+                startDate.setDate(endDate.getDate() - duration);
+
+                startDateInput.value = formatDate(startDate);
+                endDateInput.value = formatDate(endDate);
+            }
+        }
+
+        function updateDatesFromEnd(startIndex) {
+            for (let i = startIndex; i < rows.length; i++) {
+                const row = rows[i];
+                const startDateInput = row.querySelector('td:nth-child(2) > input');
+                const endDateInput = row.querySelector('td:nth-child(3) > input');
+                const durationCell = row.querySelector('td:nth-child(4)');
+
+                const startDate = new Date(startDateInput.value);
+                const endDate = new Date(endDateInput.value);
+
+                const duration = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24));
+                durationCell.textContent = duration;
+
+                if (i < rows.length - 1) {
+                    const nextRow = rows[i + 1];
+                    const nextStartDateInput = nextRow.querySelector('td:nth-child(2) > input');
+                    nextStartDateInput.value = formatDate(endDate);
+                    updateDatesFromStart(i + 1);
+                }
+            }
+        }
+
+        function formatDate(date) {
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = date.toLocaleString('default', { month: 'short' });
+            const year = date.getFullYear();
+            return `${day} ${month} ${year}`;
+        }
+    });
+    </script>
+{% endblock %}

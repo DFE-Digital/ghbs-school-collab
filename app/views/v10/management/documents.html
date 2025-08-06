@@ -1,0 +1,48 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% set pageName="Management" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Documents</h1>
+      <h2 class="govuk-heading-m">Personal details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Create procurement risk assessment tool
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#">http://staging.get-help-buying-for-schools.service.gov.uk/templates/documents/PRAT2025.xlsx</a>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">
+                file: Create procurement risk assessment tool</span></a>
+                | <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden">
+                  file: Create procurement risk assessment tool</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Another file
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="#">http://staging.get-help-buying-for-schools.service.gov.uk/templates/documents/another-file.docx</a>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">
+                file: Create procurement risk assessment tool</span></a>
+                | <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden">
+                  file: Create procurement risk assessment tool</span></a>
+            </dd>
+          </div>
+        </dl>
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-govuk-button-init="">
+            Add document
+          </button>
+          <a class="govuk-link" href="management">Cancel</a>
+        </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% set pageName="Handover from Triage" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              {% if (data['userType'] == 'procurement-operations') %}
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+                </li>
+              {% endif %}
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Handover from Triage
+                  </a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Handover from Triage</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="handover-from-triage" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Information has already been gathered by
+                triage about the procurement including the requested due date
+                and contact details.</p>
+              <p class="govuk-body"><a href="#" class="govuk-link">
+                Review the handover document in SharePoint (opens in new tab)
+                </a>.
+              </p>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagHandoverFromTriage-3" name="tagHandoverFromTriage" type="checkbox" value="Send participation agreement" checked="checked" {{ checked("tagHandoverFromTriage", "Send participation agreement") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagHandoverFromTriage-3">
+                      Send participation agreement
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagHandoverFromTriage-4" name="tagHandoverFromTriage" type="checkbox" value="Participation agreement signed" checked="checked" {{ checked("tagHandoverFromTriage", "Participation agreement signed") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagHandoverFromTriage-4">
+                      Participation agreement signed
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagHandoverFromTriage-6" name="tagHandoverFromTriage" type="checkbox" value="Assigned to procurement operations lead" checked="checked" {{ checked("tagHandoverFromTriage", "Assigned to procurement operations lead") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagHandoverFromTriage-6">
+                      Assigned to procurement operations lead
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item" style="display: none;">
+                    <input class="govuk-checkboxes__input" id="tagHandoverFromTriage-0" name="tagHandoverFromTriage" type="checkbox" value="empty" checked="empty">
+                    <label class="govuk-label govuk-checkboxes__label" for="tagHandoverFromTriage-0">
+                      empty
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="../../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -27,3 +27,12 @@
 .tableNumbers{
     font-feature-settings: 'tnum' 1, 'ss01' 1, 'zero' 1;
 }
+
+.govuk-header__link .govuk-header__logotype{
+  height: 30px;
+}
+
+.govuk-header__link:focus .govuk-header__logotype{
+  content: url(/public/images/department-for-education_black.png);
+  height: 30px;
+}

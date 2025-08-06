@@ -1,0 +1,83 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% set pageName="Get school sign-off for document pack" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              {% if (data['userType'] == 'procurement-operations') %}
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+                </li>
+              {% endif %}
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Get school sign-off
+                  for document pack</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Get school sign-off for document pack</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="get-school-sign-off-for-document-pack" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Send document pack to the school for
+                approval.</p>
+              <p class="govuk-body">You should emphasise to the school lead the
+                legal importance of carefully checking and approving the
+                document pack.</p>
+            </div>
+            <div class="govuk-form-group">
+              <h2 class="govuk-heading-m">Actions</h2>
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSignOffBidDocumentWithSchool-1" name="tagSignOffBidDocumentWithSchool" type="checkbox" value="Email pack to the school" {{ checked("tagSignOffBidDocumentWithSchool", "Email pack to the school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSignOffBidDocumentWithSchool-1">
+                      Email pack to the school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSignOffBidDocumentWithSchool-2" name="tagSignOffBidDocumentWithSchool" type="checkbox" value="Approval from school received" {{ checked("tagSignOffBidDocumentWithSchool", "Approval from school received") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSignOffBidDocumentWithSchool-2">
+                      Approval from school received
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="tagSignOffBidDocumentWithSchool-3" name="tagSignOffBidDocumentWithSchool" type="checkbox" value="Save approval screenshot in SharePoint" {{ checked("tagSignOffBidDocumentWithSchool", "Save approval screenshot in SharePoint") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="tagSignOffBidDocumentWithSchool-3">
+                      Save approval screenshot in SharePoint
+                    </label>
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item" style="display: none;">
+                  <input class="govuk-checkboxes__input" id="tagSignOffBidDocumentWithSchool-0" name="tagSignOffBidDocumentWithSchool" type="checkbox" value="empty" checked="empty">
+                  <label class="govuk-label govuk-checkboxes__label" for="tagSignOffBidDocumentWithSchool-0">
+                    empty
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button">
+                Save and continue
+              </button>
+              <a class="govuk-link" href="../../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

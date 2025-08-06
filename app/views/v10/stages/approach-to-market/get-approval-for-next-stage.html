@@ -1,0 +1,85 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% set pageName="Get CAB approval" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="govuk-breadcrumbs__list">
+              {% if (data['userType'] == 'procurement-operations') %}
+                <li class="govuk-breadcrumbs__list-item">
+                  <a class="govuk-breadcrumbs__link" href="#">Procurements</a>
+                </li>
+              {% endif %}
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="../../procurement">004335
+                  Catering services</a>
+              </li>
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="#">Get CAB approval</a>
+              </li>
+            </ol>
+          </nav>
+          {% include "../../includes/case-identifiers.html" %}
+          <h1 class="govuk-heading-l">Get CAB approval</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="get-approval-for-next-stage" method="post" novalidate>
+            <div class="govuk-form-group">
+              <p class="govuk-body">Procurements above the cost threshold
+                requires approval from the Commercial Advisory Board (CAB).
+                Follow the process outlined in the <a href="#" class="govuk-link" target="_blank" rel="noopener noreferrer">
+                commercial operating model (opens in new tab)</a>.
+              </p>
+            </div>
+            <div class="govuk-form-group">
+              <div class="govuk-checkboxes govuk-checkboxes__checklist" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-1" name="tagGetApprovalForStage2" type="checkbox" value="Complete commercial assurance document" {{ checked("tagGetApprovalForStage2", "Complete commercial assurance document") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-1">
+                    Complete commercial assurance document
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-2" name="tagGetApprovalForStage2" type="checkbox" value="Get approval from G7" {{ checked("tagGetApprovalForStage2", "Get approval from G7") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-2">
+                    Get approval from G7
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-3" name="tagGetApprovalForStage2" type="checkbox" value="Add to secretariat agenda" {{ checked("tagGetApprovalForStage2", "Add to secretariat agenda") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-3">
+                    Add to secretariat agenda
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-4" name="tagGetApprovalForStage2" type="checkbox" value="Approval received from CAB" {{ checked("tagGetApprovalForStage2", "Approval received from CAB") }}>
+                  <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-4">
+                    Approval received from CAB
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item" style="display: none;">
+                  <input class="govuk-checkboxes__input" id="tagGetApprovalForStage2-0" name="tagGetApprovalForStage2" type="checkbox" value="empty" checked="empty">
+                  <label class="govuk-label govuk-checkboxes__label" for="tagGetApprovalForStage2-0">
+                    empty
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="govuk-button-group">
+              <button type="submit" class="govuk-button" data-module="govuk-button" name="pageAction" value="continue">
+                Continue
+              </button>
+              <a class="govuk-link" href="../../procurement">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
