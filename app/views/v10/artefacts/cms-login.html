@@ -1,0 +1,47 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% set pageName="Complete procurement evaluation" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if (data['signOut'] === 'true' ) %}
+        <div class="govuk-form-group">
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Important
+              </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__heading">
+                You have signed out
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-xl">Case management system</h1>
+        <p class="govuk-body">Use this service to support complex school
+          procurements or onboard schools to specific schemes. You will be able to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>view support requests</li>
+          <li>email schools with guidance and procurement advice</li>
+          <li>update cases as they progress</li>
+          <li>share evaluation files and contracts with school users</li>
+        </ul>
+        <p class="govuk-body">Contact you line manager if you do not have
+          access.</p>
+      </div>
+      <div class="govuk-form-group">
+        <a href="?signOut=false" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+          Start now
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
