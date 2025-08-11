@@ -1,6 +1,6 @@
 module.exports = function (router) {
 
-  var version = "v9";
+  var version = "v10";
 
   router.get('/' + version + '/procurement', function (req, res) {
     const tagCompleteInformationGatheringStatus = req.session.data['tagCompleteInformationGatheringStatus']
@@ -18,6 +18,8 @@ module.exports = function (router) {
       req.session.data.stage1ApprovalBlocked = 'true'
       res.locals.data.stage1ApprovalBlocked = 'true'
     }
+    req.session.data.hideNavigation = 'false'
+    res.locals.data.hideNavigation = 'false'
 
     res.render(version + '/procurement', {})
   })
