@@ -15,7 +15,9 @@
           </a>
         </div>
         <div class="govuk-header__signed-in-user">
-            Signed in as Rich Cooley {{data['hideNavigation']}}
+          {% if (data['signOut'] != 'true') %}
+            Signed in as Rich Cooley
+          {% endif %}
         </div>
     </div>
   </header>
